@@ -90,7 +90,7 @@ const ScenarioDetail = () => {
     }
   };
 
-  if (!scenario || !language) {
+  if (!scenario || !language || phraseStates.length === 0) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
@@ -146,6 +146,7 @@ const ScenarioDetail = () => {
           <div className="space-y-4">
             {phrases.map((phrase, index) => {
               const state = phraseStates[index];
+              if (!state) return null; // Safety check
               const isYourLine = index % 2 === 0;
 
               return (
