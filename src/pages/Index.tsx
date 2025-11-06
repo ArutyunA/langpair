@@ -250,19 +250,23 @@ const Index = () => {
         <ProgressHeader streak={streak} xp={xp} dailyGoal={dailyGoal} />
 
         {dailyVocab.length > 0 && (
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-foreground">Daily Vocabulary (10 words)</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {dailyVocab.map((vocab, index) => (
-                <VocabularyCard
-                  key={index}
-                  word={vocab.word}
-                  translation={vocab.translation}
-                  romanization={vocab.romanization}
-                />
-              ))}
+          <Button
+            size="lg"
+            className="w-full h-auto py-8 bg-gradient-primary hover:opacity-90 shadow-card-hover"
+            onClick={() => navigate("/vocabulary-quiz")}
+          >
+            <div className="text-center space-y-1">
+              <div className="text-sm font-medium opacity-90">
+                {selectedLanguage === "russian" ? "Russian" : "Cantonese"} Vocabulary
+              </div>
+              <div className="text-2xl font-bold">
+                Daily Vocab Flash Challenge
+              </div>
+              <div className="text-sm opacity-75">
+                {dailyVocab.length} words to practice
+              </div>
             </div>
-          </div>
+          </Button>
         )}
 
         <ScenarioCard
