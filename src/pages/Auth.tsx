@@ -19,8 +19,16 @@ const Auth = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+    // Check if already authenticated on mount
+    supabase.auth.getSession().then(({ data: { session } }) => {
       if (session) {
+        navigate("/");
+      }
+    });
+
+    // Only navigate on actual sign-in events, not on session checks
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
+      if (event === "SIGNED_IN") {
         navigate("/");
       }
     });
