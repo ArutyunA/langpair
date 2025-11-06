@@ -138,6 +138,11 @@ const VocabularyQuiz = () => {
     if (isCorrect) {
       setScore(score + 1);
     }
+
+    // Automatically advance to next question after 1 second
+    setTimeout(() => {
+      handleNext();
+    }, 1000);
   };
 
   const handleNext = async () => {
@@ -257,15 +262,6 @@ const VocabularyQuiz = () => {
                   })}
                 </div>
 
-                {showResult && (
-                  <Button
-                    size="lg"
-                    onClick={handleNext}
-                    className="w-full bg-gradient-primary"
-                  >
-                    {currentIndex < vocabulary.length - 1 ? "Next Question" : "Finish Quiz"}
-                  </Button>
-                )}
               </div>
             </CardContent>
           </Card>
