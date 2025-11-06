@@ -167,6 +167,12 @@ const Index = () => {
     });
   };
 
+  useEffect(() => {
+    if (!loading && !user) {
+      navigate("/auth");
+    }
+  }, [loading, user, navigate]);
+
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -178,12 +184,6 @@ const Index = () => {
       </div>
     );
   }
-
-  useEffect(() => {
-    if (!loading && !user) {
-      navigate("/auth");
-    }
-  }, [loading, user, navigate]);
 
   if (!user) {
     return null;
