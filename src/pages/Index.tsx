@@ -1,39 +1,162 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { User, Session } from "@supabase/supabase-js";
+import { supabase } from "@/integrations/supabase/client";
 import LanguageSelector from "@/components/LanguageSelector";
 import ProgressHeader from "@/components/ProgressHeader";
 import ScenarioCard from "@/components/ScenarioCard";
 import PhraseCard from "@/components/PhraseCard";
+import VocabularyCard from "@/components/VocabularyCard";
 import AchievementBadge from "@/components/AchievementBadge";
 import { Button } from "@/components/ui/button";
 import { scenarios, achievements } from "@/data/scenarios";
 import { useToast } from "@/hooks/use-toast";
 
+interface DailyVocabulary {
+  word: string;
+  translation: string;
+  romanization?: string;
+}
+
 const Index = () => {
+  const [user, setUser] = useState<User | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
   const [selectedLanguage, setSelectedLanguage] = useState<"russian" | "cantonese" | null>(null);
   const [completedPhrases, setCompletedPhrases] = useState(0);
   const [streak, setStreak] = useState(1);
   const [xp, setXp] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [dailyVocab, setDailyVocab] = useState<DailyVocabulary[]>([]);
+  const navigate = useNavigate();
   const { toast } = useToast();
 
   const dailyGoal = 100;
   const currentScenario = scenarios[0];
 
-  const handlePhraseComplete = () => {
+  useEffect(() => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        setSession(session);
+        setUser(session?.user ?? null);
+      }
+    );
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+      setUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    if (!user) {
+      setLoading(false);
+      navigate("/auth");
+      return;
+    }
+
+    const fetchUserData = async () => {
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("learning_language")
+        .eq("id", user.id)
+        .single();
+
+      if (profile) {
+        setSelectedLanguage(profile.learning_language as "russian" | "cantonese");
+      }
+
+      const { data: progress } = await supabase
+        .from("user_progress")
+        .select("streak, xp")
+        .eq("user_id", user.id)
+        .single();
+
+      if (progress) {
+        setStreak(progress.streak);
+        setXp(progress.xp);
+      }
+
+      if (profile?.learning_language) {
+        const { data: vocab } = await supabase
+          .from("daily_vocabulary")
+          .select("word, translation, romanization")
+          .eq("language", profile.learning_language)
+          .eq("date", new Date().toISOString().split("T")[0])
+          .limit(10);
+
+        if (vocab) {
+          setDailyVocab(vocab);
+        }
+      }
+
+      setLoading(false);
+    };
+
+    fetchUserData();
+  }, [user, navigate]);
+
+  const updateProgress = async (newXp: number) => {
+    if (!user) return;
+
+    await supabase
+      .from("user_progress")
+      .update({
+        xp: newXp,
+        last_activity_date: new Date().toISOString().split("T")[0],
+      })
+      .eq("user_id", user.id);
+  };
+
+  const handlePhraseComplete = async (phraseId: string) => {
+    if (!user) return;
+
+    const newXp = xp + 10;
     setCompletedPhrases(prev => prev + 1);
-    setXp(prev => prev + 10);
+    setXp(newXp);
+
+    await supabase.from("completed_phrases").insert({
+      user_id: user.id,
+      phrase_id: phraseId,
+      scenario_id: currentScenario.id,
+    });
+
+    await updateProgress(newXp);
+
     toast({
       title: "+10 XP",
       description: "Great job! Keep learning!",
     });
   };
 
-  const handleCompleteScenario = () => {
-    setXp(prev => prev + 50);
+  const handleCompleteScenario = async () => {
+    const newXp = xp + 50;
+    setXp(newXp);
+    await updateProgress(newXp);
+
     toast({
       title: "🎉 Scenario Complete!",
       description: "+50 XP bonus! Come back tomorrow for a new challenge.",
     });
   };
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+    navigate("/auth");
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+            Loading...
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (!selectedLanguage) {
     return (
@@ -67,18 +190,43 @@ const Index = () => {
           <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
             LangPair
           </h1>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => setSelectedLanguage(null)}
-          >
-            Change Language
-          </Button>
+          <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setSelectedLanguage(null)}
+            >
+              Change Language
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleSignOut}
+            >
+              Sign Out
+            </Button>
+          </div>
         </div>
       </header>
 
       <main className="container mx-auto px-4 py-8 max-w-4xl space-y-8">
         <ProgressHeader streak={streak} xp={xp} dailyGoal={dailyGoal} />
+
+        {dailyVocab.length > 0 && (
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-foreground">Daily Vocabulary (10 words)</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {dailyVocab.map((vocab, index) => (
+                <VocabularyCard
+                  key={index}
+                  word={vocab.word}
+                  translation={vocab.translation}
+                  romanization={vocab.romanization}
+                />
+              ))}
+            </div>
+          </div>
+        )}
 
         <ScenarioCard
           title={currentScenario.title}
@@ -97,7 +245,7 @@ const Index = () => {
                 phrase={phrase.phrase}
                 translation={phrase.translation}
                 romanization={phrase.romanization}
-                onComplete={handlePhraseComplete}
+                onComplete={() => handlePhraseComplete(`${currentScenario.id}-${index}`)}
               />
             ))}
           </div>
