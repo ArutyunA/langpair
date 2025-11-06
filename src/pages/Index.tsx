@@ -47,22 +47,21 @@ const Index = () => {
       (event, session) => {
         setSession(session);
         setUser(session?.user ?? null);
+        setLoading(false);
       }
     );
 
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session);
       setUser(session?.user ?? null);
+      setLoading(false);
     });
 
     return () => subscription.unsubscribe();
   }, []);
 
   useEffect(() => {
-    if (!user) {
-      setLoading(false);
-      return;
-    }
+    if (!user) return;
 
     const fetchUserData = async () => {
       const { data: profile } = await supabase
@@ -98,8 +97,6 @@ const Index = () => {
           setDailyVocab(vocab);
         }
       }
-
-      setLoading(false);
     };
 
     fetchUserData();
@@ -182,8 +179,13 @@ const Index = () => {
     );
   }
 
+  useEffect(() => {
+    if (!loading && !user) {
+      navigate("/auth");
+    }
+  }, [loading, user, navigate]);
+
   if (!user) {
-    navigate("/auth");
     return null;
   }
 
