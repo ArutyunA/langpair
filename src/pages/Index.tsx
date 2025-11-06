@@ -8,10 +8,18 @@ import ScenarioCard from "@/components/ScenarioCard";
 import PhraseCard from "@/components/PhraseCard";
 import VocabularyCard from "@/components/VocabularyCard";
 import AchievementBadge from "@/components/AchievementBadge";
-import FriendsList from "@/components/FriendsList";
 import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { scenarios, achievements } from "@/data/scenarios";
 import { useToast } from "@/hooks/use-toast";
+import { UserCircle, Users, Globe, LogOut } from "lucide-react";
 
 interface DailyVocabulary {
   word: string;
@@ -146,6 +154,22 @@ const Index = () => {
     navigate("/auth");
   };
 
+  const handleChangeLanguage = async (newLanguage: "russian" | "cantonese") => {
+    if (!user) return;
+    
+    await supabase
+      .from("profiles")
+      .update({ learning_language: newLanguage })
+      .eq("id", user.id);
+    
+    setSelectedLanguage(newLanguage);
+    
+    toast({
+      title: "Language updated",
+      description: `Now learning ${newLanguage}`,
+    });
+  };
+
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -195,22 +219,30 @@ const Index = () => {
           <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
             LangPair
           </h1>
-          <div className="flex gap-2">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setSelectedLanguage(null)}
-            >
-              Change Language
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={handleSignOut}
-            >
-              Sign Out
-            </Button>
-          </div>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="sm">
+                <UserCircle className="w-5 h-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuLabel>Profile</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={() => handleChangeLanguage(selectedLanguage === "russian" ? "cantonese" : "russian")}>
+                <Globe className="w-4 h-4 mr-2" />
+                Learning: {selectedLanguage === "russian" ? "Russian" : "Cantonese"}
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => navigate("/friends")}>
+                <Users className="w-4 h-4 mr-2" />
+                Learning Partners
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem onClick={handleSignOut}>
+                <LogOut className="w-4 h-4 mr-2" />
+                Sign Out
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </header>
 
@@ -266,17 +298,13 @@ const Index = () => {
           </Button>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-foreground">Achievements</h2>
-            <div className="grid gap-4">
-              {achievements.map(achievement => (
-                <AchievementBadge key={achievement.id} achievement={achievement} />
-              ))}
-            </div>
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-foreground">Achievements</h2>
+          <div className="grid gap-4">
+            {achievements.map(achievement => (
+              <AchievementBadge key={achievement.id} achievement={achievement} />
+            ))}
           </div>
-
-          <FriendsList />
         </div>
       </main>
     </div>
