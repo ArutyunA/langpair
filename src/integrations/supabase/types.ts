@@ -14,7 +14,130 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      completed_phrases: {
+        Row: {
+          completed_at: string
+          id: string
+          phrase_id: string
+          scenario_id: string
+          user_id: string
+        }
+        Insert: {
+          completed_at?: string
+          id?: string
+          phrase_id: string
+          scenario_id: string
+          user_id: string
+        }
+        Update: {
+          completed_at?: string
+          id?: string
+          phrase_id?: string
+          scenario_id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "completed_phrases_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      daily_vocabulary: {
+        Row: {
+          created_at: string
+          date: string
+          id: string
+          language: string
+          romanization: string | null
+          translation: string
+          word: string
+        }
+        Insert: {
+          created_at?: string
+          date?: string
+          id?: string
+          language: string
+          romanization?: string | null
+          translation: string
+          word: string
+        }
+        Update: {
+          created_at?: string
+          date?: string
+          id?: string
+          language?: string
+          romanization?: string | null
+          translation?: string
+          word?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          id: string
+          learning_language: string
+          updated_at: string
+          username: string
+        }
+        Insert: {
+          created_at?: string
+          id: string
+          learning_language: string
+          updated_at?: string
+          username: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          learning_language?: string
+          updated_at?: string
+          username?: string
+        }
+        Relationships: []
+      }
+      user_progress: {
+        Row: {
+          created_at: string
+          id: string
+          last_activity_date: string | null
+          streak: number
+          updated_at: string
+          user_id: string
+          xp: number
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          last_activity_date?: string | null
+          streak?: number
+          updated_at?: string
+          user_id: string
+          xp?: number
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          last_activity_date?: string | null
+          streak?: number
+          updated_at?: string
+          user_id?: string
+          xp?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_progress_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
