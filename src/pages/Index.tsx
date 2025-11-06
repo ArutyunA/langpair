@@ -15,6 +15,9 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { scenarios, achievements } from "@/data/scenarios";
@@ -230,10 +233,20 @@ const Index = () => {
             <DropdownMenuContent align="end" className="w-56">
               <DropdownMenuLabel>Profile</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={() => handleChangeLanguage(selectedLanguage === "russian" ? "cantonese" : "russian")}>
-                <Globe className="w-4 h-4 mr-2" />
-                Learning: {selectedLanguage === "russian" ? "Russian" : "Cantonese"}
-              </DropdownMenuItem>
+              <DropdownMenuSub>
+                <DropdownMenuSubTrigger>
+                  <Globe className="w-4 h-4 mr-2" />
+                  Learning: {selectedLanguage === "russian" ? "Russian" : "Cantonese"}
+                </DropdownMenuSubTrigger>
+                <DropdownMenuSubContent>
+                  <DropdownMenuItem onClick={() => handleChangeLanguage("russian")}>
+                    Russian
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => handleChangeLanguage("cantonese")}>
+                    Cantonese
+                  </DropdownMenuItem>
+                </DropdownMenuSubContent>
+              </DropdownMenuSub>
               <DropdownMenuItem onClick={() => navigate("/friends")}>
                 <Users className="w-4 h-4 mr-2" />
                 Learning Partners

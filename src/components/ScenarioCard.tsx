@@ -13,11 +13,9 @@ interface ScenarioCardProps {
 }
 
 const ScenarioCard = ({ title, description, yourRole, partnerRole, language, onClick }: ScenarioCardProps) => {
-  const gradientClass = language === "russian" ? "bg-gradient-primary" : "bg-gradient-secondary";
-  
   return (
     <Card 
-      className={`${gradientClass} p-6 shadow-card text-white space-y-4 cursor-pointer transition-all hover:shadow-card-hover hover:scale-[1.02]`}
+      className="bg-gradient-primary p-6 shadow-card text-white space-y-4 cursor-pointer transition-all hover:shadow-card-hover hover:scale-[1.02]"
       onClick={onClick}
     >
       <div className="flex items-start justify-between">
