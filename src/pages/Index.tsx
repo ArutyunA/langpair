@@ -277,6 +277,8 @@ const Index = () => {
           yourRole={currentScenario.yourRole}
           partnerRole={currentScenario.partnerRole}
           language={selectedLanguage}
+          scenarioId={currentScenario.id}
+          onClick={() => navigate(`/scenario/${currentScenario.id}`)}
         />
 
         <div className="space-y-4">

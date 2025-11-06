@@ -8,13 +8,18 @@ interface ScenarioCardProps {
   yourRole: string;
   partnerRole: string;
   language: "russian" | "cantonese";
+  scenarioId: string;
+  onClick: () => void;
 }
 
-const ScenarioCard = ({ title, description, yourRole, partnerRole, language }: ScenarioCardProps) => {
+const ScenarioCard = ({ title, description, yourRole, partnerRole, language, onClick }: ScenarioCardProps) => {
   const gradientClass = language === "russian" ? "bg-gradient-primary" : "bg-gradient-secondary";
   
   return (
-    <Card className={`${gradientClass} p-6 shadow-card text-white space-y-4`}>
+    <Card 
+      className={`${gradientClass} p-6 shadow-card text-white space-y-4 cursor-pointer transition-all hover:shadow-card-hover hover:scale-[1.02]`}
+      onClick={onClick}
+    >
       <div className="flex items-start justify-between">
         <div className="space-y-2">
           <h3 className="text-2xl font-bold">Today's Scenario</h3>
@@ -32,6 +37,10 @@ const ScenarioCard = ({ title, description, yourRole, partnerRole, language }: S
         <Badge variant="secondary" className="bg-white/20 text-white border-0 hover:bg-white/30">
           Partner: {partnerRole}
         </Badge>
+      </div>
+
+      <div className="text-sm opacity-75 text-center pt-2">
+        Click to start the conversation
       </div>
     </Card>
   );

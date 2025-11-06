@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import Friends from "./pages/Friends";
 import VocabularyQuiz from "./pages/VocabularyQuiz";
+import ScenarioDetail from "./pages/ScenarioDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/auth" element={<Auth />} />
           <Route path="/friends" element={<Friends />} />
           <Route path="/vocabulary-quiz" element={<VocabularyQuiz />} />
+          <Route path="/scenario/:scenarioId" element={<ScenarioDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
