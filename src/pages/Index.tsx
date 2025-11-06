@@ -8,6 +8,7 @@ import ScenarioCard from "@/components/ScenarioCard";
 import PhraseCard from "@/components/PhraseCard";
 import VocabularyCard from "@/components/VocabularyCard";
 import AchievementBadge from "@/components/AchievementBadge";
+import FriendsList from "@/components/FriendsList";
 import { Button } from "@/components/ui/button";
 import { scenarios, achievements } from "@/data/scenarios";
 import { useToast } from "@/hooks/use-toast";
@@ -52,7 +53,6 @@ const Index = () => {
   useEffect(() => {
     if (!user) {
       setLoading(false);
-      navigate("/auth");
       return;
     }
 
@@ -61,9 +61,9 @@ const Index = () => {
         .from("profiles")
         .select("learning_language")
         .eq("id", user.id)
-        .single();
+        .maybeSingle();
 
-      if (profile) {
+      if (profile?.learning_language) {
         setSelectedLanguage(profile.learning_language as "russian" | "cantonese");
       }
 
@@ -71,7 +71,7 @@ const Index = () => {
         .from("user_progress")
         .select("streak, xp")
         .eq("user_id", user.id)
-        .single();
+        .maybeSingle();
 
       if (progress) {
         setStreak(progress.streak);
@@ -95,7 +95,7 @@ const Index = () => {
     };
 
     fetchUserData();
-  }, [user, navigate]);
+  }, [user]);
 
   const updateProgress = async (newXp: number) => {
     if (!user) return;
@@ -156,6 +156,11 @@ const Index = () => {
         </div>
       </div>
     );
+  }
+
+  if (!user) {
+    navigate("/auth");
+    return null;
   }
 
   if (!selectedLanguage) {
@@ -261,13 +266,17 @@ const Index = () => {
           </Button>
         </div>
 
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">Achievements</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {achievements.map(achievement => (
-              <AchievementBadge key={achievement.id} achievement={achievement} />
-            ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-foreground">Achievements</h2>
+            <div className="grid gap-4">
+              {achievements.map(achievement => (
+                <AchievementBadge key={achievement.id} achievement={achievement} />
+              ))}
+            </div>
           </div>
+
+          <FriendsList />
         </div>
       </main>
     </div>
