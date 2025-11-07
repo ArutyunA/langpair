@@ -13,11 +13,18 @@ interface PhraseState {
   showTranslation: boolean;
 }
 
+interface VocabularyEntry {
+  word: string;
+  translation: string;
+  romanization?: string | null;
+}
+
 const ScenarioDetail = () => {
   const { scenarioId } = useParams();
   const [scenario, setScenario] = useState<ScenarioContent | null>(null);
   const [phraseStates, setPhraseStates] = useState<PhraseState[]>([]);
   const [loadingScenario, setLoadingScenario] = useState(true);
+  const [vocabHighlights, setVocabHighlights] = useState<VocabularyEntry[]>([]);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -48,6 +55,27 @@ const ScenarioDetail = () => {
 
     fetchScenario();
   }, [scenarioId]);
+
+  useEffect(() => {
+    const fetchVocabulary = async () => {
+      if (!scenario) return;
+      const { data, error } = await supabase
+        .from("daily_vocabulary")
+        .select("word, translation, romanization")
+        .eq("day_number", scenario.dayNumber)
+        .eq("language", scenario.language)
+        .limit(5);
+
+      if (error) {
+        console.error("Error loading vocabulary highlights", error);
+        return;
+      }
+
+      setVocabHighlights(data ?? []);
+    };
+
+    fetchVocabulary();
+  }, [scenario]);
 
   const handlePhraseClick = (index: number) => {
     setPhraseStates(prev => {
@@ -105,6 +133,7 @@ const ScenarioDetail = () => {
   }
 
   const phrases = scenario.phrases;
+  const promptHighlights = scenario.prompts ?? [];
 
   return (
     <div className="min-h-screen bg-background">
@@ -125,10 +154,10 @@ const ScenarioDetail = () => {
         <div className="space-y-6">
           <Card className="border-2">
             <CardContent className="p-6">
-              <div className="space-y-4">
-                <div className="text-center space-y-2 pb-4 border-b">
+              <div className="space-y-6">
+                <div className="space-y-2 pb-4 border-b text-center">
                   <h2 className="text-xl font-bold text-foreground">{scenario.description}</h2>
-                  <div className="flex justify-around text-sm text-muted-foreground">
+                  <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
                     <div>
                       <span className="font-semibold">You:</span> {scenario.yourRole}
                     </div>
@@ -138,14 +167,45 @@ const ScenarioDetail = () => {
                   </div>
                 </div>
 
+                {vocabHighlights.length > 0 && (
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold text-foreground">Key Vocabulary</h3>
+                    <div className="grid gap-2 sm:grid-cols-2 text-sm text-muted-foreground">
+                      {vocabHighlights.map((entry, index) => (
+                        <div key={`${entry.word}-${index}`} className="flex items-center justify-between rounded-md border border-border px-3 py-2">
+                          <div>
+                            <p className="font-semibold text-foreground">{entry.word}</p>
+                            {entry.romanization && (
+                              <p className="text-xs text-muted-foreground">{entry.romanization}</p>
+                            )}
+                          </div>
+                          <span>{entry.translation}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {promptHighlights.length > 0 && (
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold text-foreground">Conversation Prompts</h3>
+                    <ul className="list-disc pl-5 text-sm text-muted-foreground space-y-1 text-left">
+                      {promptHighlights.map(prompt => (
+                        <li key={prompt.id}>{prompt.prompt}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
                 <div className="text-sm text-muted-foreground text-center">
-                  Click on any phrase to reveal romanization and translation
+                  Tap any example phrase below to reveal romanization and translation.
                 </div>
               </div>
             </CardContent>
           </Card>
 
           <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-foreground">Example Phrases</h3>
             {phrases.map((phrase, index) => {
               const state = phraseStates[index];
               if (!state) return null; // Safety check

@@ -14,11 +14,11 @@ interface ScenarioCardProps {
 
 const ScenarioCard = ({ title, description, yourRole, partnerRole, language, onClick }: ScenarioCardProps) => {
   const roleBadgeClasses =
-    "border-0 bg-white/20 text-primary-foreground hover:bg-white/30 dark:bg-muted/40 dark:text-card-foreground dark:hover:bg-muted/60";
+    "border border-border bg-background/60 text-foreground hover:bg-background/80 dark:bg-primary/40 dark:text-primary-foreground dark:border-primary/50";
 
   return (
-    <Card 
-      className="bg-gradient-primary p-6 shadow-card text-primary-foreground space-y-4 cursor-pointer transition-all hover:shadow-card-hover hover:scale-[1.02] dark:bg-card/90 dark:text-card-foreground"
+    <Card
+      className="p-6 shadow-card space-y-4 cursor-pointer transition-all hover:shadow-card-hover hover:scale-[1.02] bg-gradient-primary text-primary-foreground dark:bg-primary/10 dark:text-primary-foreground dark:border dark:border-primary/30"
       onClick={onClick}
     >
       <div className="flex items-start justify-between">

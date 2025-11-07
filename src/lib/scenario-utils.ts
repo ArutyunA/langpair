@@ -3,9 +3,11 @@ import type { ScenarioContent } from "@/types/scenario";
 
 export type ScenarioRow = Tables<"daily_scenarios">;
 export type ScenarioPhraseRow = Tables<"daily_scenario_phrases">;
+export type ScenarioPromptRow = Tables<"daily_scenario_prompts">;
 
 export type ScenarioQueryResult = ScenarioRow & {
   phrases: ScenarioPhraseRow[] | null;
+  prompts: ScenarioPromptRow[] | null;
 };
 
 export const DAILY_SCENARIO_SELECT = `
@@ -16,7 +18,8 @@ export const DAILY_SCENARIO_SELECT = `
   description,
   your_role,
   partner_role,
-  phrases:daily_scenario_phrases(id, order_index, phrase, translation, romanization)
+  phrases:daily_scenario_phrases(id, order_index, phrase, translation, romanization),
+  prompts:daily_scenario_prompts(id, order_index, prompt)
 `;
 
 export const normalizeScenario = (row: ScenarioQueryResult): ScenarioContent => {
@@ -31,6 +34,14 @@ export const normalizeScenario = (row: ScenarioQueryResult): ScenarioContent => 
       romanization: phrase.romanization,
     }));
 
+  const prompts = (row.prompts ?? [])
+    .sort((a, b) => a.order_index - b.order_index)
+    .map<ScenarioContent["prompts"][number]>(prompt => ({
+      id: prompt.id,
+      orderIndex: prompt.order_index,
+      prompt: prompt.prompt,
+    }));
+
   return {
     id: row.id,
     dayNumber: row.day_number,
@@ -40,5 +51,6 @@ export const normalizeScenario = (row: ScenarioQueryResult): ScenarioContent => 
     yourRole: row.your_role,
     partnerRole: row.partner_role,
     phrases,
+    prompts,
   };
 };

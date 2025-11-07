@@ -6,6 +6,12 @@ export interface ScenarioPhrase {
   romanization?: string | null;
 }
 
+export interface ScenarioPrompt {
+  id: string;
+  orderIndex: number;
+  prompt: string;
+}
+
 export interface ScenarioContent {
   id: string;
   dayNumber: number;
@@ -15,4 +21,5 @@ export interface ScenarioContent {
   yourRole: string;
   partnerRole: string;
   phrases: ScenarioPhrase[];
+  prompts: ScenarioPrompt[];
 }

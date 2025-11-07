@@ -40,59 +40,80 @@ const Auth = () => {
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-
     setErrorMessage(null);
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
 
-    if (error) {
-      setErrorMessage(error.message);
-      toast({
-        title: "Error signing in",
-        description: error.message,
-        variant: "destructive",
+    try {
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
       });
+
+      if (error) {
+        setErrorMessage(error.message);
+        toast({
+          title: "Error signing in",
+          description: error.message,
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Welcome back!",
+          description: "Successfully signed in.",
+        });
+      }
+    } finally {
       setLoading(false);
-    } else {
-      toast({
-        title: "Welcome back!",
-        description: "Successfully signed in.",
-      });
     }
   };
 
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-
     setErrorMessage(null);
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: `${window.location.origin}/`,
-        data: {
-          username,
-          learning_language: learningLanguage,
-        },
-      },
-    });
 
-    if (error) {
-      setErrorMessage(error.message);
-      toast({
-        title: "Error signing up",
-        description: error.message,
-        variant: "destructive",
+    try {
+      const { error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          emailRedirectTo: `${window.location.origin}/`,
+          data: {
+            username,
+            learning_language: learningLanguage,
+          },
+        },
       });
-      setLoading(false);
-    } else {
+
+      if (error) {
+        setErrorMessage(error.message);
+        toast({
+          title: "Error signing up",
+          description: error.message,
+          variant: "destructive",
+        });
+        return;
+      }
+
       toast({
         title: "Account created!",
         description: "Welcome to LangPair! You can now start learning.",
       });
+
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      });
+
+      if (signInError) {
+        setErrorMessage(signInError.message);
+        toast({
+          title: "Auto sign-in failed",
+          description: signInError.message,
+          variant: "destructive",
+        });
+      }
+    } finally {
+      setLoading(false);
     }
   };
 

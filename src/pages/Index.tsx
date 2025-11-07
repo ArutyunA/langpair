@@ -230,6 +230,7 @@ const Index = () => {
     );
   }
 
+  const currentScenario = selectedLanguage ? dailyScenarios[selectedLanguage] : null;
   const vocabCount = dailyVocab.length;
 
   return (
@@ -295,7 +296,7 @@ const Index = () => {
 
         <Button
           size="lg"
-          className="w-full h-auto py-8 bg-gradient-primary hover:opacity-90 shadow-card-hover"
+          className="w-full h-auto py-8 bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-card-hover dark:bg-primary/10 dark:text-primary-foreground dark:border dark:border-primary/30"
           onClick={() => navigate("/vocabulary-quiz")}
         >
           <div className="text-center space-y-1">

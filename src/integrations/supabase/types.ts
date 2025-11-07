@@ -150,6 +150,38 @@ export type Database = {
           },
         ]
       }
+      daily_scenario_prompts: {
+        Row: {
+          created_at: string
+          id: string
+          order_index: number
+          prompt: string
+          scenario_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          order_index: number
+          prompt: string
+          scenario_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          order_index?: number
+          prompt?: string
+          scenario_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "daily_scenario_prompts_scenario_id_fkey"
+            columns: ["scenario_id"]
+            isOneToOne: false
+            referencedRelation: "daily_scenarios"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       friends: {
         Row: {
           created_at: string

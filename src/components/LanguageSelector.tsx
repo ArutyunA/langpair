@@ -13,8 +13,8 @@ const LanguageSelector = ({ selectedLanguage, onSelect }: LanguageSelectorProps)
         <Card
           className={`p-6 cursor-pointer transition-all duration-300 hover:shadow-card-hover ${
             selectedLanguage === "russian"
-              ? "bg-gradient-primary border-primary shadow-card-hover scale-105"
-              : "bg-gradient-card hover:scale-102"
+              ? "bg-gradient-primary border-primary shadow-card-hover scale-105 dark:bg-card dark:border-primary dark:shadow-card"
+              : "bg-gradient-card hover:scale-102 dark:bg-card/80"
           }`}
           onClick={() => onSelect("russian")}
         >
@@ -28,8 +28,8 @@ const LanguageSelector = ({ selectedLanguage, onSelect }: LanguageSelectorProps)
         <Card
           className={`p-6 cursor-pointer transition-all duration-300 hover:shadow-card-hover ${
             selectedLanguage === "cantonese"
-              ? "bg-gradient-secondary border-secondary shadow-card-hover scale-105"
-              : "bg-gradient-card hover:scale-102"
+              ? "bg-gradient-secondary border-secondary shadow-card-hover scale-105 dark:bg-card dark:border-secondary dark:shadow-card"
+              : "bg-gradient-card hover:scale-102 dark:bg-card/80"
           }`}
           onClick={() => onSelect("cantonese")}
         >
