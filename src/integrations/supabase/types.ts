@@ -48,6 +48,7 @@ export type Database = {
       }
       daily_vocabulary: {
         Row: {
+          day_number: number
           created_at: string
           date: string
           id: string
@@ -57,6 +58,7 @@ export type Database = {
           word: string
         }
         Insert: {
+          day_number: number
           created_at?: string
           date?: string
           id?: string
@@ -66,6 +68,7 @@ export type Database = {
           word: string
         }
         Update: {
+          day_number?: number
           created_at?: string
           date?: string
           id?: string
@@ -75,6 +78,77 @@ export type Database = {
           word?: string
         }
         Relationships: []
+      }
+      daily_scenarios: {
+        Row: {
+          created_at: string
+          day_number: number
+          description: string
+          id: string
+          language: string
+          partner_role: string
+          title: string
+          your_role: string
+        }
+        Insert: {
+          created_at?: string
+          day_number: number
+          description: string
+          id?: string
+          language: string
+          partner_role: string
+          title: string
+          your_role: string
+        }
+        Update: {
+          created_at?: string
+          day_number?: number
+          description?: string
+          id?: string
+          language?: string
+          partner_role?: string
+          title?: string
+          your_role?: string
+        }
+        Relationships: []
+      }
+      daily_scenario_phrases: {
+        Row: {
+          created_at: string
+          id: string
+          order_index: number
+          phrase: string
+          romanization: string | null
+          scenario_id: string
+          translation: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          order_index: number
+          phrase: string
+          romanization?: string | null
+          scenario_id: string
+          translation: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          order_index?: number
+          phrase?: string
+          romanization?: string | null
+          scenario_id?: string
+          translation?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "daily_scenario_phrases_scenario_id_fkey"
+            columns: ["scenario_id"]
+            isOneToOne: false
+            referencedRelation: "daily_scenarios"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       friends: {
         Row: {

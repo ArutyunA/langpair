@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft } from "lucide-react";
-import { scenarios } from "@/data/scenarios";
+import { DAILY_SCENARIO_SELECT, normalizeScenario, type ScenarioQueryResult } from "@/lib/scenario-utils";
+import type { ScenarioContent } from "@/types/scenario";
 
 interface PhraseState {
   showRomanization: boolean;
@@ -14,38 +15,39 @@ interface PhraseState {
 
 const ScenarioDetail = () => {
   const { scenarioId } = useParams();
-  const [language, setLanguage] = useState<"russian" | "cantonese" | null>(null);
+  const [scenario, setScenario] = useState<ScenarioContent | null>(null);
   const [phraseStates, setPhraseStates] = useState<PhraseState[]>([]);
+  const [loadingScenario, setLoadingScenario] = useState(true);
   const navigate = useNavigate();
   const { toast } = useToast();
 
-  const scenario = scenarios.find(s => s.id === scenarioId);
-
   useEffect(() => {
-    fetchLanguage();
-  }, []);
+    const fetchScenario = async () => {
+      if (!scenarioId) return;
 
-  useEffect(() => {
-    if (scenario && language) {
-      const phrases = language === "russian" ? scenario.russianPhrases : scenario.cantonesePhrases;
-      setPhraseStates(phrases.map(() => ({ showRomanization: false, showTranslation: false })));
-    }
-  }, [scenario, language]);
+      const { data, error } = await supabase
+        .from("daily_scenarios")
+        .select(DAILY_SCENARIO_SELECT)
+        .eq("id", scenarioId)
+        .maybeSingle();
 
-  const fetchLanguage = async () => {
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return;
+      if (error) {
+        console.error("Error loading scenario", error);
+        setLoadingScenario(false);
+        return;
+      }
 
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("learning_language")
-      .eq("id", user.id)
-      .single();
+      if (data) {
+        const normalized = normalizeScenario(data as ScenarioQueryResult);
+        setScenario(normalized);
+        setPhraseStates(normalized.phrases.map(() => ({ showRomanization: false, showTranslation: false })));
+      }
 
-    if (profile) {
-      setLanguage(profile.learning_language as "russian" | "cantonese");
-    }
-  };
+      setLoadingScenario(false);
+    };
+
+    fetchScenario();
+  }, [scenarioId]);
 
   const handlePhraseClick = (index: number) => {
     setPhraseStates(prev => {
@@ -90,7 +92,7 @@ const ScenarioDetail = () => {
     }
   };
 
-  if (!scenario || !language || phraseStates.length === 0) {
+  if (loadingScenario || !scenario || phraseStates.length === 0) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
@@ -102,7 +104,7 @@ const ScenarioDetail = () => {
     );
   }
 
-  const phrases = language === "russian" ? scenario.russianPhrases : scenario.cantonesePhrases;
+  const phrases = scenario.phrases;
 
   return (
     <div className="min-h-screen bg-background">

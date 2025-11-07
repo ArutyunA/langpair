@@ -5,10 +5,8 @@ import { supabase } from "@/integrations/supabase/client";
 import LanguageSelector from "@/components/LanguageSelector";
 import ProgressHeader from "@/components/ProgressHeader";
 import ScenarioCard from "@/components/ScenarioCard";
-import PhraseCard from "@/components/PhraseCard";
-import VocabularyCard from "@/components/VocabularyCard";
-import AchievementBadge from "@/components/AchievementBadge";
 import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,9 +18,12 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { scenarios, achievements } from "@/data/scenarios";
 import { useToast } from "@/hooks/use-toast";
-import { UserCircle, Users, Globe, LogOut } from "lucide-react";
+import { useTheme } from "next-themes";
+import { UserCircle, Users, Globe, LogOut, SunMoon } from "lucide-react";
+import { ScenarioContent } from "@/types/scenario";
+import { getCurrentLessonDay } from "@/lib/daily-cycle";
+import { DAILY_SCENARIO_SELECT, normalizeScenario, type ScenarioQueryResult } from "@/lib/scenario-utils";
 
 interface DailyVocabulary {
   word: string;
@@ -34,16 +35,21 @@ const Index = () => {
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
   const [selectedLanguage, setSelectedLanguage] = useState<"russian" | "cantonese" | null>(null);
-  const [completedPhrases, setCompletedPhrases] = useState(0);
   const [streak, setStreak] = useState(1);
   const [xp, setXp] = useState(0);
   const [loading, setLoading] = useState(true);
   const [dailyVocab, setDailyVocab] = useState<DailyVocabulary[]>([]);
+  const [dailyScenarios, setDailyScenarios] = useState<Record<"russian" | "cantonese", ScenarioContent | null>>({
+    russian: null,
+    cantonese: null,
+  });
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { resolvedTheme, setTheme } = useTheme();
+  const isDarkMode = resolvedTheme === "dark";
 
   const dailyGoal = 100;
-  const currentScenario = scenarios[0];
+  const dayNumber = getCurrentLessonDay();
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
@@ -93,7 +99,7 @@ const Index = () => {
           .from("daily_vocabulary")
           .select("word, translation, romanization")
           .eq("language", profile.learning_language)
-          .eq("date", new Date().toISOString().split("T")[0])
+          .eq("day_number", dayNumber)
           .limit(10);
 
         if (vocab) {
@@ -103,7 +109,35 @@ const Index = () => {
     };
 
     fetchUserData();
-  }, [user]);
+  }, [user, dayNumber]);
+
+  useEffect(() => {
+    const fetchDailyScenario = async () => {
+      const { data, error } = await supabase
+        .from("daily_scenarios")
+        .select(DAILY_SCENARIO_SELECT)
+        .eq("day_number", dayNumber);
+
+      if (error) {
+        console.error("Error fetching scenarios:", error);
+        return;
+      }
+
+      const scenarioMap: Record<"russian" | "cantonese", ScenarioContent | null> = {
+        russian: null,
+        cantonese: null,
+      };
+
+      data?.forEach(row => {
+        const language = row.language as "russian" | "cantonese";
+        scenarioMap[language] = normalizeScenario(row as ScenarioQueryResult);
+      });
+
+      setDailyScenarios(scenarioMap);
+    };
+
+    fetchDailyScenario();
+  }, [dayNumber]);
 
   const updateProgress = async (newXp: number) => {
     if (!user) return;
@@ -115,27 +149,6 @@ const Index = () => {
         last_activity_date: new Date().toISOString().split("T")[0],
       })
       .eq("user_id", user.id);
-  };
-
-  const handlePhraseComplete = async (phraseId: string) => {
-    if (!user) return;
-
-    const newXp = xp + 10;
-    setCompletedPhrases(prev => prev + 1);
-    setXp(newXp);
-
-    await supabase.from("completed_phrases").insert({
-      user_id: user.id,
-      phrase_id: phraseId,
-      scenario_id: currentScenario.id,
-    });
-
-    await updateProgress(newXp);
-
-    toast({
-      title: "+10 XP",
-      description: "Great job! Keep learning!",
-    });
   };
 
   const handleCompleteScenario = async () => {
@@ -168,6 +181,10 @@ const Index = () => {
       title: "Language updated",
       description: `Now learning ${newLanguage}`,
     });
+  };
+
+  const handleThemeToggle = (checked: boolean) => {
+    setTheme(checked ? "dark" : "light");
   };
 
   useEffect(() => {
@@ -213,9 +230,7 @@ const Index = () => {
     );
   }
 
-  const phrases = selectedLanguage === "russian" 
-    ? currentScenario.russianPhrases 
-    : currentScenario.cantonesePhrases;
+  const vocabCount = dailyVocab.length;
 
   return (
     <div className="min-h-screen bg-background">
@@ -247,6 +262,20 @@ const Index = () => {
                   </DropdownMenuItem>
                 </DropdownMenuSubContent>
               </DropdownMenuSub>
+              <DropdownMenuItem
+                onSelect={event => event.preventDefault()}
+                className="flex items-center justify-between"
+              >
+                <div className="flex items-center">
+                  <SunMoon className="w-4 h-4 mr-2" />
+                  Dark Mode
+                </div>
+                <Switch
+                  checked={isDarkMode}
+                  onCheckedChange={handleThemeToggle}
+                  aria-label="Toggle dark mode"
+                />
+              </DropdownMenuItem>
               <DropdownMenuItem onClick={() => navigate("/friends")}>
                 <Users className="w-4 h-4 mr-2" />
                 Learning Partners
@@ -264,69 +293,51 @@ const Index = () => {
       <main className="container mx-auto px-4 py-8 max-w-4xl space-y-8">
         <ProgressHeader streak={streak} xp={xp} dailyGoal={dailyGoal} />
 
-        {dailyVocab.length > 0 && (
-          <Button
-            size="lg"
-            className="w-full h-auto py-8 bg-gradient-primary hover:opacity-90 shadow-card-hover"
-            onClick={() => navigate("/vocabulary-quiz")}
-          >
-            <div className="text-center space-y-1">
-              <div className="text-sm font-medium opacity-90">
-                {selectedLanguage === "russian" ? "Russian" : "Cantonese"} Vocabulary
-              </div>
-              <div className="text-2xl font-bold">
-                Daily Vocab Flash Challenge
-              </div>
-              <div className="text-sm opacity-75">
-                {dailyVocab.length} words to practice
-              </div>
+        <Button
+          size="lg"
+          className="w-full h-auto py-8 bg-gradient-primary hover:opacity-90 shadow-card-hover"
+          onClick={() => navigate("/vocabulary-quiz")}
+        >
+          <div className="text-center space-y-1">
+            <div className="text-sm font-medium opacity-90">
+              {selectedLanguage === "russian" ? "Russian" : "Cantonese"} Vocabulary
             </div>
-          </Button>
-        )}
-
-        <ScenarioCard
-          title={currentScenario.title}
-          description={currentScenario.description}
-          yourRole={currentScenario.yourRole}
-          partnerRole={currentScenario.partnerRole}
-          language={selectedLanguage}
-          scenarioId={currentScenario.id}
-          onClick={() => navigate(`/scenario/${currentScenario.id}`)}
-        />
-
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">Practice Phrases</h2>
-          <div className="grid gap-4">
-            {phrases.map((phrase, index) => (
-              <PhraseCard
-                key={index}
-                phrase={phrase.phrase}
-                translation={phrase.translation}
-                romanization={phrase.romanization}
-                onComplete={() => handlePhraseComplete(`${currentScenario.id}-${index}`)}
-              />
-            ))}
+            <div className="text-2xl font-bold">
+              Daily Vocab Flash Challenge
+            </div>
+            <div className="text-sm opacity-75">
+              {vocabCount} words to practice
+            </div>
           </div>
-        </div>
+        </Button>
+
+        {currentScenario ? (
+          <ScenarioCard
+            title={currentScenario.title}
+            description={currentScenario.description}
+            yourRole={currentScenario.yourRole}
+            partnerRole={currentScenario.partnerRole}
+            language={selectedLanguage}
+            scenarioId={currentScenario.id}
+            onClick={() => navigate(`/scenario/${currentScenario.id}`)}
+          />
+        ) : (
+          <div className="p-6 border border-dashed border-border rounded-xl text-center text-muted-foreground">
+            Loading today's scenario...
+          </div>
+        )}
 
         <div className="flex justify-center pt-4">
           <Button
             size="lg"
             className="bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-card-hover px-8"
             onClick={handleCompleteScenario}
+            disabled={!currentScenario}
           >
             Complete Scenario
           </Button>
         </div>
 
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold text-foreground">Achievements</h2>
-          <div className="grid gap-4">
-            {achievements.map(achievement => (
-              <AchievementBadge key={achievement.id} achievement={achievement} />
-            ))}
-          </div>
-        </div>
       </main>
     </div>
   );

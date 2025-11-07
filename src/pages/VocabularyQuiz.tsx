@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft, Check, X } from "lucide-react";
+import { getCurrentLessonDay } from "@/lib/daily-cycle";
 
 interface VocabQuestion {
   word: string;
@@ -25,9 +26,11 @@ const VocabularyQuiz = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
 
+  const dayNumber = getCurrentLessonDay();
+
   useEffect(() => {
     fetchVocabulary();
-  }, []);
+  }, [dayNumber]);
 
   useEffect(() => {
     if (vocabulary.length > 0 && currentIndex < vocabulary.length) {
@@ -47,32 +50,37 @@ const VocabularyQuiz = () => {
 
     if (!profile) return;
 
-    setLanguage(profile.learning_language);
+    const languagePreference = (profile.learning_language as "russian" | "cantonese") ?? "russian";
+    setLanguage(languagePreference);
 
     const { data: vocab } = await supabase
       .from("daily_vocabulary")
       .select("word, translation, romanization")
       .eq("language", profile.learning_language)
-      .eq("date", new Date().toISOString().split("T")[0])
+      .eq("day_number", dayNumber)
       .limit(10);
 
-    if (vocab) {
-      const hasNonRomanAlphabet = profile.learning_language === "russian" || profile.learning_language === "cantonese";
-      const questions: VocabQuestion[] = vocab.flatMap((v, index) => {
-        const types: VocabQuestion[] = [
-          { ...v, questionType: "toEnglish" },
-          { ...v, questionType: "fromEnglish" },
-        ];
-        if (hasNonRomanAlphabet && v.romanization) {
-          types.push({ ...v, questionType: "romanToEnglish" });
-        }
-        return types;
-      });
-      
-      // Shuffle questions
-      const shuffled = questions.sort(() => Math.random() - 0.5);
-      setVocabulary(shuffled);
+    const source = (vocab ?? []).slice(0, 10);
+
+    if (source.length === 0) {
+      setVocabulary([]);
+      return;
     }
+
+    const hasNonRomanAlphabet = languagePreference === "russian" || languagePreference === "cantonese";
+    const questions: VocabQuestion[] = source.flatMap(v => {
+      const questionTypes: VocabQuestion[] = [
+        { ...v, questionType: "toEnglish" },
+        { ...v, questionType: "fromEnglish" },
+      ];
+      if (hasNonRomanAlphabet && v.romanization) {
+        questionTypes.push({ ...v, questionType: "romanToEnglish" });
+      }
+      return questionTypes;
+    });
+
+    const shuffled = questions.sort(() => Math.random() - 0.5);
+    setVocabulary(shuffled);
   };
 
   const generateOptions = () => {
