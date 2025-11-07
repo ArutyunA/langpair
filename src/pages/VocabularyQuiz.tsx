@@ -8,11 +8,16 @@ import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft, Check, X } from "lucide-react";
 import { getCurrentLessonDay } from "@/lib/daily-cycle";
 
+const MAX_QUESTIONS = 20;
+const DONT_KNOW_OPTION = "Don't know";
+
 interface VocabQuestion {
   word: string;
   translation: string;
   romanization?: string;
   questionType: "toEnglish" | "fromEnglish" | "romanToEnglish";
+  attempts?: number;
+  incorrect?: number;
 }
 
 const VocabularyQuiz = () => {
@@ -67,20 +72,66 @@ const VocabularyQuiz = () => {
       return;
     }
 
-    const hasNonRomanAlphabet = languagePreference === "russian" || languagePreference === "cantonese";
-    const questions: VocabQuestion[] = source.flatMap(v => {
-      const questionTypes: VocabQuestion[] = [
-        { ...v, questionType: "toEnglish" },
-        { ...v, questionType: "fromEnglish" },
-      ];
-      if (hasNonRomanAlphabet && v.romanization) {
-        questionTypes.push({ ...v, questionType: "romanToEnglish" });
+    const supportsRomanizationMode = languagePreference === "cantonese";
+    const questions: VocabQuestion[] = [];
+
+    source.forEach(entry => {
+      const availableTypes: VocabQuestion["questionType"][] = ["toEnglish", "fromEnglish"];
+      if (supportsRomanizationMode && entry.romanization) {
+        availableTypes.push("romanToEnglish");
       }
-      return questionTypes;
+      availableTypes
+        .sort(() => Math.random() - 0.5)
+        .forEach(type =>
+          questions.push({
+            ...entry,
+            questionType: type,
+            attempts: 0,
+            incorrect: 0,
+          }),
+        );
     });
 
-    const shuffled = questions.sort(() => Math.random() - 0.5);
+    const shuffled = questions.sort(() => Math.random() - 0.5).slice(0, MAX_QUESTIONS);
     setVocabulary(shuffled);
+    setCurrentIndex(0);
+    setScore(0);
+    setSelectedAnswer(null);
+    setShowResult(false);
+  };
+
+  const buildPoolByType = (type: VocabQuestion["questionType"]) => {
+    return vocabulary
+      .map(v => (type === "fromEnglish" ? v.word : v.translation))
+      .filter((value): value is string => Boolean(value));
+  };
+
+  const buildWrongAnswers = (
+    correctAnswer: string,
+    pool: string[],
+  ) => {
+    const unique = Array.from(new Set(pool.filter(value => value !== correctAnswer)));
+    const shuffled = unique.sort(() => Math.random() - 0.5);
+    const wrongs: string[] = [];
+
+    for (const option of shuffled) {
+      if (wrongs.length === 3) break;
+      wrongs.push(option);
+    }
+
+    // Fallback: if there still aren't enough unique options, reuse pool entries
+    if (wrongs.length < 3) {
+      while (wrongs.length < 3 && pool.length > 0) {
+        const candidate = pool[Math.floor(Math.random() * pool.length)];
+        if (candidate !== correctAnswer && !wrongs.includes(candidate)) {
+          wrongs.push(candidate);
+        } else if (pool.length === 1) {
+          break;
+        }
+      }
+    }
+
+    return wrongs;
   };
 
   const generateOptions = () => {
@@ -88,30 +139,32 @@ const VocabularyQuiz = () => {
     if (!current) return;
 
     let correctAnswer = "";
-    let wrongAnswers: string[] = [];
-
-    if (current.questionType === "toEnglish") {
-      correctAnswer = current.translation;
-      wrongAnswers = vocabulary
-        .filter((v, i) => i !== currentIndex)
-        .map(v => v.translation)
-        .slice(0, 3);
-    } else if (current.questionType === "fromEnglish") {
+    if (current.questionType === "fromEnglish") {
       correctAnswer = current.word;
-      wrongAnswers = vocabulary
-        .filter((v, i) => i !== currentIndex)
-        .map(v => v.word)
-        .slice(0, 3);
     } else {
       correctAnswer = current.translation;
-      wrongAnswers = vocabulary
-        .filter((v, i) => i !== currentIndex)
-        .map(v => v.translation)
-        .slice(0, 3);
     }
 
-    const allOptions = [correctAnswer, ...wrongAnswers].sort(() => Math.random() - 0.5);
-    setOptions(allOptions);
+    const pool = buildPoolByType(current.questionType);
+    let wrongAnswers = buildWrongAnswers(correctAnswer, pool);
+
+    // Ensure at least 4 unique actual options (1 correct + 3 wrong)
+    const optionSet = new Set<string>([correctAnswer, ...wrongAnswers]);
+    const uniquePool = Array.from(new Set(pool.filter(value => value !== correctAnswer)));
+    while (optionSet.size < 4 && uniquePool.length > 0) {
+      const candidate = uniquePool[Math.floor(Math.random() * uniquePool.length)];
+      optionSet.add(candidate);
+    }
+    const fallbackPool = pool.filter(value => value !== correctAnswer);
+    while (optionSet.size < 4 && fallbackPool.length > 0) {
+      const candidate = fallbackPool[Math.floor(Math.random() * fallbackPool.length)];
+      optionSet.add(candidate);
+    }
+    const actualOptions = Array.from(optionSet).sort(() => Math.random() - 0.5);
+    if (!actualOptions.includes(DONT_KNOW_OPTION)) {
+      actualOptions.push(DONT_KNOW_OPTION);
+    }
+    setOptions(actualOptions);
   };
 
   const getQuestion = () => {
@@ -136,13 +189,38 @@ const VocabularyQuiz = () => {
     }
   };
 
+  const recordAttempt = (questionIndex: number, isCorrect: boolean) => {
+    setVocabulary(prev => {
+      const clone = [...prev];
+      const entry = { ...clone[questionIndex] };
+      entry.attempts = (entry.attempts ?? 0) + 1;
+      if (!isCorrect) {
+        entry.incorrect = (entry.incorrect ?? 0) + 1;
+      }
+      clone[questionIndex] = entry;
+      return clone;
+    });
+  };
+
+  const handleSkip = () => {
+    if (showResult) return;
+    recordAttempt(currentIndex, false);
+    handleNext();
+  };
+
   const handleAnswer = (answer: string) => {
+    if (answer === DONT_KNOW_OPTION) {
+      handleSkip();
+      return;
+    }
+
     if (showResult) return;
 
     setSelectedAnswer(answer);
     setShowResult(true);
 
     const isCorrect = answer === getCorrectAnswer();
+    recordAttempt(currentIndex, isCorrect);
     if (isCorrect) {
       setScore(score + 1);
     }
@@ -174,13 +252,35 @@ const VocabularyQuiz = () => {
             .update({ xp: progress.xp + xpGained })
             .eq("user_id", user.id);
         }
-
-        toast({
-          title: "Quiz Complete!",
-          description: `You scored ${score}/${vocabulary.length} and earned ${xpGained} XP!`,
-        });
       }
-      navigate("/");
+
+      const sortedPerformance = [...vocabulary].sort((a, b) => {
+        const incorrectA = a.incorrect ?? 0;
+        const incorrectB = b.incorrect ?? 0;
+        if (incorrectA === incorrectB) {
+          const attemptsA = a.attempts ?? 0;
+          const attemptsB = b.attempts ?? 0;
+          return attemptsB - attemptsA;
+        }
+        return incorrectB - incorrectA;
+      });
+
+      const summaryLines = sortedPerformance
+        .filter(entry => (entry.attempts ?? 0) > 0)
+        .slice(0, 10)
+        .map(entry => {
+          const attempts = entry.attempts ?? 0;
+          const incorrect = entry.incorrect ?? 0;
+          return `${entry.word} / ${entry.translation} — ${incorrect}/${attempts} incorrect`;
+        })
+        .join("\\n");
+
+      toast({
+        title: "Quiz Complete!",
+        description: `Score: ${score}/${vocabulary.length} (${Math.round((score / vocabulary.length) * 100)}%)\\n${summaryLines}`,
+      });
+
+      setTimeout(() => navigate("/"), 500);
     }
   };
 
@@ -246,6 +346,7 @@ const VocabularyQuiz = () => {
                     const isCorrect = option === getCorrectAnswer();
                     const showCorrect = showResult && isCorrect;
                     const showWrong = showResult && isSelected && !isCorrect;
+                    const isSkip = option === DONT_KNOW_OPTION;
 
                     return (
                       <Button
@@ -255,15 +356,17 @@ const VocabularyQuiz = () => {
                         className={`h-auto py-4 text-lg ${
                           showCorrect ? "bg-green-500/20 border-green-500" :
                           showWrong ? "bg-red-500/20 border-red-500" :
-                          isSelected ? "bg-primary/10" : ""
-                        }`}
+                          isSelected && !isSkip ? "bg-primary/10" : ""
+                        } ${isSkip ? "justify-center w-1/2 mx-auto text-muted-foreground italic bg-muted/40 border-dashed" : ""}`}
                         onClick={() => handleAnswer(option)}
                         disabled={showResult}
                       >
-                        <div className="flex items-center justify-between w-full">
-                          <span>{option}</span>
-                          {showCorrect && <Check className="w-5 h-5 text-green-500" />}
-                          {showWrong && <X className="w-5 h-5 text-red-500" />}
+                        <div className="w-full flex flex-col items-center gap-1">
+                          <span className={isSkip ? "italic" : ""}>{option}</span>
+                          <div className="flex gap-2">
+                            {showCorrect && <Check className="w-5 h-5 text-green-500" />}
+                            {showWrong && <X className="w-5 h-5 text-red-500" />}
+                          </div>
                         </div>
                       </Button>
                     );

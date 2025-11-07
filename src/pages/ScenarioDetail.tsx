@@ -134,6 +134,7 @@ const ScenarioDetail = () => {
 
   const phrases = scenario.phrases;
   const promptHighlights = scenario.prompts ?? [];
+  const showRomanization = scenario.language === "cantonese";
 
   return (
     <div className="min-h-screen bg-background">
@@ -175,7 +176,7 @@ const ScenarioDetail = () => {
                         <div key={`${entry.word}-${index}`} className="flex items-center justify-between rounded-md border border-border px-3 py-2">
                           <div>
                             <p className="font-semibold text-foreground">{entry.word}</p>
-                            {entry.romanization && (
+                            {showRomanization && entry.romanization && (
                               <p className="text-xs text-muted-foreground">{entry.romanization}</p>
                             )}
                           </div>
@@ -229,7 +230,7 @@ const ScenarioDetail = () => {
                         {phrase.phrase}
                       </div>
 
-                      {state.showRomanization && phrase.romanization && (
+                      {state.showRomanization && showRomanization && phrase.romanization && (
                         <div className="text-lg text-primary/80 italic">
                           {phrase.romanization}
                         </div>
