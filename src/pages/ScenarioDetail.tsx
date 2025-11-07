@@ -158,14 +158,6 @@ const ScenarioDetail = () => {
               <div className="space-y-6">
                 <div className="space-y-2 pb-4 border-b text-center">
                   <h2 className="text-xl font-bold text-foreground">{scenario.description}</h2>
-                  <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground">
-                    <div>
-                      <span className="font-semibold">You:</span> {scenario.yourRole}
-                    </div>
-                    <div>
-                      <span className="font-semibold">Partner:</span> {scenario.partnerRole}
-                    </div>
-                  </div>
                 </div>
 
                 {vocabHighlights.length > 0 && (

@@ -328,17 +328,6 @@ const Index = () => {
           </div>
         )}
 
-        <div className="flex justify-center pt-4">
-          <Button
-            size="lg"
-            className="bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-card-hover px-8"
-            onClick={handleCompleteScenario}
-            disabled={!currentScenario}
-          >
-            Complete Scenario
-          </Button>
-        </div>
-
       </main>
     </div>
   );

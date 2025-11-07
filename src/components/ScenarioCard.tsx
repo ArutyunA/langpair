@@ -31,15 +31,6 @@ const ScenarioCard = ({ title, description, yourRole, partnerRole, language, onC
 
       <p className="text-sm opacity-90 leading-relaxed">{description}</p>
 
-      <div className="flex gap-3 flex-wrap">
-        <Badge variant="secondary" className={roleBadgeClasses}>
-          You: {yourRole}
-        </Badge>
-        <Badge variant="secondary" className={roleBadgeClasses}>
-          Partner: {partnerRole}
-        </Badge>
-      </div>
-
       <div className="text-sm opacity-75 text-center pt-2">
         Click to start the conversation
       </div>

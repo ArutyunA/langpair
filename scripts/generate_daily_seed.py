@@ -245,7 +245,8 @@ def build_prompts(
     context = {
         "desc": description_snippet,
         "you": your_role.lower(),
-        "partner": partner_role.lower(),
+        "partner": "your partner",
+        "partner_role": partner_role.lower(),
         "vocab0": format_vocab(vocabulary, 0),
         "vocab1": format_vocab(vocabulary, 1),
         "vocab2": format_vocab(vocabulary, 2),
