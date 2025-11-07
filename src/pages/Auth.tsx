@@ -14,6 +14,7 @@ const Auth = () => {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
   const [learningLanguage, setLearningLanguage] = useState("russian");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
@@ -40,12 +41,14 @@ const Auth = () => {
     e.preventDefault();
     setLoading(true);
 
+    setErrorMessage(null);
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
 
     if (error) {
+      setErrorMessage(error.message);
       toast({
         title: "Error signing in",
         description: error.message,
@@ -64,6 +67,7 @@ const Auth = () => {
     e.preventDefault();
     setLoading(true);
 
+    setErrorMessage(null);
     const { error } = await supabase.auth.signUp({
       email,
       password,
@@ -77,6 +81,7 @@ const Auth = () => {
     });
 
     if (error) {
+      setErrorMessage(error.message);
       toast({
         title: "Error signing up",
         description: error.message,
@@ -101,6 +106,11 @@ const Auth = () => {
           <CardDescription>Learn languages together</CardDescription>
         </CardHeader>
         <CardContent>
+          {errorMessage && (
+            <div className="mb-4 text-sm text-destructive bg-destructive/10 border border-destructive rounded-md px-3 py-2">
+              {errorMessage}
+            </div>
+          )}
           <Tabs defaultValue="signin" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="signin">Sign In</TabsTrigger>
