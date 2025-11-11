@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -29,10 +29,20 @@ const VocabularyQuiz = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [language, setLanguage] = useState<string>("");
+  const [showQuestionRomanization, setShowQuestionRomanization] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
 
   const dayNumber = getCurrentLessonDay();
+  const romanizationLookup = useMemo(() => {
+    const map = new Map<string, string>();
+    vocabulary.forEach(entry => {
+      if (entry.word) {
+        map.set(entry.word, entry.romanization ?? "");
+      }
+    });
+    return map;
+  }, [vocabulary]);
 
   useEffect(() => {
     fetchVocabulary();
@@ -94,6 +104,7 @@ const VocabularyQuiz = () => {
     setScore(0);
     setSelectedAnswer(null);
     setShowResult(false);
+    setShowQuestionRomanization(false);
   };
 
   const buildPoolByType = (
@@ -199,6 +210,7 @@ const VocabularyQuiz = () => {
   const handleSkip = () => {
     if (showResult) return;
     recordAttempt(currentIndex, false);
+    setShowQuestionRomanization(false);
     handleNext();
   };
 
@@ -218,11 +230,7 @@ const VocabularyQuiz = () => {
     if (isCorrect) {
       setScore(score + 1);
     }
-
-    // Automatically advance to next question after 1 second
-    setTimeout(() => {
-      handleNext();
-    }, 1000);
+    setShowQuestionRomanization(false);
   };
 
   const handleNext = async () => {
@@ -230,6 +238,7 @@ const VocabularyQuiz = () => {
       setCurrentIndex(currentIndex + 1);
       setSelectedAnswer(null);
       setShowResult(false);
+      setShowQuestionRomanization(false);
       return;
     }
 
@@ -283,6 +292,16 @@ const VocabularyQuiz = () => {
   const currentOptions = current?.options ?? [];
   const progress = ((currentIndex + 1) / vocabulary.length) * 100;
 
+  const canRevealQuestionRomanization =
+    language === "cantonese" &&
+    current?.questionType === "toEnglish" &&
+    Boolean(current?.romanization);
+
+  const showOptionRomanization =
+    language === "cantonese" &&
+    current?.questionType === "fromEnglish" &&
+    showResult;
+
   return (
     <div className="min-h-screen bg-background">
       <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-10">
@@ -319,9 +338,23 @@ const VocabularyQuiz = () => {
                       ? "Translate to English"
                       : `Translate to ${language === "russian" ? "Russian" : "Cantonese"}`}
                   </p>
-                  <h2 className="text-4xl font-bold text-foreground">
-                    {getQuestion()}
-                  </h2>
+                  <div className="space-y-2">
+                    <h2
+                      className={`text-4xl font-bold text-foreground ${
+                        canRevealQuestionRomanization ? "cursor-pointer" : ""
+                      }`}
+                      onClick={() => {
+                        if (canRevealQuestionRomanization) {
+                          setShowQuestionRomanization(prev => !prev);
+                        }
+                      }}
+                    >
+                      {getQuestion()}
+                    </h2>
+                    {canRevealQuestionRomanization && showQuestionRomanization && current.romanization && (
+                      <p className="text-lg text-muted-foreground">{current.romanization}</p>
+                    )}
+                  </div>
                 </div>
 
                 <div className="grid gap-3">
@@ -347,6 +380,11 @@ const VocabularyQuiz = () => {
                       >
                         <div className="w-full flex flex-col items-center gap-1">
                           <span className={isSkip ? "italic" : ""}>{option}</span>
+                          {showOptionRomanization && !isSkip && (
+                            <span className="text-sm text-muted-foreground">
+                              {romanizationLookup.get(option) ?? ""}
+                            </span>
+                          )}
                           <div className="flex gap-2">
                             {showCorrect && <Check className="w-5 h-5 text-green-500" />}
                             {showWrong && <X className="w-5 h-5 text-red-500" />}
@@ -356,6 +394,11 @@ const VocabularyQuiz = () => {
                     );
                   })}
                 </div>
+                {showResult && (
+                  <Button className="w-full mt-4" onClick={handleNext}>
+                    Continue
+                  </Button>
+                )}
 
               </div>
             </CardContent>
