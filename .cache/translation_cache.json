@@ -1,0 +1,3602 @@
+{
+  "ru::daughter": {
+    "t": "дочь",
+    "r": "doch'"
+  },
+  "ru::school day": {
+    "t": "школьный день",
+    "r": "shkol'nyy den'"
+  },
+  "ru::homework": {
+    "t": "домашнее задание",
+    "r": "domashneye zadaniye"
+  },
+  "ru::backpack": {
+    "t": "рюкзак",
+    "r": "ryukzak"
+  },
+  "ru::lunchbox": {
+    "t": "коробка для ланча",
+    "r": "korobka dlya lancha"
+  },
+  "ru::school bus": {
+    "t": "школьный автобус",
+    "r": "shkol'nyy avtobus"
+  },
+  "ru::How was your day at school, Min?": {
+    "t": "Как прошел твой день в школе, Мин?",
+    "r": "Kak proshel tvoy den' v shkole, Min?"
+  },
+  "ru::Did the bus ride feel crowded this afternoon?": {
+    "t": "Сегодня днём в автобусе было многолюдно?",
+    "r": "Segodnya dnom v avtobuse bylo mnogolyudno?"
+  },
+  "ru::Show me the homework so we can plan breaks.": {
+    "t": "Покажи мне домашнее задание, чтобы мы могли спланировать перерывы.",
+    "r": "Pokazhi mne domashneye zadaniye, chtoby my mogli splanirovat' pereryvy."
+  },
+  "ru::Pack your art project carefully for tomorrow.": {
+    "t": "Тщательно упакуйте свой арт-проект на завтра.",
+    "r": "Tshchatel'no upakuyte svoy art-proyekt na zavtra."
+  },
+  "yue::daughter": {
+    "t": "女兒",
+    "r": "neoi5ji4"
+  },
+  "yue::school day": {
+    "t": "上學日",
+    "r": "soeng5hok6 jat6"
+  },
+  "yue::homework": {
+    "t": "功課",
+    "r": "gung1fo3"
+  },
+  "yue::backpack": {
+    "t": "背囊",
+    "r": "bui3nong4"
+  },
+  "yue::lunchbox": {
+    "t": "飯盒",
+    "r": "faan6haap2"
+  },
+  "yue::school bus": {
+    "t": "校車",
+    "r": "haau6ce1"
+  },
+  "yue::How was your day at school, Min?": {
+    "t": "敏，你今日喺學校過得點呀?",
+    "r": "man5 nei5 gam1jat6 hai2 hok6haau6 gwo3 dak1 dim2 aa4"
+  },
+  "yue::Did the bus ride feel crowded this afternoon?": {
+    "t": "今日下午搭巴士覺得多人嗎？",
+    "r": "gam1jat6 haa6ng5 daap3 baa1si2 gok3dak1 do1 jan4 maa3"
+  },
+  "yue::Show me the homework so we can plan breaks.": {
+    "t": "畀我睇下功課，咁我哋可以安排休息時間",
+    "r": "bei3 ngo5 tai2haa5 gung1fo3 gam3 ngo5dei6 ho2ji5 on1paai4 jau1sik1si4gaan3"
+  },
+  "yue::Pack your art project carefully for tomorrow.": {
+    "t": "小心咁整理你嘅藝術項目帶返屋企明日用",
+    "r": "siu2sam1 gam3 zing2lei5 nei5 ge3 ngai6seot6 hong6muk6 daai3 faan1uk1kei2 ming4jat6 jung6"
+  },
+  "ru::middle school": {
+    "t": "средняя школа",
+    "r": "srednyaya shkola"
+  },
+  "ru::homeroom": {
+    "t": "классная комната",
+    "r": "klassnaya komnata"
+  },
+  "ru::textbook": {
+    "t": "учебник",
+    "r": "uchebnik"
+  },
+  "ru::locker": {
+    "t": "шкафчик",
+    "r": "shkafchik"
+  },
+  "ru::late bell": {
+    "t": "поздний звонок",
+    "r": "pozdniy zvonok"
+  },
+  "ru::study plan": {
+    "t": "учебный план",
+    "r": "uchebnyy plan"
+  },
+  "ru::Ka Ming, are you almost back on campus?": {
+    "t": "Ка Минг, ты уже почти вернулся в кампус?",
+    "r": "Ka Ming, ty uzhe pochti vernulsya v kampus?"
+  },
+  "ru::Grab the science textbook from your locker first.": {
+    "t": "Сначала возьмите из шкафчика учебник по естествознанию.",
+    "r": "Snachala voz'mite iz shkafchika uchebnik po yestestvoznaniyu."
+  },
+  "ru::The late bell rings in five minutes, so breathe and focus.": {
+    "t": "Поздний звонок прозвенит через пять минут, так что дышите и сосредоточьтесь.",
+    "r": "Pozdniy zvonok prozvenit cherez pyat' minut, tak chto dyshite i sosredotoch'tes'."
+  },
+  "ru::Review the history notes tonight so you feel ready.": {
+    "t": "Просмотрите исторические заметки сегодня вечером, чтобы чувствовать себя готовыми.",
+    "r": "Prosmotrite istoricheskiye zametki segodnya vecherom, chtoby chuvstvovat' sebya gotovymi."
+  },
+  "yue::middle school": {
+    "t": "中學",
+    "r": "zung1hok6"
+  },
+  "yue::homeroom": {
+    "t": "班主任時間",
+    "r": "baan1zyu2jam6 si4gaan1"
+  },
+  "yue::textbook": {
+    "t": "教科書",
+    "r": "gaau3fo1syu1"
+  },
+  "yue::locker": {
+    "t": "儲物櫃",
+    "r": "cyu5mat6gwai6"
+  },
+  "yue::late bell": {
+    "t": "遲鈴",
+    "r": "ci4 ling4"
+  },
+  "yue::study plan": {
+    "t": "讀書計劃",
+    "r": "duk6syu1 gai3waak6"
+  },
+  "yue::Ka Ming, are you almost back on campus?": {
+    "t": "家明，你快返學校未？",
+    "r": "gaa1 ming4 nei5 faai3 faan1hok6 haau6 mei6"
+  },
+  "yue::Grab the science textbook from your locker first.": {
+    "t": "首先喺你嘅儲物櫃攞科學課本",
+    "r": "sau2sin1 hai2 nei5 ge3 cyu5mat6gwai6 lo2 fo1hok6 fo3bun2"
+  },
+  "yue::The late bell rings in five minutes, so breathe and focus.": {
+    "t": "喇叭聲五分鐘後響，深呼吸同專注",
+    "r": "laa3baa1 seng1 ng5 fan1zung1 hau6 hoeng2 sam1fu1kap1 tung4 zyun1zyu3"
+  },
+  "yue::Review the history notes tonight so you feel ready.": {
+    "t": "今晚溫習歷史筆記，令你準備好。",
+    "r": "gam1maan1 wan1zaap6 lik6si2 bat1gei3 ling6 nei5 zeon2bei6 hou2"
+  },
+  "ru::night breeze": {
+    "t": "ночной бриз",
+    "r": "nochnoy briz"
+  },
+  "ru::thick blanket": {
+    "t": "толстое одеяло",
+    "r": "tolstoye odeyalo"
+  },
+  "ru::space heater": {
+    "t": "обогреватель",
+    "r": "obogrevatel'"
+  },
+  "ru::hot tea": {
+    "t": "горячий чай",
+    "r": "goryachiy chay"
+  },
+  "ru::window latch": {
+    "t": "оконная защелка",
+    "r": "okonnaya zashchelka"
+  },
+  "ru::sleep quality": {
+    "t": "качество сна",
+    "r": "kachestvo sna"
+  },
+  "ru::Lingling, did the night breeze sneak through the window again?": {
+    "t": "Линглинг, ночной ветерок снова пробрался в окно?",
+    "r": "Lingling, nochnoy veterok snova probralsya v okno?"
+  },
+  "ru::I will warm a thermos of hot tea for you two.": {
+    "t": "Я согрею для вас двоих термос с горячим чаем.",
+    "r": "YA sogreyu dlya vas dvoikh termos s goryachim chayem."
+  },
+  "ru::Check whether the space heater timer actually turned on.": {
+    "t": "Проверьте, действительно ли включился таймер обогревателя.",
+    "r": "Prover'te, deystvitel'no li vklyuchilsya taymer obogrevatelya."
+  },
+  "ru::Let us track sleep quality tomorrow and compare notes.": {
+    "t": "Давайте завтра отследим качество сна и сравним записи.",
+    "r": "Davayte zavtra otsledim kachestvo sna i sravnim zapisi."
+  },
+  "yue::night breeze": {
+    "t": "夜風",
+    "r": "je6 fung1"
+  },
+  "yue::thick blanket": {
+    "t": "厚厚的毛毯",
+    "r": "hau5 hau5 dik1 mou4taam2"
+  },
+  "yue::space heater": {
+    "t": "暖風機",
+    "r": "nyun5fung1gei1"
+  },
+  "yue::hot tea": {
+    "t": "熱茶",
+    "r": "jit6caa4"
+  },
+  "yue::window latch": {
+    "t": "窗閂",
+    "r": "coeng1 saan1"
+  },
+  "yue::sleep quality": {
+    "t": "睡眠質素",
+    "r": "seoi6min4 zat1sou3"
+  },
+  "yue::Lingling, did the night breeze sneak through the window again?": {
+    "t": "玲玲，夜風又偷偷從窗入嚟㗎？",
+    "r": "ling4ling4 je6 fung1 jau6 tau1tau1 cung4 coeng1 jap6 lai4gaa3"
+  },
+  "yue::I will warm a thermos of hot tea for you two.": {
+    "t": "我會為你哋兩個暖一個保溫壺嘅熱茶",
+    "r": "ngo5 wui5 wai6 nei5dei6 loeng5 go3 nyun5 jat1go3 bou2wan1 wu4 ge3 jit6caa4"
+  },
+  "yue::Check whether the space heater timer actually turned on.": {
+    "t": "檢查空氣暖爐定時器是否真正啟動",
+    "r": "gim2caa4 hung1hei3 nyun5lou4 ding6si4 hei3 si6fau2 zan1zing3 kai2 dung6"
+  },
+  "yue::Let us track sleep quality tomorrow and compare notes.": {
+    "t": "我哋聽日追蹤訓眠質素同埋比較一下記錄",
+    "r": "ngo5dei6 ting1jat6 zeoi1zung1 fan3 min4 zat1sou3 tung4maai4 bei2gaau3 jat1haa5 gei3luk6"
+  },
+  "ru::company": {
+    "t": "компания",
+    "r": "kompaniya"
+  },
+  "ru::coworker chat": {
+    "t": "чат коллеги",
+    "r": "chat kollegi"
+  },
+  "ru::weekly meeting": {
+    "t": "еженедельная встреча",
+    "r": "yezhenedel'naya vstrecha"
+  },
+  "ru::project brief": {
+    "t": "письмо о проекте",
+    "r": "pis'mo o proyekte"
+  },
+  "ru::deadlines": {
+    "t": "сроки",
+    "r": "sroki"
+  },
+  "ru::feedback notes": {
+    "t": "примечания к отзывам",
+    "r": "primechaniya k otzyvam"
+  },
+  "ru::James, how are you feeling about the client meeting today?": {
+    "t": "Джеймс, как ты относишься к сегодняшней встрече с клиентом?",
+    "r": "Dzheyms, kak ty otnosish'sya k segodnyashney vstreche s kliyentom?"
+  },
+  "ru::Let us swap feedback notes before the weekly call.": {
+    "t": "Давайте обменяемся комментариями перед еженедельным звонком.",
+    "r": "Davayte obmenyayemsya kommentariyami pered yezhenedel'nym zvonkom."
+  },
+  "ru::Can you update the project brief while I email the manager?": {
+    "t": "Можете ли вы обновить краткое описание проекта, пока я отправляю электронное письмо менеджеру?",
+    "r": "Mozhete li vy obnovit' kratkoye opisaniye proyekta, poka ya otpravlyayu elektronnoye pis'mo menedzheru?"
+  },
+  "ru::We should block time for breaks so the deadlines feel lighter.": {
+    "t": "Нам следует выделить время для перерывов, чтобы сократить сроки.",
+    "r": "Nam sleduyet vydelit' vremya dlya pereryvov, chtoby sokratit' sroki."
+  },
+  "yue::company": {
+    "t": "公司",
+    "r": "gung1si1"
+  },
+  "yue::coworker chat": {
+    "t": "同事傾計",
+    "r": "tung4si6 keng1gai2"
+  },
+  "yue::weekly meeting": {
+    "t": "每週會議",
+    "r": "mui5zau1 wui6ji5"
+  },
+  "yue::project brief": {
+    "t": "項目簡介",
+    "r": "hong6muk6 gaan2gaai3"
+  },
+  "yue::deadlines": {
+    "t": "截止日期",
+    "r": "zit6zi2 jat6kei4"
+  },
+  "yue::feedback notes": {
+    "t": "反饋筆記",
+    "r": "faan2gwai6 bat1gei3"
+  },
+  "yue::James, how are you feeling about the client meeting today?": {
+    "t": "James，你今日對客戶會議有咩感覺？",
+    "r": "nei5 gam1jat6 deoi3 haak3wu6 wui6ji5 jau5me1 gam2gok3"
+  },
+  "yue::Let us swap feedback notes before the weekly call.": {
+    "t": "我哋喺每週電話會議前互換意見筆記",
+    "r": "ngo5dei6 hai2 mui5zau1 din6waa2wui6ji5 cin4 wu6wun6 ji3gin3 bat1gei3"
+  },
+  "yue::Can you update the project brief while I email the manager?": {
+    "t": "你可以更新項目簡報，我去發電郵俾經理？",
+    "r": "nei5 ho2ji5 gang1san1 hong6muk6 gaan2bou3 ngo5 heoi3 faat3din6 jau4 bei2 ging1lei5"
+  },
+  "yue::We should block time for breaks so the deadlines feel lighter.": {
+    "t": "我哋應該安排時間休息，令截止日期感覺冇咁迫。",
+    "r": "ngo5dei6 jing1goi1 on1paai4 si4gaan1 jau1sik1 ling6 zit6zi2 jat6kei4 gam2gok3 mou5 gam3 bik1"
+  },
+  "ru::shoe store": {
+    "t": "обувной магазин",
+    "r": "obuvnoy magazin"
+  },
+  "ru::sneakers": {
+    "t": "кроссовки",
+    "r": "krossovki"
+  },
+  "ru::heel height": {
+    "t": "высота каблука",
+    "r": "vysota kabluka"
+  },
+  "ru::size chart": {
+    "t": "Таблица размеров",
+    "r": "Tablitsa razmerov"
+  },
+  "ru::return policy": {
+    "t": "политика возврата",
+    "r": "politika vozvrata"
+  },
+  "ru::comfort test": {
+    "t": "тест на комфорт",
+    "r": "test na komfort"
+  },
+  "ru::Lisa, do these sneakers feel better than the last pair?": {
+    "t": "Лиза, эти кроссовки на ощупь лучше, чем предыдущая пара?",
+    "r": "Liza, eti krossovki na oshchup' luchshe, chem predydushchaya para?"
+  },
+  "ru::Let us double check the size chart before we pay.": {
+    "t": "Давайте дважды проверим таблицу размеров, прежде чем платить.",
+    "r": "Davayte dvazhdy proverim tablitsu razmerov, prezhde chem platit'."
+  },
+  "ru::I will ask about the return policy just in case.": {
+    "t": "На всякий случай спрошу о правилах возврата.",
+    "r": "Na vsyakiy sluchay sproshu o pravilakh vozvrata."
+  },
+  "ru::Walk a full lap to test the comfort and balance.": {
+    "t": "Пройдите полный круг, чтобы проверить комфорт и равновесие.",
+    "r": "Proydite polnyy krug, chtoby proverit' komfort i ravnovesiye."
+  },
+  "yue::shoe store": {
+    "t": "鞋店",
+    "r": "haai4dim3"
+  },
+  "yue::sneakers": {
+    "t": "運動鞋",
+    "r": "wan6dung6haai4"
+  },
+  "yue::heel height": {
+    "t": "高跟鞋高度",
+    "r": "gou1gan1haai4 gou1dou6"
+  },
+  "yue::size chart": {
+    "t": "尺碼表",
+    "r": "cek3maa5 biu2"
+  },
+  "yue::return policy": {
+    "t": "退貨政策",
+    "r": "teoi3fo3 zing3caak3"
+  },
+  "yue::comfort test": {
+    "t": "舒適度測試",
+    "r": "syu1sik1 dou6 caak1si3"
+  },
+  "yue::Lisa, do these sneakers feel better than the last pair?": {
+    "t": "Lisa，呢對運動鞋比上一對舒服啲嗎？",
+    "r": "ne1 deoi3 wan6dung6haai4 bei2 soeng5 jat1deoi3 syu1fuk6 di1 maa3"
+  },
+  "yue::Let us double check the size chart before we pay.": {
+    "t": "喺我哋付款之前，唔該我哋再仔細核對一次尺碼表",
+    "r": "hai2 ngo5dei6 fu6fun2 zi1cin4 m4goi1 ngo5dei6 zoi3 zi2sai3 hat6deoi3 jat1ci3 cek3maa5 biu2"
+  },
+  "yue::I will ask about the return policy just in case.": {
+    "t": "我會問返貨政策以防萬一",
+    "r": "ngo5 wui5 man6faan1 fo3 zing3caak3 ji5fong4maan6jat1"
+  },
+  "yue::Walk a full lap to test the comfort and balance.": {
+    "t": "行完整一圈以測試舒適度同平衡",
+    "r": "haang4 jyun4zing2 jat1 gyun6 ji5 caak1si3 syu1sik1 dou6 tung4 ping4hang4"
+  },
+  "ru::girlfriend": {
+    "t": "подруга",
+    "r": "podruga"
+  },
+  "ru::coffee date": {
+    "t": "свидание за кофе",
+    "r": "svidaniye za kofe"
+  },
+  "ru::hobby": {
+    "t": "хобби",
+    "r": "khobbi"
+  },
+  "ru::weekend plan": {
+    "t": "план на выходные",
+    "r": "plan na vykhodnyye"
+  },
+  "ru::text thread": {
+    "t": "текстовая ветка",
+    "r": "tekstovaya vetka"
+  },
+  "ru::celebration": {
+    "t": "праздник",
+    "r": "prazdnik"
+  },
+  "ru::Andy, what do you like most about her so far?": {
+    "t": "Энди, что тебе в ней больше всего нравится?",
+    "r": "Endi, chto tebe v ney bol'she vsego nravitsya?"
+  },
+  "ru::Should we plan a double coffee date next week?": {
+    "t": "Должны ли мы запланировать двойное свидание за кофе на следующей неделе?",
+    "r": "Dolzhny li my zaplanirovat' dvoynoye svidaniye za kofe na sleduyushchey nedele?"
+  },
+  "ru::Tell me the funniest text thread you two shared.": {
+    "t": "Расскажи мне самую смешную переписку, которой вы переписывались.",
+    "r": "Rasskazhi mne samuyu smeshnuyu perepisku, kotoroy vy perepisyvalis'."
+  },
+  "ru::Remember to celebrate slowly and enjoy the new pace.": {
+    "t": "Не забывайте праздновать медленно и наслаждаться новым темпом.",
+    "r": "Ne zabyvayte prazdnovat' medlenno i naslazhdat'sya novym tempom."
+  },
+  "yue::girlfriend": {
+    "t": "女朋友",
+    "r": "neoi2pang4jau5"
+  },
+  "yue::coffee date": {
+    "t": "咖啡約會",
+    "r": "gaa3fe1 joek3wui2"
+  },
+  "yue::hobby": {
+    "t": "嗜好",
+    "r": "si3hou3"
+  },
+  "yue::weekend plan": {
+    "t": "周末計劃",
+    "r": "zau1mut6 gai3waak6"
+  },
+  "yue::text thread": {
+    "t": "文字串",
+    "r": "man4zi6 cyun3"
+  },
+  "yue::celebration": {
+    "t": "慶祝",
+    "r": "hing3zuk1"
+  },
+  "yue::Andy, what do you like most about her so far?": {
+    "t": "Andy，到而家你最鍾意佢啲乜嘢？",
+    "r": "dou2 ji4gaa1 nei5 zeoi3zung1ji3 keoi5 di1 mat1je5"
+  },
+  "yue::Should we plan a double coffee date next week?": {
+    "t": "我哋下星期應唔應該安排一次雙人咖啡約會?",
+    "r": "ngo5dei6 haa6sing1kei4 jing1 m4 jing1goi1 on1paai4 jat1ci3 soeng1jan4 gaa3fe1 joek3wui2"
+  },
+  "yue::Tell me the funniest text thread you two shared.": {
+    "t": "講畀我聽你哋兩個分享過最搞笑嘅訊息對話。",
+    "r": "gong2 bei3 ngo5 teng1 nei5dei6 loeng5 go3 fan1hoeng2 gwo3 zeoi3 gaau2siu3 ge3 seon3sik1 deoi3waa2"
+  },
+  "yue::Remember to celebrate slowly and enjoy the new pace.": {
+    "t": "記住慢慢慶祝，享受新的節奏",
+    "r": "gei3zyu6 maan6maan2 hing3zuk1 hoeng2sau6 san1 dik1 zit3zau3"
+  },
+  "ru::birthday party": {
+    "t": "день рождения",
+    "r": "den' rozhdeniya"
+  },
+  "ru::gift wrap": {
+    "t": "подарочная упаковка",
+    "r": "podarochnaya upakovka"
+  },
+  "ru::dress code": {
+    "t": "дресс-код",
+    "r": "dress-kod"
+  },
+  "ru::guest list": {
+    "t": "список гостей",
+    "r": "spisok gostey"
+  },
+  "ru::party bus": {
+    "t": "автобус для вечеринок",
+    "r": "avtobus dlya vecherinok"
+  },
+  "ru::sparkler candles": {
+    "t": "бенгальские свечи",
+    "r": "bengal'skiye svechi"
+  },
+  "ru::Jack, did you sign the birthday card yet?": {
+    "t": "Джек, ты уже подписал поздравительную открытку?",
+    "r": "Dzhek, ty uzhe podpisal pozdravitel'nuyu otkrytku?"
+  },
+  "ru::I can wrap the gift while you iron the shirt.": {
+    "t": "Я могу упаковать подарок, пока ты гладишь рубашку.",
+    "r": "YA mogu upakovat' podarok, poka ty gladish' rubashku."
+  },
+  "ru::Should we call a ride share or catch the party bus?": {
+    "t": "Стоит ли нам вызвать каршеринг или сесть на автобус для вечеринок?",
+    "r": "Stoit li nam vyzvat' karshering ili sest' na avtobus dlya vecherinok?"
+  },
+  "ru::Save room for cake because the host ordered extra.": {
+    "t": "Оставьте место для торта, потому что хозяин заказал дополнительно.",
+    "r": "Ostav'te mesto dlya torta, potomu chto khozyain zakazal dopolnitel'no."
+  },
+  "yue::birthday party": {
+    "t": "生日派對",
+    "r": "saang1jat6paai3deoi3"
+  },
+  "yue::gift wrap": {
+    "t": "禮物包裝",
+    "r": "lai5mat6 baau1zong1"
+  },
+  "yue::dress code": {
+    "t": "着裝規範",
+    "r": "zoek3zong1 kwai1faan6"
+  },
+  "yue::guest list": {
+    "t": "賓客名單",
+    "r": "ban1haak3 ming4daan1"
+  },
+  "yue::party bus": {
+    "t": "派對巴士",
+    "r": "paai3deoi3 baa1si2"
+  },
+  "yue::sparkler candles": {
+    "t": "煙花蠟燭",
+    "r": "jin1faa1 laap6zuk1"
+  },
+  "yue::Jack, did you sign the birthday card yet?": {
+    "t": "Jack, 你簽咗生日卡未？",
+    "r": "nei5 cim1 zo2 saang1jat6kaat1 mei6"
+  },
+  "yue::I can wrap the gift while you iron the shirt.": {
+    "t": "我可以包禮物，你去熨衫。",
+    "r": "ngo5 ho2ji5 baau1 lai5mat6 nei5 heoi3 tong3saam1"
+  },
+  "yue::Should we call a ride share or catch the party bus?": {
+    "t": "我哋應該叫共乘車定搭派對巴士？",
+    "r": "ngo5dei6 jing1goi1 giu3 gung6sing4 ce1 ding6 daap3 paai3deoi3 baa1si2"
+  },
+  "yue::Save room for cake because the host ordered extra.": {
+    "t": "留位食蛋糕，因為主人叫咗多啲。",
+    "r": "lau4 wai2 sik6 daan6gou1 jan1wai6 zyu2jan2 giu3 zo2 do1 di1"
+  },
+  "ru::tiny apartment": {
+    "t": "крошечная квартира",
+    "r": "kroshechnaya kvartira"
+  },
+  "ru::storage box": {
+    "t": "ящик для хранения",
+    "r": "yashchik dlya khraneniya"
+  },
+  "ru::floor plan": {
+    "t": "план этажа",
+    "r": "plan etazha"
+  },
+  "ru::rent budget": {
+    "t": "арендный бюджет",
+    "r": "arendnyy byudzhet"
+  },
+  "ru::folding table": {
+    "t": "складной столик",
+    "r": "skladnoy stolik"
+  },
+  "ru::shared closet": {
+    "t": "общий шкаф",
+    "r": "obshchiy shkaf"
+  },
+  "ru::This tiny apartment feels packed, so let us redraw the floor plan.": {
+    "t": "Эта крошечная квартирка кажется переполненной, поэтому давайте перерисуем план этажа.",
+    "r": "Eta kroshechnaya kvartirka kazhetsya perepolnennoy, poetomu davayte pererisuyem plan etazha."
+  },
+  "ru::Can we build more storage boxes for the hallway?": {
+    "t": "Можем ли мы построить больше ящиков для хранения вещей в коридоре?",
+    "r": "Mozhem li my postroit' bol'she yashchikov dlya khraneniya veshchey v koridore?"
+  },
+  "ru::I will ask the landlord about a folding table or shelf.": {
+    "t": "Я спрошу хозяина о складном столике или полке.",
+    "r": "YA sproshu khozyaina o skladnom stolike ili polke."
+  },
+  "ru::Let us split the rent budget review every Sunday night.": {
+    "t": "Давайте разделим обзор бюджета аренды каждое воскресенье вечером.",
+    "r": "Davayte razdelim obzor byudzheta arendy kazhdoye voskresen'ye vecherom."
+  },
+  "yue::tiny apartment": {
+    "t": "細細嘅單位",
+    "r": "sai3sai3 ge3 daan1wai2"
+  },
+  "yue::storage box": {
+    "t": "儲物箱",
+    "r": "cyu5mat6 soeng1"
+  },
+  "yue::floor plan": {
+    "t": "樓層平面圖",
+    "r": "lau4cang4 ping4min2tou4"
+  },
+  "yue::rent budget": {
+    "t": "租金預算",
+    "r": "zou1gam1 jyu6syun3"
+  },
+  "yue::folding table": {
+    "t": "摺枱",
+    "r": "zip3 toi2"
+  },
+  "yue::shared closet": {
+    "t": "共享衣櫃",
+    "r": "gung6hoeng2 ji1gwai6"
+  },
+  "yue::This tiny apartment feels packed, so let us redraw the floor plan.": {
+    "t": "呢個細細嘅公寓感覺好擠，所以我哋重畫一份平面圖啦。",
+    "r": "ni1go3 sai3sai3 ge3 gung1jyu6 gam2gok3 hou2 zai1 so2ji5 ngo5dei6 zung6 waa2 jat1fan6 ping4min2tou4 la1"
+  },
+  "yue::Can we build more storage boxes for the hallway?": {
+    "t": "我哋可以喺走廊度多建啲儲物箱嗎？",
+    "r": "ngo5dei6 ho2ji5 hai2 zau2long2 dou6 do1 gin3 di1 cyu5mat6 soeng1 maa3"
+  },
+  "yue::I will ask the landlord about a folding table or shelf.": {
+    "t": "我會問房東有冇折枱或者架.",
+    "r": "ngo5 wui5 man6 fong4dung1 jau5mou5 zit3 toi2 waak6ze2 gaa3"
+  },
+  "yue::Let us split the rent budget review every Sunday night.": {
+    "t": "我哋每個星期日夜晚檢討租金預算",
+    "r": "ngo5dei6 mui5go3 sing1kei4jat6 je6maan1 gim2tou2 zou1gam1 jyu6syun3"
+  },
+  "ru::laptop stand": {
+    "t": "подставка для ноутбука",
+    "r": "podstavka dlya noutbuka"
+  },
+  "ru::wireless mouse": {
+    "t": "беспроводная мышь",
+    "r": "besprovodnaya mysh'"
+  },
+  "ru::screen break": {
+    "t": "разрыв экрана",
+    "r": "razryv ekrana"
+  },
+  "ru::focus timer": {
+    "t": "таймер фокусировки",
+    "r": "taymer fokusirovki"
+  },
+  "ru::software update": {
+    "t": "обновление программного обеспечения",
+    "r": "obnovleniye programmnogo obespecheniya"
+  },
+  "ru::stretch reminder": {
+    "t": "напоминание о растяжении",
+    "r": "napominaniye o rastyazhenii"
+  },
+  "ru::Ho Yi, did you install the latest software updates?": {
+    "t": "Хо Йи, ты установил последние обновления программного обеспечения?",
+    "r": "Kho Yi, ty ustanovil posledniye obnovleniya programmnogo obespecheniya?"
+  },
+  "ru::Set a focus timer so breaks actually happen.": {
+    "t": "Установите таймер фокусировки, чтобы перерывы действительно происходили.",
+    "r": "Ustanovite taymer fokusirovki, chtoby pereryvy deystvitel'no proiskhodili."
+  },
+  "ru::I will send a stretch reminder every hour today.": {
+    "t": "Сегодня я буду отправлять напоминание каждый час.",
+    "r": "Segodnya ya budu otpravlyat' napominaniye kazhdyy chas."
+  },
+  "ru::Let us adjust the laptop stand to save your shoulders.": {
+    "t": "Давайте отрегулируем подставку для ноутбука, чтобы сохранить ваши плечи.",
+    "r": "Davayte otreguliruyem podstavku dlya noutbuka, chtoby sokhranit' vashi plechi."
+  },
+  "yue::laptop stand": {
+    "t": "手提電腦支架",
+    "r": "sau2tai4din6nou5 zi1gaa2"
+  },
+  "yue::wireless mouse": {
+    "t": "無線滑鼠",
+    "r": "mou4sin3 waat6syu2"
+  },
+  "yue::screen break": {
+    "t": "屏幕休息",
+    "r": "ping4mok6 jau1sik1"
+  },
+  "yue::focus timer": {
+    "t": "專注計時器",
+    "r": "zyun1zyu3 gai3si4hei3"
+  },
+  "yue::software update": {
+    "t": "軟件更新",
+    "r": "jyun5gin2 gang1san1"
+  },
+  "yue::stretch reminder": {
+    "t": "伸展提示",
+    "r": "san1zin2 tai4si6"
+  },
+  "yue::Ho Yi, did you install the latest software updates?": {
+    "t": "Ho Yi，你有冇安裝最新嘅軟件更新？",
+    "r": "nei5 jau5mou5 on1zong1 zeoi3san1 ge3 jyun5gin2 gang1san1"
+  },
+  "yue::Set a focus timer so breaks actually happen.": {
+    "t": "設定專注計時器以確保休息實際發生",
+    "r": "cit3ding6 zyun1zyu3 gai3si4hei3 ji5 kok3bou2 jau1sik1 sat6zai3 faat3sang1"
+  },
+  "yue::I will send a stretch reminder every hour today.": {
+    "t": "我今日會每小時發送一次伸展提醒",
+    "r": "ngo5 gam1jat6 wui5 mui5 siu2si4 faat3sung3 jat1ci3 san1zin2 tai4seng2"
+  },
+  "yue::Let us adjust the laptop stand to save your shoulders.": {
+    "t": "我哋調整下手提電腦架，保護你嘅肩膊",
+    "r": "ngo5dei6 tiu4zing2 haa6sau2 tai4 din6nou5 gaa3 bou2wu6 nei5 ge3 gin1bok3"
+  },
+  "ru::table reservation": {
+    "t": "бронирование столика",
+    "r": "bronirovaniye stolika"
+  },
+  "ru::menu special": {
+    "t": "специальное меню",
+    "r": "spetsial'noye menyu"
+  },
+  "ru::waitlist": {
+    "t": "список ожидания",
+    "r": "spisok ozhidaniya"
+  },
+  "ru::tea pot": {
+    "t": "ты можешь",
+    "r": "ty mozhesh'"
+  },
+  "ru::signature dish": {
+    "t": "фирменное блюдо",
+    "r": "firmennoye blyudo"
+  },
+  "ru::bill split": {
+    "t": "разделение счета",
+    "r": "razdeleniye scheta"
+  },
+  "ru::Ziyi, which signature dish are you craving tonight?": {
+    "t": "Зийи, какое фирменное блюдо ты хочешь сегодня вечером?",
+    "r": "Ziyi, kakoye firmennoye blyudo ty khochesh' segodnya vecherom?"
+  },
+  "ru::Let us ask if the waitlist is moving quickly.": {
+    "t": "Давайте спросим, быстро ли движется список ожидания.",
+    "r": "Davayte sprosim, bystro li dvizhetsya spisok ozhidaniya."
+  },
+  "ru::Could you pour the tea while I check the menu special?": {
+    "t": "Не могли бы вы налить чай, пока я проверю специальное меню?",
+    "r": "Ne mogli by vy nalit' chay, poka ya proveryu spetsial'noye menyu?"
+  },
+  "ru::We can split the bill and leave a thank you note.": {
+    "t": "Мы можем разделить счет и оставить благодарственное письмо.",
+    "r": "My mozhem razdelit' schet i ostavit' blagodarstvennoye pis'mo."
+  },
+  "yue::table reservation": {
+    "t": "訂枱",
+    "r": "deng6 toi2"
+  },
+  "yue::menu special": {
+    "t": "餐牌精選",
+    "r": "caan1paai2 zing1syun2"
+  },
+  "yue::waitlist": {
+    "t": "等候名單",
+    "r": "dang2hau6 ming4daan1"
+  },
+  "yue::tea pot": {
+    "t": "茶壺",
+    "r": "caa4wu2"
+  },
+  "yue::signature dish": {
+    "t": "招牌菜",
+    "r": "ziu1paai4coi3"
+  },
+  "yue::bill split": {
+    "t": "AA制",
+    "r": "ei1ei1zai3"
+  },
+  "yue::Ziyi, which signature dish are you craving tonight?": {
+    "t": "Ziyi，你今晚想食邊道招牌菜？",
+    "r": "nei5 gam1maan1 soeng2 sik6 bin1dou6 ziu1paai4coi3"
+  },
+  "yue::Let us ask if the waitlist is moving quickly.": {
+    "t": "我哋問下等候名單有冇快啲走先",
+    "r": "ngo5dei6 man6haa5 dang2hau6 ming4daan1 jau5mou5 faai3 di1 zau2sin1"
+  },
+  "yue::Could you pour the tea while I check the menu special?": {
+    "t": "你可唔可以倒茶畀我，我同時睇下餐牌有咩推介？",
+    "r": "nei5 ho2 m4 ho2ji5 dou2caa4 bei3 ngo5 ngo5 tung4si4 tai2haa5 caan1paai2 jau5me1 teoi1gaai3"
+  },
+  "yue::We can split the bill and leave a thank you note.": {
+    "t": "我哋可以分開付錢，並留一張感謝紙條",
+    "r": "ngo5dei6 ho2ji5 fan1hoi1 fu6cin2 bing6 lau4 jat1zoeng1 gam2ze6 zi2tiu2"
+  },
+  "ru::playlist": {
+    "t": "список воспроизведения",
+    "r": "spisok vosproizvedeniya"
+  },
+  "ru::headphones": {
+    "t": "наушники",
+    "r": "naushniki"
+  },
+  "ru::dance move": {
+    "t": "танцевальное движение",
+    "r": "tantseval'noye dvizheniye"
+  },
+  "ru::chorus": {
+    "t": "хор",
+    "r": "khor"
+  },
+  "ru::volume knob": {
+    "t": "ручка громкости",
+    "r": "ruchka gromkosti"
+  },
+  "ru::favorite singer": {
+    "t": "любимый певец",
+    "r": "lyubimyy pevets"
+  },
+  "ru::Hiu Suet, cue up the playlist you mentioned yesterday.": {
+    "t": "Привет Сует, включи плейлист, который ты упомянул вчера.",
+    "r": "Privet Suyet, vklyuchi pleylist, kotoryy ty upomyanul vchera."
+  },
+  "ru::Let us slow the volume so we can still chat.": {
+    "t": "Давайте уменьшим громкость, чтобы мы могли продолжать общаться.",
+    "r": "Davayte umen'shim gromkost', chtoby my mogli prodolzhat' obshchat'sya."
+  },
+  "ru::Teach me that dance move you practiced last night.": {
+    "t": "Научи меня тому танцевальному движению, которое ты практиковал вчера вечером.",
+    "r": "Nauchi menya tomu tantseval'nomu dvizheniyu, kotoroye ty praktikoval vchera vecherom."
+  },
+  "ru::Share a favorite singer so I can add it to my list.": {
+    "t": "Поделитесь любимым певцом, чтобы я мог добавить его в свой список.",
+    "r": "Podelites' lyubimym pevtsom, chtoby ya mog dobavit' yego v svoy spisok."
+  },
+  "yue::playlist": {
+    "t": "播放列表",
+    "r": "bo3fong3lit6biu2"
+  },
+  "yue::headphones": {
+    "t": "耳機",
+    "r": "ji5gei1"
+  },
+  "yue::dance move": {
+    "t": "舞步",
+    "r": "mou5bou6"
+  },
+  "yue::chorus": {
+    "t": "合唱",
+    "r": "hap6coeng3"
+  },
+  "yue::volume knob": {
+    "t": "音量旋鈕",
+    "r": "jam1loeng6 syun4nau2"
+  },
+  "yue::favorite singer": {
+    "t": "最愛的歌手",
+    "r": "zeoi3 oi3 dik1 go1sau2"
+  },
+  "yue::Hiu Suet, cue up the playlist you mentioned yesterday.": {
+    "t": "曉雪，整好你昨日提過嘅播放清單",
+    "r": "hiu2 syut3 zing2 hou2 nei5 zok3jat6 tai4gwo3 ge3 bo3fong3 cing1daan1"
+  },
+  "yue::Let us slow the volume so we can still chat.": {
+    "t": "我哋將音量調低啲，咁我哋仲可以傾偈",
+    "r": "ngo5dei6 zoeng1 jam1loeng6 diu6 dai1 di1 gam3 ngo5dei6 zung6 ho2ji5 keng1gai2"
+  },
+  "yue::Teach me that dance move you practiced last night.": {
+    "t": "教我你昨晚練習嗰個舞步",
+    "r": "gaau3 ngo5 nei5 zok6maan5 lin6zaap6 go2go3 mou5bou6"
+  },
+  "yue::Share a favorite singer so I can add it to my list.": {
+    "t": "分享你喜歡嘅歌手，咁我可以加返落我嘅清單",
+    "r": "fan1hoeng2 nei5 hei2fun1 ge3 go1sau2 gam3 ngo5 ho2ji5 gaa1faan1 lok6 ngo5 ge3 cing1daan1"
+  },
+  "ru::meal prep": {
+    "t": "приготовление еды",
+    "r": "prigotovleniye yedy"
+  },
+  "ru::step count": {
+    "t": "количество шагов",
+    "r": "kolichestvo shagov"
+  },
+  "ru::hydration": {
+    "t": "гидратация",
+    "r": "gidratatsiya"
+  },
+  "ru::interval run": {
+    "t": "интервальный бег",
+    "r": "interval'nyy beg"
+  },
+  "ru::sleep rhythm": {
+    "t": "ритм сна",
+    "r": "ritm sna"
+  },
+  "ru::progress photo": {
+    "t": "фото прогресса",
+    "r": "foto progressa"
+  },
+  "ru::Are we logging our step count tonight, Ah Hung?": {
+    "t": "Мы сегодня вечером записываем количество шагов, А Хун?",
+    "r": "My segodnya vecherom zapisyvayem kolichestvo shagov, A Khun?"
+  },
+  "ru::Let us prep meals so tomorrow feels easier.": {
+    "t": "Давайте приготовим еду, чтобы завтра было легче.",
+    "r": "Davayte prigotovim yedu, chtoby zavtra bylo legche."
+  },
+  "ru::Remember to hydrate before the interval run.": {
+    "t": "Не забывайте пить воду перед интервальной пробежкой.",
+    "r": "Ne zabyvayte pit' vodu pered interval'noy probezhkoy."
+  },
+  "ru::Take a progress photo now so we can compare later.": {
+    "t": "Сделайте фото прогресса сейчас, чтобы мы могли сравнить позже.",
+    "r": "Sdelayte foto progressa seychas, chtoby my mogli sravnit' pozzhe."
+  },
+  "yue::meal prep": {
+    "t": "準備餐食",
+    "r": "zeon2bei6 caan1 sik6"
+  },
+  "yue::step count": {
+    "t": "步數",
+    "r": "bou6sou3"
+  },
+  "yue::hydration": {
+    "t": "補水",
+    "r": "bou2seoi2"
+  },
+  "yue::interval run": {
+    "t": "間歇跑",
+    "r": "gaan3hit3 paau2"
+  },
+  "yue::sleep rhythm": {
+    "t": "睡眠節奏",
+    "r": "seoi6min4 zit3zau3"
+  },
+  "yue::progress photo": {
+    "t": "進展相",
+    "r": "zeon3zin2 soeng2"
+  },
+  "yue::Are we logging our step count tonight, Ah Hung?": {
+    "t": "阿雄，我哋今晚會唔會記錄我哋嘅步數呀？",
+    "r": "aa3 hung4 ngo5dei6 gam1maan1 wui5 m4wui5 gei3luk6 ngo5dei6 ge3 bou6sou3 aa4"
+  },
+  "yue::Let us prep meals so tomorrow feels easier.": {
+    "t": "不如我哋預備餐飯，咁聽日會輕鬆啲",
+    "r": "bat1jyu4 ngo5dei6 jyu6bei6 caan1faan6 gam3 ting1jat6 wui5 heng1sung1 di1"
+  },
+  "yue::Remember to hydrate before the interval run.": {
+    "t": "記住喺間歇跑之前補充水分",
+    "r": "gei3zyu6 hai2 gaan3hit3 paau2 zi1cin4 bou2cung1 seoi2fan6"
+  },
+  "yue::Take a progress photo now so we can compare later.": {
+    "t": "而家影一張進度相，之後可以比較",
+    "r": "ji4gaa1 jing2 jat1zoeng1 zeon3dou6 soeng2 zi1hau6 ho2ji5 bei2gaau3"
+  },
+  "ru::job listing": {
+    "t": "список вакансий",
+    "r": "spisok vakansiy"
+  },
+  "ru::resume draft": {
+    "t": "черновик резюме",
+    "r": "chernovik rezyume"
+  },
+  "ru::cover letter": {
+    "t": "Сопроводительное письмо",
+    "r": "Soprovoditel'noye pis'mo"
+  },
+  "ru::skills grid": {
+    "t": "сетка навыков",
+    "r": "setka navykov"
+  },
+  "ru::video interview": {
+    "t": "видеоинтервью",
+    "r": "videointerv'yu"
+  },
+  "ru::network coffee": {
+    "t": "сетевой кофе",
+    "r": "setevoy kofe"
+  },
+  "ru::Zi Jun, which job listing excited you this morning?": {
+    "t": "Цзы Цзюнь, какой список вакансий взволновал тебя сегодня утром?",
+    "r": "TSzy TSzyun', kakoy spisok vakansiy vzvolnoval tebya segodnya utrom?"
+  },
+  "ru::Let us tailor the resume draft before lunch.": {
+    "t": "Давайте до обеда подготовим проект резюме.",
+    "r": "Davayte do obeda podgotovim proyekt rezyume."
+  },
+  "ru::I can role-play the video interview tonight.": {
+    "t": "Я могу разыграть видеоинтервью сегодня вечером.",
+    "r": "YA mogu razygrat' videointerv'yu segodnya vecherom."
+  },
+  "ru::Schedule a networking coffee while momentum is high.": {
+    "t": "Запланируйте нетворкинг-кофе, пока динамика высока.",
+    "r": "Zaplaniruyte netvorking-kofe, poka dinamika vysoka."
+  },
+  "yue::job listing": {
+    "t": "職位列表",
+    "r": "zik1wai6 lit6biu2"
+  },
+  "yue::resume draft": {
+    "t": "履歷表草稿",
+    "r": "lei5lik6biu2 cou2gou2"
+  },
+  "yue::cover letter": {
+    "t": "求職信",
+    "r": "kau4zik1seon3"
+  },
+  "yue::skills grid": {
+    "t": "技能網格",
+    "r": "gei6nang4 mong5gaak3"
+  },
+  "yue::video interview": {
+    "t": "影片面試",
+    "r": "jing2pin2 min6si3"
+  },
+  "yue::network coffee": {
+    "t": "網絡咖啡",
+    "r": "mong5lok2 gaa3fe1"
+  },
+  "yue::Zi Jun, which job listing excited you this morning?": {
+    "t": "志俊，你今朝邊個招聘廣告最令你興奮？",
+    "r": "zi3 zeon3 nei5 gam1ziu1 bin1go3 ziu1ping3 gwong2gou3 zeoi3 ling6 nei5 hing1fan5"
+  },
+  "yue::Let us tailor the resume draft before lunch.": {
+    "t": "我哋喺午餐前整好履歷草稿",
+    "r": "ngo5dei6 hai2 ng5caan1 cin4 zing2 hou2 lei5lik6 cou2gou2"
+  },
+  "yue::I can role-play the video interview tonight.": {
+    "t": "我今晚可以扮演影片面試的角色",
+    "r": "ngo5 gam1maan1 ho2ji5 baan3jin2 jing2pin2 min6si3 dik1 gok3sik1"
+  },
+  "yue::Schedule a networking coffee while momentum is high.": {
+    "t": "趁勢安排一次社交咖啡",
+    "r": "can3sai3 on1paai4 jat1ci3 se5gaau1 gaa3fe1"
+  },
+  "ru::timecard": {
+    "t": "табель учета рабочего времени",
+    "r": "tabel' ucheta rabochego vremeni"
+  },
+  "ru::commute": {
+    "t": "добираться",
+    "r": "dobirat'sya"
+  },
+  "ru::street food": {
+    "t": "уличная еда",
+    "r": "ulichnaya yeda"
+  },
+  "ru::podcast episode": {
+    "t": "эпизод подкаста",
+    "r": "epizod podkasta"
+  },
+  "ru::sofa nap": {
+    "t": "диванный день",
+    "r": "divannyy den'"
+  },
+  "ru::night market": {
+    "t": "ночной рынок",
+    "r": "nochnoy rynok"
+  },
+  "ru::Ah Jun, did work end on time today?": {
+    "t": "А, Джун, работа сегодня закончилась вовремя?",
+    "r": "A, Dzhun, rabota segodnya zakonchilas' vovremya?"
+  },
+  "ru::Grab some street food before the long commute.": {
+    "t": "Перед долгой поездкой на работу перекусите уличной едой.",
+    "r": "Pered dolgoy poyezdkoy na rabotu perekusite ulichnoy yedoy."
+  },
+  "ru::I saved a podcast episode for your ride home.": {
+    "t": "Я сохранил выпуск подкаста, чтобы ты мог поехать домой.",
+    "r": "YA sokhranil vypusk podkasta, chtoby ty mog poyekhat' domoy."
+  },
+  "ru::Text me when you reach the sofa so we can debrief.": {
+    "t": "Напиши мне, когда доберешься до дивана, чтобы мы могли подвести итоги.",
+    "r": "Napishi mne, kogda doberesh'sya do divana, chtoby my mogli podvesti itogi."
+  },
+  "yue::timecard": {
+    "t": "打卡紙",
+    "r": "daa2kaat1 zi2"
+  },
+  "yue::commute": {
+    "t": "通勤",
+    "r": "tung1kan4"
+  },
+  "yue::street food": {
+    "t": "街頭小食",
+    "r": "gaai1tau4 siu2sik6"
+  },
+  "yue::podcast episode": {
+    "t": "播客節目",
+    "r": "bo3haak3 zit3muk6"
+  },
+  "yue::sofa nap": {
+    "t": "梳化瞓覺",
+    "r": "so1faa2 fan3gaau3"
+  },
+  "yue::night market": {
+    "t": "夜市",
+    "r": "je6si5"
+  },
+  "yue::Ah Jun, did work end on time today?": {
+    "t": "阿俊，今日返工準時收工嗎？",
+    "r": "aa3 zeon3 gam1jat6 faan1gung1 zeon2si4 sau1gung1 maa3"
+  },
+  "yue::Grab some street food before the long commute.": {
+    "t": "喺長途通勤前食啲街頭小食",
+    "r": "hai2 coeng4tou4 tung1kan4 cin4 sik6 di1 gaai1tau4 siu2sik6"
+  },
+  "yue::I saved a podcast episode for your ride home.": {
+    "t": "我幫你儲咗一集播客，等你返屋企路上聽",
+    "r": "ngo5 bong1 nei5 cou5 zo2 jat1 zaap6 bo3haak3 dang2 nei5 faan1uk1kei2 lou6soeng6 teng1"
+  },
+  "yue::Text me when you reach the sofa so we can debrief.": {
+    "t": "你到梳化時發訊息畀我，咁我哋可以總結一下。",
+    "r": "nei5 dou2 so1faa2 si4 faat3 seon3sik1 bei3 ngo5 gam3 ngo5dei6 ho2ji5 zung2git3 jat1haa5"
+  },
+  "ru::wardrobe": {
+    "t": "гардероб",
+    "r": "garderob"
+  },
+  "ru::laundry rack": {
+    "t": "вешалка для белья",
+    "r": "veshalka dlya bel'ya"
+  },
+  "ru::ironing board": {
+    "t": "гладильная доска",
+    "r": "gladil'naya doska"
+  },
+  "ru::weather report": {
+    "t": "прогноз погоды",
+    "r": "prognoz pogody"
+  },
+  "ru::accessories": {
+    "t": "аксессуары",
+    "r": "aksessuary"
+  },
+  "ru::backup outfit": {
+    "t": "резервное снаряжение",
+    "r": "rezervnoye snaryazheniye"
+  },
+  "ru::Si, lay the wardrobe pieces on the bed first.": {
+    "t": "Да, сначала положи предметы гардероба на кровать.",
+    "r": "Da, snachala polozhi predmety garderoba na krovat'."
+  },
+  "ru::Let us check the weather report before choosing shoes.": {
+    "t": "Давайте проверим прогноз погоды, прежде чем выбирать обувь.",
+    "r": "Davayte proverim prognoz pogody, prezhde chem vybirat' obuv'."
+  },
+  "ru::I will handle the ironing board if you pick accessories.": {
+    "t": "Я займусь гладильной доской, если вы подберете аксессуары.",
+    "r": "YA zaymus' gladil'noy doskoy, yesli vy podberete aksessuary."
+  },
+  "ru::Pack a backup outfit so you feel calm all day.": {
+    "t": "Возьмите с собой запасной наряд, чтобы чувствовать себя спокойно весь день.",
+    "r": "Voz'mite s soboy zapasnoy naryad, chtoby chuvstvovat' sebya spokoyno ves' den'."
+  },
+  "yue::wardrobe": {
+    "t": "衣櫃",
+    "r": "ji1gwai6"
+  },
+  "yue::laundry rack": {
+    "t": "晾衫架",
+    "r": "long6saam1gaa2"
+  },
+  "yue::ironing board": {
+    "t": "熨衫板",
+    "r": "tong3saam1baan2"
+  },
+  "yue::weather report": {
+    "t": "天氣報告",
+    "r": "tin1hei3bou3gou3"
+  },
+  "yue::accessories": {
+    "t": "配件",
+    "r": "pui3gin2"
+  },
+  "yue::backup outfit": {
+    "t": "備用服裝",
+    "r": "bei6jung6 fuk6zong1"
+  },
+  "yue::Si, lay the wardrobe pieces on the bed first.": {
+    "t": "係，先將衣櫃件擺喺床上。",
+    "r": "hai6 sin1 zoeng1 ji1gwai6 gin6 baai2 hai2 cong4 soeng5"
+  },
+  "yue::Let us check the weather report before choosing shoes.": {
+    "t": "我哋喺揀鞋之前先睇下天氣報告",
+    "r": "ngo5dei6 hai2 gaan2 haai4 zi1cin4 sin1tai2 haa5 tin1hei3bou3gou3"
+  },
+  "yue::I will handle the ironing board if you pick accessories.": {
+    "t": "如果你揀配件，我會處理熨衣板",
+    "r": "jyu4gu2 nei5 gaan2 pui3gin2 ngo5 wui5 cyu2lei5 tong3 ji1 baan2"
+  },
+  "yue::Pack a backup outfit so you feel calm all day.": {
+    "t": "帶備一套備用衣服，讓你一整日都感到安心",
+    "r": "daai3bei6 jat1tou3 bei6jung6 ji1fuk6 joeng6 nei5 jat1zing2jat6 dou1 gam2dou2 on1sam1"
+  },
+  "ru::study hall": {
+    "t": "учебный зал",
+    "r": "uchebnyy zal"
+  },
+  "ru::snack bar": {
+    "t": "закусочная",
+    "r": "zakusochnaya"
+  },
+  "ru::club meeting": {
+    "t": "собрание клуба",
+    "r": "sobraniye kluba"
+  },
+  "ru::notebook": {
+    "t": "блокнот",
+    "r": "bloknot"
+  },
+  "ru::locker pass": {
+    "t": "пропуск в шкафчик",
+    "r": "propusk v shkafchik"
+  },
+  "ru::practice quiz": {
+    "t": "практический тест",
+    "r": "prakticheskiy test"
+  },
+  "ru::Cheuk Man, want to sit by the snack bar?": {
+    "t": "Чук, чувак, хочешь посидеть у закусочной?",
+    "r": "Chuk, chuvak, khochesh' posidet' u zakusochnoy?"
+  },
+  "ru::Let us swap notebooks and compare answers.": {
+    "t": "Давайте поменяемся тетрадками и сравним ответы.",
+    "r": "Davayte pomenyayemsya tetradkami i sravnim otvety."
+  },
+  "ru::I will grab the locker pass so we can move quickly.": {
+    "t": "Я возьму пропуск на шкафчик, чтобы мы могли двигаться быстрее.",
+    "r": "YA voz'mu propusk na shkafchik, chtoby my mogli dvigat'sya bystreye."
+  },
+  "ru::Bring your club updates so we can plan practice.": {
+    "t": "Приносите новости своего клуба, чтобы мы могли спланировать тренировку.",
+    "r": "Prinosite novosti svoyego kluba, chtoby my mogli splanirovat' trenirovku."
+  },
+  "yue::study hall": {
+    "t": "自習室",
+    "r": "zi6zaap6 sat1"
+  },
+  "yue::snack bar": {
+    "t": "小食吧",
+    "r": "siu2sik6 baa1"
+  },
+  "yue::club meeting": {
+    "t": "社團會議",
+    "r": "se5tyun4 wui6ji5"
+  },
+  "yue::notebook": {
+    "t": "手帳",
+    "r": "sau2zoeng3"
+  },
+  "yue::locker pass": {
+    "t": "儲物櫃通行證",
+    "r": "cyu5mat6gwai6 tung1hang4zing3"
+  },
+  "yue::practice quiz": {
+    "t": "練習測驗",
+    "r": "lin6zaap6 caak1jim6"
+  },
+  "yue::Cheuk Man, want to sit by the snack bar?": {
+    "t": "卓文，你想坐喺小食吧嗰度嗎？",
+    "r": "coek3 man4 nei5 soeng2 co5 hai2 siu2sik6 baa1 go2dou6 maa3"
+  },
+  "yue::Let us swap notebooks and compare answers.": {
+    "t": "我哋交換筆記本嚟比較答案",
+    "r": "ngo5dei6 gaau1wun6 bat1gei3bun2 lei4 bei2gaau3 daap3on3"
+  },
+  "yue::I will grab the locker pass so we can move quickly.": {
+    "t": "我會攞儲物櫃通行證，咁我哋可以快啲行動",
+    "r": "ngo5 wui5 lo2 cyu5mat6gwai6 tung1hang4zing3 gam3 ngo5dei6 ho2ji5 faai3 di1 hang4dung6"
+  },
+  "yue::Bring your club updates so we can plan practice.": {
+    "t": "帶埋你嘅會社最新消息嚟，咁我哋可以計劃練習",
+    "r": "daai3maai4 nei5 ge3 wui6se5 zeoi3san1 siu1sik1 lei4 gam3 ngo5dei6 ho2ji5 gai3waak6 lin6zaap6"
+  },
+  "ru::shift schedule": {
+    "t": "график смен",
+    "r": "grafik smen"
+  },
+  "ru::task queue": {
+    "t": "очередь задач",
+    "r": "ochered' zadach"
+  },
+  "ru::badge swipe": {
+    "t": "пролистывание значка",
+    "r": "prolistyvaniye znachka"
+  },
+  "ru::lunch break": {
+    "t": "обеденный перерыв",
+    "r": "obedennyy pereryv"
+  },
+  "ru::status board": {
+    "t": "статусная доска",
+    "r": "statusnaya doska"
+  },
+  "ru::pep talk": {
+    "t": "напутственная речь",
+    "r": "naputstvennaya rech'"
+  },
+  "ru::Mei Mei, let us skim the task queue together.": {
+    "t": "Мэй Мэй, давай вместе просмотрим очередь задач.",
+    "r": "Mey Mey, davay vmeste prosmotrim ochered' zadach."
+  },
+  "ru::Swipe your badge early so nothing glitches.": {
+    "t": "Проведите свой значок заранее, чтобы ничего не сработало.",
+    "r": "Provedite svoy znachok zaraneye, chtoby nichego ne srabotalo."
+  },
+  "ru::I booked our lunch break for twelve sharp.": {
+    "t": "Я забронировал обеденный перерыв ровно на двенадцать.",
+    "r": "YA zabroniroval obedennyy pereryv rovno na dvenadtsat'."
+  },
+  "ru::Here is a quick pep talk before the status board meeting.": {
+    "t": "Вот краткая воодушевляющая речь перед заседанием статус-совета.",
+    "r": "Vot kratkaya voodushevlyayushchaya rech' pered zasedaniyem status-soveta."
+  },
+  "yue::shift schedule": {
+    "t": "班次時間表",
+    "r": "baan1ci3 si4gaan1biu2"
+  },
+  "yue::task queue": {
+    "t": "任務隊列",
+    "r": "jam4mou6 deoi6lit6"
+  },
+  "yue::badge swipe": {
+    "t": "刷徽章",
+    "r": "caat3 fai1zoeng1"
+  },
+  "yue::lunch break": {
+    "t": "午飯時間",
+    "r": "ng5faan6 si4gaan1"
+  },
+  "yue::status board": {
+    "t": "狀態板",
+    "r": "zong6taai3 baan2"
+  },
+  "yue::pep talk": {
+    "t": "打氣說話",
+    "r": "daa2hei3 syut3waa6"
+  },
+  "yue::Mei Mei, let us skim the task queue together.": {
+    "t": "美美，我哋一齊睇下工作隊列啦",
+    "r": "mei5mei5 ngo5dei6 jat1cai4 tai2haa5 gung1zok3deoi6 lit6 la1"
+  },
+  "yue::Swipe your badge early so nothing glitches.": {
+    "t": "提早刷你嘅證以避免故障",
+    "r": "tai4zou2 caat3 nei5 ge3 zing3 ji5 bei6min5 gu3zoeng3"
+  },
+  "yue::I booked our lunch break for twelve sharp.": {
+    "t": "我訂咗我哋嘅午餐時間十一點正。",
+    "r": "ngo5 deng6 zo2 ngo5dei6 ge3 ng5caan1 si4gaan1 sap6jat1dim2 zeng3"
+  },
+  "yue::Here is a quick pep talk before the status board meeting.": {
+    "t": "喺狀態板會議之前，呢度有個簡短嘅鼓舞講話",
+    "r": "hai2 zong6taai3 baan2 wui6ji5 zi1cin4 ni1dou6 jau5 go3 gaan2dyun2 ge3 gu2mou5 gong2waa2"
+  },
+  "ru::day off": {
+    "t": "выходной",
+    "r": "vykhodnoy"
+  },
+  "ru::spa ticket": {
+    "t": "билет в спа",
+    "r": "bilet v spa"
+  },
+  "ru::park bench": {
+    "t": "скамейка в парке",
+    "r": "skameyka v parke"
+  },
+  "ru::novel": {
+    "t": "роман",
+    "r": "roman"
+  },
+  "ru::slow brunch": {
+    "t": "медленный бранч",
+    "r": "medlennyy branch"
+  },
+  "ru::photo journal": {
+    "t": "фотожурнал",
+    "r": "fotozhurnal"
+  },
+  "ru::How do you want to spend this precious day off?": {
+    "t": "Как вы хотите провести этот драгоценный выходной?",
+    "r": "Kak vy khotite provesti etot dragotsennyy vykhodnoy?"
+  },
+  "ru::Let us reserve a slow brunch by the park.": {
+    "t": "Давайте зарезервируем медленный бранч в парке.",
+    "r": "Davayte zarezerviruyem medlennyy branch v parke."
+  },
+  "ru::Pack a novel so you can truly unplug.": {
+    "t": "Возьмите с собой роман, чтобы вы могли по-настоящему отключиться.",
+    "r": "Voz'mite s soboy roman, chtoby vy mogli po-nastoyashchemu otklyuchit'sya."
+  },
+  "ru::We can start a photo journal of restful moments.": {
+    "t": "Мы можем начать фотожурнал спокойных моментов.",
+    "r": "My mozhem nachat' fotozhurnal spokoynykh momentov."
+  },
+  "yue::day off": {
+    "t": "休息日",
+    "r": "jau1sik1 jat6"
+  },
+  "yue::spa ticket": {
+    "t": "水療入場券",
+    "r": "seoi2liu4 jap6coeng4gyun3"
+  },
+  "yue::park bench": {
+    "t": "公園長椅",
+    "r": "gung1jyun2 coeng4ji2"
+  },
+  "yue::novel": {
+    "t": "小說",
+    "r": "siu2syut3"
+  },
+  "yue::slow brunch": {
+    "t": "慢慢享受早午餐",
+    "r": "maan6maan2 hoeng2sau6 zou2 ng5caan1"
+  },
+  "yue::photo journal": {
+    "t": "相片日誌",
+    "r": "soeng3pin2 jat6zi3"
+  },
+  "yue::How do you want to spend this precious day off?": {
+    "t": "你想點樣度過呢個珍貴嘅假期日子？",
+    "r": "nei5 soeng2 dim2joeng2 dou6gwo3 ni1go3 zan1gwai3 ge3 gaa3kei4 jat6zi2"
+  },
+  "yue::Let us reserve a slow brunch by the park.": {
+    "t": "我哋喺公園訂個慢慢嘅早午餐",
+    "r": "ngo5dei6 hai2 gung1jyun2 deng6 go3 maan6maan2 ge3 zou2 ng5caan1"
+  },
+  "yue::Pack a novel so you can truly unplug.": {
+    "t": "帶埋本小說，好讓你真係放鬆下",
+    "r": "daai3maai4 bun2 siu2syut3 hou2 joeng6 nei5 zan1hai6 fong3sung1 haa5"
+  },
+  "yue::We can start a photo journal of restful moments.": {
+    "t": "我哋可以開始一個記錄寧靜時刻嘅相片日誌",
+    "r": "ngo5dei6 ho2ji5 hoi1ci2 jat1go3 gei3luk6 ning4zing6 si4haak1 ge3 soeng3pin2 jat6zi3"
+  },
+  "ru::temperature": {
+    "t": "температура",
+    "r": "temperatura"
+  },
+  "ru::clinic": {
+    "t": "клиника",
+    "r": "klinika"
+  },
+  "ru::medicine dose": {
+    "t": "доза лекарства",
+    "r": "doza lekarstva"
+  },
+  "ru::rest day": {
+    "t": "день отдыха",
+    "r": "den' otdykha"
+  },
+  "ru::ginger soup": {
+    "t": "имбирный суп",
+    "r": "imbirnyy sup"
+  },
+  "ru::follow-up call": {
+    "t": "последующий звонок",
+    "r": "posleduyushchiy zvonok"
+  },
+  "ru::Yuet Ling, when did the discomfort start?": {
+    "t": "Юэт Линг, когда начался дискомфорт?",
+    "r": "Yuet Ling, kogda nachalsya diskomfort?"
+  },
+  "ru::Let us book a clinic visit if the fever stays.": {
+    "t": "Давайте запишемся на визит в клинику, если температура сохранится.",
+    "r": "Davayte zapishemsya na vizit v kliniku, yesli temperatura sokhranitsya."
+  },
+  "ru::Remember your medicine dose after eating.": {
+    "t": "Помните о дозе лекарства после еды.",
+    "r": "Pomnite o doze lekarstva posle yedy."
+  },
+  "ru::Text me a photo of the soup so I know you rested.": {
+    "t": "Напиши мне фото супа, чтобы я знала, что ты отдохнула.",
+    "r": "Napishi mne foto supa, chtoby ya znala, chto ty otdokhnula."
+  },
+  "yue::temperature": {
+    "t": "溫度",
+    "r": "wan1dou6"
+  },
+  "yue::clinic": {
+    "t": "診所",
+    "r": "can2so2"
+  },
+  "yue::medicine dose": {
+    "t": "藥量",
+    "r": "joek6 loeng6"
+  },
+  "yue::rest day": {
+    "t": "休息日",
+    "r": "jau1sik1 jat6"
+  },
+  "yue::ginger soup": {
+    "t": "薑湯",
+    "r": "goeng1 soeng1"
+  },
+  "yue::follow-up call": {
+    "t": "跟進電話",
+    "r": "gan1zeon3 din6waa2"
+  },
+  "yue::Yuet Ling, when did the discomfort start?": {
+    "t": "月玲，你嘅不適係幾時開始嘅？",
+    "r": "jyut6 ling4 nei5 ge3 bat1sik1 hai6 gei2si2 hoi1ci2 ge3"
+  },
+  "yue::Let us book a clinic visit if the fever stays.": {
+    "t": "如果發燒持續，我哋就預約睇診所",
+    "r": "jyu4gu2 faat3siu1 ci4zuk6 ngo5dei6 zau6 jyu6joek3 tai2 can2so2"
+  },
+  "yue::Remember your medicine dose after eating.": {
+    "t": "記得飯後食藥量",
+    "r": "gei3dak1 faan6 hau6 sik6joek6 loeng6"
+  },
+  "yue::Text me a photo of the soup so I know you rested.": {
+    "t": "發張湯嘅相俾我睇，咁我知道你有休息過。",
+    "r": "faat3 zoeng1 soeng1 ge3 soeng2 bei2 ngo5 tai2 gam3 ngo5 zi1dou3 nei5 jau5 jau1sik1 gwo3"
+  },
+  "ru::lecture hall": {
+    "t": "лекционный зал",
+    "r": "lektsionnyy zal"
+  },
+  "ru::semester plan": {
+    "t": "план отпуска",
+    "r": "plan otpuska"
+  },
+  "ru::research lab": {
+    "t": "исследовательская лаборатория",
+    "r": "issledovatel'skaya laboratoriya"
+  },
+  "ru::student card": {
+    "t": "студенческий билет",
+    "r": "studencheskiy bilet"
+  },
+  "ru::group project": {
+    "t": "групповой проект",
+    "r": "gruppovoy proyekt"
+  },
+  "ru::cafeteria pass": {
+    "t": "пропуск в кафетерий",
+    "r": "propusk v kafeteriy"
+  },
+  "ru::Ah Yan, which lecture hall are you in today?": {
+    "t": "А, Ян, в какой лекционной аудитории ты сегодня?",
+    "r": "A, Yan, v kakoy lektsionnoy auditorii ty segodnya?"
+  },
+  "ru::Let us review the semester plan together.": {
+    "t": "Давайте вместе рассмотрим план на семестр.",
+    "r": "Davayte vmeste rassmotrim plan na semestr."
+  },
+  "ru::Do you need help reserving a research lab slot?": {
+    "t": "Вам нужна помощь с резервированием места в исследовательской лаборатории?",
+    "r": "Vam nuzhna pomoshch' s rezervirovaniyem mesta v issledovatel'skoy laboratorii?"
+  },
+  "ru::Bring your student card so we can grab dinner later.": {
+    "t": "Принесите свой студенческий билет, чтобы мы могли поужинать позже.",
+    "r": "Prinesite svoy studencheskiy bilet, chtoby my mogli pouzhinat' pozzhe."
+  },
+  "yue::lecture hall": {
+    "t": "演講廳",
+    "r": "jin2gong2 teng1"
+  },
+  "yue::semester plan": {
+    "t": "學期計劃",
+    "r": "hok6kei4 gai3waak6"
+  },
+  "yue::research lab": {
+    "t": "研究實驗室",
+    "r": "jin4gau3 sat6jim6sat1"
+  },
+  "yue::student card": {
+    "t": "學生證",
+    "r": "hok6saang1zing3"
+  },
+  "yue::group project": {
+    "t": "小組項目",
+    "r": "siu2zou2 hong6muk6"
+  },
+  "yue::cafeteria pass": {
+    "t": "自助餐廳通行證",
+    "r": "zi6zo6caan1teng1 tung1hang4zing3"
+  },
+  "yue::Ah Yan, which lecture hall are you in today?": {
+    "t": "阿欣，你今日喺邊個講座廳呀？",
+    "r": "aa3 jan1 nei5 gam1jat6 hai2 bin1go3 gong2zo6 teng1 aa4"
+  },
+  "yue::Let us review the semester plan together.": {
+    "t": "我哋一齊檢視學期計劃",
+    "r": "ngo5dei6 jat1cai4 gim2si6 hok6kei4 gai3waak6"
+  },
+  "yue::Do you need help reserving a research lab slot?": {
+    "t": "你需要幫忙預訂研究實驗室的時段嗎？",
+    "r": "nei5 seoi1jiu3 bong1mong4 jyu6deng6 jin4gau3 sat6jim6sat1 dik1 si4dyun6 maa3"
+  },
+  "yue::Bring your student card so we can grab dinner later.": {
+    "t": "帶埋你嘅學生證，我哋之後可以去食晚餐",
+    "r": "daai3maai4 nei5 ge3 hok6saang1zing3 ngo5dei6 zi1hau6 ho2ji5 heoi3sik6 maan5caan1"
+  },
+  "ru::job portal": {
+    "t": "портал вакансий",
+    "r": "portal vakansiy"
+  },
+  "ru::portfolio link": {
+    "t": "ссылка на портфолио",
+    "r": "ssylka na portfolio"
+  },
+  "ru::referral": {
+    "t": "направление",
+    "r": "napravleniye"
+  },
+  "ru::salary range": {
+    "t": "диапазон зарплат",
+    "r": "diapazon zarplat"
+  },
+  "ru::mock interview": {
+    "t": "ложное интервью",
+    "r": "lozhnoye interv'yu"
+  },
+  "ru::celebration snack": {
+    "t": "праздничная закуска",
+    "r": "prazdnichnaya zakuska"
+  },
+  "ru::Ka Chung, upload the new portfolio link tonight.": {
+    "t": "Ка Чунг, загрузи сегодня вечером ссылку на новое портфолио.",
+    "r": "Ka Chung, zagruzi segodnya vecherom ssylku na novoye portfolio."
+  },
+  "ru::Let us request another referral while leads are warm.": {
+    "t": "Давайте запросим еще одно направление, пока лиды горячие.",
+    "r": "Davayte zaprosim yeshche odno napravleniye, poka lidy goryachiye."
+  },
+  "ru::We can rehearse interview answers after dinner.": {
+    "t": "Мы можем порепетировать ответы на собеседовании после ужина.",
+    "r": "My mozhem porepetirovat' otvety na sobesedovanii posle uzhina."
+  },
+  "ru::Promise me a celebration snack when you land the job.": {
+    "t": "Обещай мне праздничный перекус, когда получишь работу.",
+    "r": "Obeshchay mne prazdnichnyy perekus, kogda poluchish' rabotu."
+  },
+  "yue::job portal": {
+    "t": "招聘網站",
+    "r": "ziu1ping3 mong5zaam6"
+  },
+  "yue::portfolio link": {
+    "t": "作品集連結",
+    "r": "zok3ban2 zaap6 lin4git3"
+  },
+  "yue::referral": {
+    "t": "轉介",
+    "r": "zyun2gaai3"
+  },
+  "yue::salary range": {
+    "t": "薪金範圍",
+    "r": "san1gam1 faan6wai4"
+  },
+  "yue::mock interview": {
+    "t": "模擬面試",
+    "r": "mou4ji4 min6si3"
+  },
+  "yue::celebration snack": {
+    "t": "慶祝小食",
+    "r": "hing3zuk1 siu2sik6"
+  },
+  "yue::Ka Chung, upload the new portfolio link tonight.": {
+    "t": "家聰，今晚上傳新作品集嘅連結。",
+    "r": "gaa1 cung1 gam1maan1 soeng6cyun4 san1zok3 ban2 zaap6 ge3 lin4git3"
+  },
+  "yue::Let us request another referral while leads are warm.": {
+    "t": "趁着客戶仍然有興趣，我哋應該再要求另一個推薦。",
+    "r": "can3 zoek3 haak3wu6 jing4jin4 jau5hing3ceoi3 ngo5dei6 jing1goi1 zoi3 jiu1kau4 ling6jat1go3 teoi1zin3"
+  },
+  "yue::We can rehearse interview answers after dinner.": {
+    "t": "我哋晚餐後可以練習面試答案",
+    "r": "ngo5dei6 maan5caan1 hau6 ho2ji5 lin6zaap6 min6si3 daap3on3"
+  },
+  "yue::Promise me a celebration snack when you land the job.": {
+    "t": "答應我你搵到工之後會慶祝食零食",
+    "r": "daap3jing3 ngo5 nei5 wan2dou2 gung1 zi1hau6 wui5 hing3zuk1 sik6 ling4sik6"
+  },
+  "ru::hospital bag": {
+    "t": "больничная сумка",
+    "r": "bol'nichnaya sumka"
+  },
+  "ru::birth plan": {
+    "t": "план рождения",
+    "r": "plan rozhdeniya"
+  },
+  "ru::prenatal visit": {
+    "t": "предродовой визит",
+    "r": "predrodovoy vizit"
+  },
+  "ru::night shift": {
+    "t": "ночная смена",
+    "r": "nochnaya smena"
+  },
+  "ru::family hotline": {
+    "t": "семейная горячая линия",
+    "r": "semeynaya goryachaya liniya"
+  },
+  "ru::baby blanket": {
+    "t": "детское одеяло",
+    "r": "detskoye odeyalo"
+  },
+  "ru::Is the hospital bag zipped and by the door?": {
+    "t": "Больничная сумка застегнута на молнию и находится у двери?",
+    "r": "Bol'nichnaya sumka zastegnuta na molniyu i nakhoditsya u dveri?"
+  },
+  "ru::Let us review the birth plan one more time.": {
+    "t": "Давайте еще раз рассмотрим план родов.",
+    "r": "Davayte yeshche raz rassmotrim plan rodov."
+  },
+  "ru::I will handle family hotline updates for you.": {
+    "t": "Я буду обновлять для вас информацию по семейной горячей линии.",
+    "r": "YA budu obnovlyat' dlya vas informatsiyu po semeynoy goryachey linii."
+  },
+  "ru::Practice calm breathing while we wait for the taxi.": {
+    "t": "Попрактикуйтесь в спокойном дыхании, пока мы ждем такси.",
+    "r": "Popraktikuytes' v spokoynom dykhanii, poka my zhdem taksi."
+  },
+  "yue::hospital bag": {
+    "t": "醫院袋",
+    "r": "ji1jyun2 doi2"
+  },
+  "yue::birth plan": {
+    "t": "生產計劃",
+    "r": "sang1caan2 gai3waak6"
+  },
+  "yue::prenatal visit": {
+    "t": "產前檢查",
+    "r": "caan2cin4gim2caa4"
+  },
+  "yue::night shift": {
+    "t": "夜班",
+    "r": "je6baan1"
+  },
+  "yue::family hotline": {
+    "t": "家庭熱線",
+    "r": "gaa1ting4 jit6sin3"
+  },
+  "yue::baby blanket": {
+    "t": "嬰兒毯",
+    "r": "jing1ji4 taam2"
+  },
+  "yue::Is the hospital bag zipped and by the door?": {
+    "t": "醫院袋係咪拉好拉鏈放喺門口？",
+    "r": "ji1jyun2 doi2 hai6mai6 laai1 hou2 laai1lin2 fong3 hai2 mun4hau2"
+  },
+  "yue::Let us review the birth plan one more time.": {
+    "t": "讓我哋再檢視一次出生計劃",
+    "r": "joeng6 ngo5dei6 zoi3 gim2si6 jat1ci3 ceot1saang1 gai3waak6"
+  },
+  "yue::I will handle family hotline updates for you.": {
+    "t": "我會幫你處理家庭熱線的更新",
+    "r": "ngo5 wui5 bong1 nei5 cyu2lei5 gaa1ting4 jit6sin3 dik1 gang1san1"
+  },
+  "yue::Practice calm breathing while we wait for the taxi.": {
+    "t": "我哋等的士嘅時候練習平靜呼吸",
+    "r": "ngo5dei6 dang2 dik1si2 ge3 si4hau6 lin6zaap6 ping4zing6 fu1kap1"
+  },
+  "ru::laundry pile": {
+    "t": "куча белья",
+    "r": "kucha bel'ya"
+  },
+  "ru::storage bin": {
+    "t": "бункер для хранения",
+    "r": "bunker dlya khraneniya"
+  },
+  "ru::donation bag": {
+    "t": "мешок для пожертвований",
+    "r": "meshok dlya pozhertvovaniy"
+  },
+  "ru::dust cloth": {
+    "t": "пыль ткань",
+    "r": "pyl' tkan'"
+  },
+  "ru::task timer": {
+    "t": "таймер задачи",
+    "r": "taymer zadachi"
+  },
+  "ru::playlist speaker": {
+    "t": "динамик плейлиста",
+    "r": "dinamik pleylista"
+  },
+  "ru::Start with the laundry pile and keep only what you wear.": {
+    "t": "Начните со стопки белья и оставляйте только то, что носите.",
+    "r": "Nachnite so stopki bel'ya i ostavlyayte tol'ko to, chto nosite."
+  },
+  "ru::Set a task timer so you do not burn out.": {
+    "t": "Установите таймер задачи, чтобы не перегореть.",
+    "r": "Ustanovite taymer zadachi, chtoby ne peregoret'."
+  },
+  "ru::I will label the storage bins while you sweep.": {
+    "t": "Я буду маркировать контейнеры для хранения, пока вы будете подметать.",
+    "r": "YA budu markirovat' konteynery dlya khraneniya, poka vy budete podmetat'."
+  },
+  "ru::Let us play music to make the cleaning sprint fun.": {
+    "t": "Давайте включим музыку, чтобы сделать уборку веселой.",
+    "r": "Davayte vklyuchim muzyku, chtoby sdelat' uborku veseloy."
+  },
+  "yue::laundry pile": {
+    "t": "晾衫堆",
+    "r": "long6saam1 deoi1"
+  },
+  "yue::storage bin": {
+    "t": "儲物箱",
+    "r": "cyu5mat6 soeng1"
+  },
+  "yue::donation bag": {
+    "t": "捐款袋",
+    "r": "gyun1fun2 doi2"
+  },
+  "yue::dust cloth": {
+    "t": "抹塵布",
+    "r": "mut3 can4 bou3"
+  },
+  "yue::task timer": {
+    "t": "任務計時器",
+    "r": "jam4mou6 gai3si4hei3"
+  },
+  "yue::playlist speaker": {
+    "t": "播放列表喇叭",
+    "r": "bo3fong3lit6biu2 laa3baa1"
+  },
+  "yue::Start with the laundry pile and keep only what you wear.": {
+    "t": "由洗衣堆開始，只保留你會穿嘅衣服",
+    "r": "jau4 sai2ji1 deoi1 hoi1ci2 zi2 bou2lau4 nei5 wui5 cyun1 ge3 ji1fuk6"
+  },
+  "yue::Set a task timer so you do not burn out.": {
+    "t": "設定一個任務計時器，避免自己過度疲勞。",
+    "r": "cit3ding6 jat1go3 jam4mou6 gai3si4hei3 bei6min5 zi6gei2 gwo3dou6 pei4lou4"
+  },
+  "yue::I will label the storage bins while you sweep.": {
+    "t": "我會標籤儲物箱，你就掃地。",
+    "r": "ngo5 wui5 biu1cim1 cyu5mat6 soeng1 nei5 zau6 sou3dei2"
+  },
+  "yue::Let us play music to make the cleaning sprint fun.": {
+    "t": "我哋嚟播音樂令打掃衝刺變得好玩",
+    "r": "ngo5dei6 lei4 bo3jam1 lok6 ling6 daa2sou3 cung1ci3 bin3 dak1 hou2waan2"
+  },
+  "ru::travel budget": {
+    "t": "бюджет путешествия",
+    "r": "byudzhet puteshestviya"
+  },
+  "ru::packing cubes": {
+    "t": "упаковка кубиков",
+    "r": "upakovka kubikov"
+  },
+  "ru::itinerary": {
+    "t": "маршрут",
+    "r": "marshrut"
+  },
+  "ru::passport copy": {
+    "t": "копия паспорта",
+    "r": "kopiya pasporta"
+  },
+  "ru::currency exchange": {
+    "t": "обмен валюты",
+    "r": "obmen valyuty"
+  },
+  "ru::travel journal": {
+    "t": "журнал путешествий",
+    "r": "zhurnal puteshestviy"
+  },
+  "ru::Where do you want the first stamp on this itinerary?": {
+    "t": "Где вы хотите поставить первую марку на этом маршруте?",
+    "r": "Gde vy khotite postavit' pervuyu marku na etom marshrute?"
+  },
+  "ru::Let us price flights before booking hotels.": {
+    "t": "Давайте оценим авиабилеты перед бронированием отелей.",
+    "r": "Davayte otsenim aviabilety pered bronirovaniyem oteley."
+  },
+  "ru::Start packing cubes early to avoid stress.": {
+    "t": "Начинайте собирать кубики пораньше, чтобы избежать стресса.",
+    "r": "Nachinayte sobirat' kubiki poran'she, chtoby izbezhat' stressa."
+  },
+  "ru::Keep a travel journal so memories stay bright.": {
+    "t": "Ведите дневник путешествий, чтобы воспоминания оставались яркими.",
+    "r": "Vedite dnevnik puteshestviy, chtoby vospominaniya ostavalis' yarkimi."
+  },
+  "yue::travel budget": {
+    "t": "旅行預算",
+    "r": "leoi5hang4 jyu6syun3"
+  },
+  "yue::packing cubes": {
+    "t": "收納立方袋",
+    "r": "sau1naap6 laap6fong1 doi2"
+  },
+  "yue::itinerary": {
+    "t": "行程表",
+    "r": "hang4cing4 biu2"
+  },
+  "yue::passport copy": {
+    "t": "護照副本",
+    "r": "wu6ziu3 fu3bun2"
+  },
+  "yue::currency exchange": {
+    "t": "貨幣兌換",
+    "r": "fo3bai6deoi3wun6"
+  },
+  "yue::travel journal": {
+    "t": "旅行日誌",
+    "r": "leoi5hang4 jat6zi3"
+  },
+  "yue::Where do you want the first stamp on this itinerary?": {
+    "t": "你想喺呢張行程表上邊度蓋第一個印章?",
+    "r": "nei5 soeng2 hai2 ne1 zoeng1 hang4cing4 biu2 soeng5bin1 dou6 goi3 dai6jat1go3 jan3zoeng1"
+  },
+  "yue::Let us price flights before booking hotels.": {
+    "t": "我哋先比較機票價格，再訂酒店",
+    "r": "ngo5dei6 sin1 bei2gaau3 gei1piu3 gaa3gaak3 zoi3 deng6 zau2dim3"
+  },
+  "yue::Start packing cubes early to avoid stress.": {
+    "t": "提早開始整理收納袋以避免壓力",
+    "r": "tai4zou2 hoi1ci2 zing2lei5 sau1naap6 doi2 ji5 bei6min5 aat3lik6"
+  },
+  "yue::Keep a travel journal so memories stay bright.": {
+    "t": "保持旅遊日誌令回憶保持鮮明",
+    "r": "bou2ci4 leoi5jau4 jat6zi3 ling6 wui4jik1 bou2ci4 sin1ming4"
+  },
+  "ru::boarding pass": {
+    "t": "посадочный талон",
+    "r": "posadochnyy talon"
+  },
+  "ru::customs form": {
+    "t": "таможенная форма",
+    "r": "tamozhennaya forma"
+  },
+  "ru::travel insurance": {
+    "t": "туристическая страховка",
+    "r": "turisticheskaya strakhovka"
+  },
+  "ru::airport express": {
+    "t": "экспресс в аэропорт",
+    "r": "ekspress v aeroport"
+  },
+  "ru::time zone": {
+    "t": "часовой пояс",
+    "r": "chasovoy poyas"
+  },
+  "ru::arrival text": {
+    "t": "текст прибытия",
+    "r": "tekst pribytiya"
+  },
+  "ru::Send me a photo of your boarding pass to celebrate.": {
+    "t": "Пришлите мне фотографию вашего посадочного талона, чтобы отпраздновать это событие.",
+    "r": "Prishlite mne fotografiyu vashego posadochnogo talona, chtoby otprazdnovat' eto sobytiye."
+  },
+  "ru::Remember to fill out the customs form on the plane.": {
+    "t": "Не забудьте заполнить таможенную форму в самолете.",
+    "r": "Ne zabud'te zapolnit' tamozhennuyu formu v samolete."
+  },
+  "ru::Do you need help buying travel insurance tonight?": {
+    "t": "Вам нужна помощь в покупке туристической страховки сегодня вечером?",
+    "r": "Vam nuzhna pomoshch' v pokupke turisticheskoy strakhovki segodnya vecherom?"
+  },
+  "ru::Text me once you adjust to the new time zone.": {
+    "t": "Напиши мне, как только привыкнешь к новому часовому поясу.",
+    "r": "Napishi mne, kak tol'ko privyknesh' k novomu chasovomu poyasu."
+  },
+  "yue::boarding pass": {
+    "t": "登機證",
+    "r": "dang1gei1zing3"
+  },
+  "yue::customs form": {
+    "t": "海關申報表",
+    "r": "hoi2gwaan1 san1bou3 biu2"
+  },
+  "yue::travel insurance": {
+    "t": "旅遊保險",
+    "r": "leoi5jau4 bou2him2"
+  },
+  "yue::airport express": {
+    "t": "機場快綫",
+    "r": "gei1coeng4faai3sin3"
+  },
+  "yue::time zone": {
+    "t": "時區",
+    "r": "si4keoi1"
+  },
+  "yue::arrival text": {
+    "t": "到達訊息",
+    "r": "dou3daat6 seon3sik1"
+  },
+  "yue::Send me a photo of your boarding pass to celebrate.": {
+    "t": "發張你嘅登機證畀我慶祝吓",
+    "r": "faat3 zoeng1 nei5 ge3 dang1gei1zing3 bei3 ngo5 hing3zuk1 haa2"
+  },
+  "yue::Remember to fill out the customs form on the plane.": {
+    "t": "記得喺飛機上填寫海關申報表",
+    "r": "gei3dak1 hai2 fei1gei1 soeng5 tin4se2 hoi2gwaan1 san1bou3 biu2"
+  },
+  "yue::Do you need help buying travel insurance tonight?": {
+    "t": "你今晚需要幫手買旅遊保險嗎？",
+    "r": "nei5 gam1maan1 seoi1jiu3 bong1sau2 maai5 leoi5jau4 bou2him2 maa3"
+  },
+  "yue::Text me once you adjust to the new time zone.": {
+    "t": "你適應咗新時區之後send訊息畀我",
+    "r": "nei5 sik1jing3 zo2 san1 si4keoi1 zi1hau6 seon3sik1 bei3 ngo5"
+  },
+  "ru::cooking class": {
+    "t": "урок кулинарии",
+    "r": "urok kulinarii"
+  },
+  "ru::grocery list": {
+    "t": "список продуктов",
+    "r": "spisok produktov"
+  },
+  "ru::cutting board": {
+    "t": "разделочная доска",
+    "r": "razdelochnaya doska"
+  },
+  "ru::saucepan": {
+    "t": "кастрюля",
+    "r": "kastryulya"
+  },
+  "ru::seasoning": {
+    "t": "приправа",
+    "r": "priprava"
+  },
+  "ru::taste test": {
+    "t": "тест на вкус",
+    "r": "test na vkus"
+  },
+  "ru::Write the grocery list before we leave the house.": {
+    "t": "Напишите список покупок, прежде чем выйти из дома.",
+    "r": "Napishite spisok pokupok, prezhde chem vyyti iz doma."
+  },
+  "ru::Hold the knife safely and breathe through the steps.": {
+    "t": "Держите нож надежно и дышите через ступеньки.",
+    "r": "Derzhite nozh nadezhno i dyshite cherez stupen'ki."
+  },
+  "ru::Taste the sauce and add seasoning slowly.": {
+    "t": "Попробуйте соус и медленно добавляйте приправы.",
+    "r": "Poprobuyte sous i medlenno dobavlyayte pripravy."
+  },
+  "ru::We can record the recipe so you repeat it later.": {
+    "t": "Мы можем записать рецепт, чтобы вы повторили его позже.",
+    "r": "My mozhem zapisat' retsept, chtoby vy povtorili yego pozzhe."
+  },
+  "yue::cooking class": {
+    "t": "烹飪課",
+    "r": "paang1jam6 fo3"
+  },
+  "yue::grocery list": {
+    "t": "雜貨清單",
+    "r": "zaap6fo3 cing1daan1"
+  },
+  "yue::cutting board": {
+    "t": "砧板",
+    "r": "zam1baan2"
+  },
+  "yue::saucepan": {
+    "t": "煮食鍋",
+    "r": "zyu2sik6 wo1"
+  },
+  "yue::seasoning": {
+    "t": "調味料",
+    "r": "tiu4mei6liu2"
+  },
+  "yue::taste test": {
+    "t": "試味",
+    "r": "si3mei6"
+  },
+  "yue::Write the grocery list before we leave the house.": {
+    "t": "喺我哋出門前寫好買餸清單",
+    "r": "hai2 ngo5dei6 ceot1mun4 cin4 se2 hou2 maai5sung3 cing1daan1"
+  },
+  "yue::Hold the knife safely and breathe through the steps.": {
+    "t": "安全地拿住刀，按步驟呼吸",
+    "r": "on1cyun4 dei6 laa2 zyu6 dou1 on3 bou6zaau6 fu1kap1"
+  },
+  "yue::Taste the sauce and add seasoning slowly.": {
+    "t": "試下醬汁嘅味道，再慢慢加調味料",
+    "r": "si3haa5 zoeng3zap1 ge3 mei6dou6 zoi3 maan6maan2 gaa1 tiu4mei6liu2"
+  },
+  "yue::We can record the recipe so you repeat it later.": {
+    "t": "我哋可以記錄呢個食譜，咁你遲啲可以再重複做",
+    "r": "ngo5dei6 ho2ji5 gei3luk6 ni1go3 sik6pou2 gam3 nei5 ci4di1 ho2ji5 zoi3 cung4fuk1 zou6"
+  },
+  "ru::alarm clock": {
+    "t": "будильник",
+    "r": "budil'nik"
+  },
+  "ru::sunrise walk": {
+    "t": "прогулка на рассвете",
+    "r": "progulka na rassvete"
+  },
+  "ru::coffee thermos": {
+    "t": "термос для кофе",
+    "r": "termos dlya kofe"
+  },
+  "ru::stretch mat": {
+    "t": "растягивающийся коврик",
+    "r": "rastyagivayushchiysya kovrik"
+  },
+  "ru::habit tracker": {
+    "t": "трекер привычек",
+    "r": "treker privychek"
+  },
+  "ru::reward snack": {
+    "t": "награда закуска",
+    "r": "nagrada zakuska"
+  },
+  "ru::Do you still set two alarms for Saturdays?": {
+    "t": "Вы все еще ставите два будильника на субботу?",
+    "r": "Vy vse yeshche stavite dva budil'nika na subbotu?"
+  },
+  "ru::Let us plan a sunrise walk to make it fun.": {
+    "t": "Давайте спланируем прогулку на рассвете, чтобы было весело.",
+    "r": "Davayte splaniruyem progulku na rassvete, chtoby bylo veselo."
+  },
+  "ru::I will pack a coffee thermos for the park bench.": {
+    "t": "Я возьму термос с кофе для скамейки в парке.",
+    "r": "YA voz'mu termos s kofe dlya skameyki v parke."
+  },
+  "ru::Mark the habit tracker every week you keep it up.": {
+    "t": "Отмечайте трекер привычек каждую неделю, пока вы его поддерживаете.",
+    "r": "Otmechayte treker privychek kazhduyu nedelyu, poka vy yego podderzhivayete."
+  },
+  "yue::alarm clock": {
+    "t": "鬧鐘",
+    "r": "naau6zung1"
+  },
+  "yue::sunrise walk": {
+    "t": "日出散步",
+    "r": "jat6ceot1 saan3bou6"
+  },
+  "yue::coffee thermos": {
+    "t": "咖啡保溫瓶",
+    "r": "gaa3fe1 bou2wan1 ping2"
+  },
+  "yue::stretch mat": {
+    "t": "伸展墊",
+    "r": "san1zin2 din3"
+  },
+  "yue::habit tracker": {
+    "t": "習慣追蹤器",
+    "r": "zaap6gwaan3 zeoi1zung1 hei3"
+  },
+  "yue::reward snack": {
+    "t": "獎勵小食",
+    "r": "zoeng2lai6 siu2sik6"
+  },
+  "yue::Do you still set two alarms for Saturdays?": {
+    "t": "你星期六仲會設兩個鬧鐘嗎？",
+    "r": "nei5 sing1kei4luk6 zung6wui5 cit3 loeng5 go3 naau6zung1 maa3"
+  },
+  "yue::Let us plan a sunrise walk to make it fun.": {
+    "t": "我哋計劃一次睇日出行走，令佢變得有趣",
+    "r": "ngo5dei6 gai3waak6 jat1ci3 tai2 jat6ceot1 haang4zau2 ling6 keoi5 bin3 dak1 jau5ceoi3"
+  },
+  "yue::I will pack a coffee thermos for the park bench.": {
+    "t": "我會為公園長椅準備一個保溫咖啡壺",
+    "r": "ngo5 wui5 wai6 gung1jyun2 coeng4ji2 zeon2bei6 jat1go3 bou2wan1 gaa3fe1wu2"
+  },
+  "yue::Mark the habit tracker every week you keep it up.": {
+    "t": "每星期喺你堅持嘅時候標記習慣追蹤器",
+    "r": "mui5 sing1kei4 hai2 nei5 gin1ci4 ge3 si4hau6 biu1gei3 zaap6gwaan3 zeoi1zung1 hei3"
+  },
+  "ru::long distance": {
+    "t": "большое расстояние",
+    "r": "bol'shoye rasstoyaniye"
+  },
+  "ru::video chat": {
+    "t": "видеочат",
+    "r": "videochat"
+  },
+  "ru::care package": {
+    "t": "пакет услуг по уходу",
+    "r": "paket uslug po ukhodu"
+  },
+  "ru::time difference": {
+    "t": "разница во времени",
+    "r": "raznitsa vo vremeni"
+  },
+  "ru::shared playlist": {
+    "t": "общий плейлист",
+    "r": "obshchiy pleylist"
+  },
+  "ru::future visit": {
+    "t": "будущий визит",
+    "r": "budushchiy vizit"
+  },
+  "ru::How is the new city treating you this week?": {
+    "t": "Как новый город относится к вам на этой неделе?",
+    "r": "Kak novyy gorod otnositsya k vam na etoy nedele?"
+  },
+  "ru::Let us schedule a video chat every Sunday morning.": {
+    "t": "Давайте запланируем видеочат каждое воскресное утро.",
+    "r": "Davayte zaplaniruyem videochat kazhdoye voskresnoye utro."
+  },
+  "ru::I am mailing a care package with photos.": {
+    "t": "Отправляю посылку с фотографиями.",
+    "r": "Otpravlyayu posylku s fotografiyami."
+  },
+  "ru::Start a list of places for my future visit.": {
+    "t": "Начну список мест для моего будущего визита.",
+    "r": "Nachnu spisok mest dlya moyego budushchego vizita."
+  },
+  "yue::long distance": {
+    "t": "長途",
+    "r": "coeng4tou4"
+  },
+  "yue::video chat": {
+    "t": "視像聊天",
+    "r": "si6zoeng6 liu4tin1"
+  },
+  "yue::care package": {
+    "t": "慰問包",
+    "r": "wai3man6 baau1"
+  },
+  "yue::time difference": {
+    "t": "時差",
+    "r": "si4caa1"
+  },
+  "yue::shared playlist": {
+    "t": "共享播放列表",
+    "r": "gung6hoeng2 bo3fong3lit6biu2"
+  },
+  "yue::future visit": {
+    "t": "未來的訪問",
+    "r": "mei6loi4 dik1 fong2man6"
+  },
+  "yue::How is the new city treating you this week?": {
+    "t": "新城市今個星期待你點？",
+    "r": "san1sing4 si5 gam1go3sing1kei4 doi6 nei5 dim2"
+  },
+  "yue::Let us schedule a video chat every Sunday morning.": {
+    "t": "我哋喺每個星期日上午安排視像通話",
+    "r": "ngo5dei6 hai2 mui5go3 sing1kei4jat6 soeng6ng5 on1paai4 si6zoeng6 tung1waa6"
+  },
+  "yue::I am mailing a care package with photos.": {
+    "t": "我正寄送一個附有相片的關懷包裹",
+    "r": "ngo5 zeng3 gei3sung3 jat1go3 fu6jau5 soeng3pin2 dik1 gwaan1waai4 baau1gwo2"
+  },
+  "yue::Start a list of places for my future visit.": {
+    "t": "開始列一個將來想去嘅地方清單",
+    "r": "hoi1ci2 lit6 jat1go3 zoeng1loi4 soeng2 heoi3 ge3 dei6fong1 cing1daan1"
+  },
+  "ru::morning alarm": {
+    "t": "утренний будильник",
+    "r": "utrenniy budil'nik"
+  },
+  "ru::smoothie": {
+    "t": "смузи",
+    "r": "smuzi"
+  },
+  "ru::oatmeal": {
+    "t": "овсянка",
+    "r": "ovsyanka"
+  },
+  "ru::stovetop pan": {
+    "t": "сковорода на плите",
+    "r": "skovoroda na plite"
+  },
+  "ru::grocery basket": {
+    "t": "продуктовая корзина",
+    "r": "produktovaya korzina"
+  },
+  "ru::habit streak": {
+    "t": "привычка",
+    "r": "privychka"
+  },
+  "ru::Did you manage a real breakfast today?": {
+    "t": "Удалось ли тебе сегодня позавтракать по-настоящему?",
+    "r": "Udalos' li tebe segodnya pozavtrakat' po-nastoyashchemu?"
+  },
+  "ru::Let us prep oatmeal jars for the whole week.": {
+    "t": "Заготовим баночки с овсянкой на всю неделю.",
+    "r": "Zagotovim banochki s ovsyankoy na vsyu nedelyu."
+  },
+  "ru::Send me a photo of your smoothie experiments.": {
+    "t": "Пришлите мне фото ваших экспериментов со смузи.",
+    "r": "Prishlite mne foto vashikh eksperimentov so smuzi."
+  },
+  "ru::Track the habit streak on the fridge calendar.": {
+    "t": "Отслеживайте полосу привычек в календаре холодильника.",
+    "r": "Otslezhivayte polosu privychek v kalendare kholodil'nika."
+  },
+  "yue::morning alarm": {
+    "t": "朝晨鬧鐘",
+    "r": "ziu1 san4 naau6zung1"
+  },
+  "yue::smoothie": {
+    "t": "奶昔",
+    "r": "naai5sik1"
+  },
+  "yue::oatmeal": {
+    "t": "燕麥",
+    "r": "jin3mak6"
+  },
+  "yue::stovetop pan": {
+    "t": "爐面煎鍋",
+    "r": "lou4 min6 zin1wo1"
+  },
+  "yue::grocery basket": {
+    "t": "雜貨籃",
+    "r": "zaap6fo3 laam4"
+  },
+  "yue::habit streak": {
+    "t": "習慣連續記錄",
+    "r": "zaap6gwaan3 lin4zuk6 gei3luk6"
+  },
+  "yue::Did you manage a real breakfast today?": {
+    "t": "你今日真係食咗早餐未？",
+    "r": "nei5 gam1jat6 zan1hai6 sik6 zo2 zou2caan1 mei6"
+  },
+  "yue::Let us prep oatmeal jars for the whole week.": {
+    "t": "我哋準備成星期嘅燕麥罐頭吧",
+    "r": "ngo5dei6 zeon2bei6 seng4 sing1kei4 ge3 jin3mak6 gun3tau2 baa1"
+  },
+  "yue::Send me a photo of your smoothie experiments.": {
+    "t": "發一張你嘅果昔實驗嘅相畀我",
+    "r": "faat3 jat1zoeng1 nei5 ge3 gwo2 sik1 sat6jim6 ge3 soeng2 bei3 ngo5"
+  },
+  "yue::Track the habit streak on the fridge calendar.": {
+    "t": "喺雪櫃日曆上追蹤習慣連續紀錄",
+    "r": "hai2 syut3gwai6 jat6lik6 soeng5 zeoi1zung1 zaap6gwaan3 lin4zuk6 gei2luk6"
+  },
+  "ru::lecture recap": {
+    "t": "конспект лекции",
+    "r": "konspekt lektsii"
+  },
+  "ru::presentation slides": {
+    "t": "слайды презентации",
+    "r": "slaydy prezentatsii"
+  },
+  "ru::study partner": {
+    "t": "партнер по учебе",
+    "r": "partner po uchebe"
+  },
+  "ru::campus shuttle": {
+    "t": "трансфер до кампуса",
+    "r": "transfer do kampusa"
+  },
+  "ru::tutor session": {
+    "t": "репетиторская сессия",
+    "r": "repetitorskaya sessiya"
+  },
+  "ru::coffee voucher": {
+    "t": "ваучер на кофе",
+    "r": "vaucher na kofe"
+  },
+  "ru::Xiao Ming, which notes confused you last week?": {
+    "t": "Сяо Мин, какие записи тебя смутили на прошлой неделе?",
+    "r": "Syao Min, kakiye zapisi tebya smutili na proshloy nedele?"
+  },
+  "ru::Let us split the presentation slides tonight.": {
+    "t": "Давайте сегодня вечером разделим слайды презентации.",
+    "r": "Davayte segodnya vecherom razdelim slaydy prezentatsii."
+  },
+  "ru::I can book the tutor session if you cover snacks.": {
+    "t": "Я могу записаться на занятия с репетитором, если вы оплатите закуски.",
+    "r": "YA mogu zapisat'sya na zanyatiya s repetitorom, yesli vy oplatite zakuski."
+  },
+  "ru::Meet me at the campus shuttle stop after class.": {
+    "t": "Встретимся на остановке автобуса после занятий.",
+    "r": "Vstretimsya na ostanovke avtobusa posle zanyatiy."
+  },
+  "yue::lecture recap": {
+    "t": "課堂回顧",
+    "r": "fo3tong4 wui4gu3"
+  },
+  "yue::presentation slides": {
+    "t": "簡報投影片",
+    "r": "gaan2bou3 tau4jing2 pin2"
+  },
+  "yue::study partner": {
+    "t": "讀書夥伴",
+    "r": "duk6syu1 fo2bun6"
+  },
+  "yue::campus shuttle": {
+    "t": "校園穿梭巴士",
+    "r": "haau6jyun2 cyun1so1baa1si2"
+  },
+  "yue::tutor session": {
+    "t": "補習課",
+    "r": "bou2zaap6 fo3"
+  },
+  "yue::coffee voucher": {
+    "t": "咖啡券",
+    "r": "gaa3fe1 gyun3"
+  },
+  "yue::Xiao Ming, which notes confused you last week?": {
+    "t": "小明，上星期邊啲筆記令你困惑呢？",
+    "r": "siu2ming4 soeng6sing1kei4 bin1di1 bat1gei3 ling6 nei5 kwan3waak6 ne1"
+  },
+  "yue::Let us split the presentation slides tonight.": {
+    "t": "今晚我哋分配演示文稿幻燈片",
+    "r": "gam1maan1 ngo5dei6 fan1pui3 jin2si6 man4gou2 waan6dang1pin2"
+  },
+  "yue::I can book the tutor session if you cover snacks.": {
+    "t": "如果你負責零食，我可以幫你預約導師課堂",
+    "r": "jyu4gu2 nei5 fu6zaak3 ling4sik6 ngo5 ho2ji5 bong1 nei5 jyu6joek3 dou6si1 fo3tong4"
+  },
+  "yue::Meet me at the campus shuttle stop after class.": {
+    "t": "課後喺校園穿梭巴士站同我見面",
+    "r": "fo3hau6 hai2 haau6jyun2 cyun1so1baa1si2 zaam6 tung4 ngo5 gin3min6"
+  },
+  "ru::group chat": {
+    "t": "групповой чат",
+    "r": "gruppovoy chat"
+  },
+  "ru::reservation": {
+    "t": "бронирование",
+    "r": "bronirovaniye"
+  },
+  "ru::carpool": {
+    "t": "автобаза",
+    "r": "avtobaza"
+  },
+  "ru::shared bill": {
+    "t": "общий счет",
+    "r": "obshchiy schet"
+  },
+  "ru::photo booth": {
+    "t": "фотобудка",
+    "r": "fotobudka"
+  },
+  "ru::after party": {
+    "t": "после вечеринки",
+    "r": "posle vecherinki"
+  },
+  "ru::Chun, did everyone reply in the group chat?": {
+    "t": "Чун, все ответили в групповом чате?",
+    "r": "Chun, vse otvetili v gruppovom chate?"
+  },
+  "ru::Let us confirm the reservation time before leaving.": {
+    "t": "Давайте подтвердим время бронирования перед отъездом.",
+    "r": "Davayte podtverdim vremya bronirovaniya pered ot\"yezdom."
+  },
+  "ru::I will coordinate carpool spots from campus.": {
+    "t": "Я буду координировать места для совместного использования автомобилей из кампуса.",
+    "r": "YA budu koordinirovat' mesta dlya sovmestnogo ispol'zovaniya avtomobiley iz kampusa."
+  },
+  "ru::Plan one silly photo booth pose for the group.": {
+    "t": "Придумайте для группы одну глупую позу в фотобудке.",
+    "r": "Pridumayte dlya gruppy odnu glupuyu pozu v fotobudke."
+  },
+  "yue::group chat": {
+    "t": "群組聊天",
+    "r": "kwan4 zou2 liu4tin1"
+  },
+  "yue::reservation": {
+    "t": "預訂",
+    "r": "jyu6deng6"
+  },
+  "yue::carpool": {
+    "t": "共乘",
+    "r": "gung6sing4"
+  },
+  "yue::shared bill": {
+    "t": "AA制",
+    "r": "ei1ei1zai3"
+  },
+  "yue::photo booth": {
+    "t": "攝影亭",
+    "r": "sip3jing2 ting4"
+  },
+  "yue::after party": {
+    "t": "派對之後",
+    "r": "paai3deoi3 zi1hau6"
+  },
+  "yue::Chun, did everyone reply in the group chat?": {
+    "t": "Chun，大家喺群組留言有冇回覆呀？",
+    "r": "daai6gaa1 hai2 kwan4 zou2 lau4jin4 jau5mou5 wui4fuk1 aa4"
+  },
+  "yue::Let us confirm the reservation time before leaving.": {
+    "t": "出發前我哋先確認訂位時間",
+    "r": "ceot1faat3 cin4 ngo5dei6 sin1 kok3jing6 deng6wai2 si4gaan1"
+  },
+  "yue::I will coordinate carpool spots from campus.": {
+    "t": "我會安排由校園出發嘅共乘點",
+    "r": "ngo5 wui6on1 paai4 jau4 haau6jyun2 ceot1faat3 ge3 gung6sing4 dim2"
+  },
+  "yue::Plan one silly photo booth pose for the group.": {
+    "t": "為小組設計一個傻傻的影相亭姿勢",
+    "r": "wai6 siu2zou2 cit3gai3 jat1go3 so4 so4 dik1 jing2soeng2 ting4 zi1sai3"
+  },
+  "ru::pet adoption": {
+    "t": "усыновление домашнего животного",
+    "r": "usynovleniye domashnego zhivotnogo"
+  },
+  "ru::daily walk": {
+    "t": "ежедневная прогулка",
+    "r": "yezhednevnaya progulka"
+  },
+  "ru::food bowl": {
+    "t": "миска для еды",
+    "r": "miska dlya yedy"
+  },
+  "ru::vet visit": {
+    "t": "визит к ветеринару",
+    "r": "vizit k veterinaru"
+  },
+  "ru::training treats": {
+    "t": "обучение угощения",
+    "r": "obucheniye ugoshcheniya"
+  },
+  "ru::care schedule": {
+    "t": "график ухода",
+    "r": "grafik ukhoda"
+  },
+  "ru::What kind of dog would make you happiest?": {
+    "t": "Какая собака сделает вас самым счастливым?",
+    "r": "Kakaya sobaka sdelayet vas samym schastlivym?"
+  },
+  "ru::Let us read about daily walks and chores together.": {
+    "t": "Давайте вместе почитаем о ежедневных прогулках и домашних делах.",
+    "r": "Davayte vmeste pochitayem o yezhednevnykh progulkakh i domashnikh delakh."
+  },
+  "ru::We can visit a shelter to learn from staff.": {
+    "t": "Мы можем посетить приют, чтобы поучиться у персонала.",
+    "r": "My mozhem posetit' priyut, chtoby pouchit'sya u personala."
+  },
+  "ru::Create a care schedule so the whole family can help.": {
+    "t": "Составьте график ухода, чтобы вся семья могла помочь.",
+    "r": "Sostav'te grafik ukhoda, chtoby vsya sem'ya mogla pomoch'."
+  },
+  "yue::pet adoption": {
+    "t": "領養寵物",
+    "r": "ling5joeng5 cung2mat6"
+  },
+  "yue::daily walk": {
+    "t": "每日步行",
+    "r": "mui5jat6 bou6hang4"
+  },
+  "yue::food bowl": {
+    "t": "食物碗",
+    "r": "sik6mat6 wun2"
+  },
+  "yue::vet visit": {
+    "t": "睇獸醫",
+    "r": "tai2 sau3ji1"
+  },
+  "yue::training treats": {
+    "t": "訓練獎勵",
+    "r": "fan3lin6 zoeng2lai6"
+  },
+  "yue::care schedule": {
+    "t": "護理時間表",
+    "r": "wu6lei5 si4gaan1biu2"
+  },
+  "yue::What kind of dog would make you happiest?": {
+    "t": "乜嘢種類嘅狗會令你最開心?",
+    "r": "mat1je5 zung2leoi6 ge3 gau2wui2 ling6 nei5 zeoi3 hoi1sam1"
+  },
+  "yue::Let us read about daily walks and chores together.": {
+    "t": "讓我哋一齊睇下每日散步同日常家務",
+    "r": "joeng6 ngo5dei6 jat1cai4 tai2haa5 mui5jat6 saan3bou6 tung4jat6 soeng4 gaa1mou6"
+  },
+  "yue::We can visit a shelter to learn from staff.": {
+    "t": "我哋可以去庇護所向職員學習",
+    "r": "ngo5dei6 ho2ji5 heoi3 bei3wu6so2 hoeng3 zik1jyun4 hok6zaap6"
+  },
+  "yue::Create a care schedule so the whole family can help.": {
+    "t": "制定一個護理時間表，令全家人都可以幫手。",
+    "r": "zai3ding6 jat1go3 wu6lei5 si4gaan1biu2 ling6 cyun4gaa1 jan4 dou1 ho2ji5 bong1sau2"
+  },
+  "ru::family tree": {
+    "t": "генеалогическое древо",
+    "r": "genealogicheskoye drevo"
+  },
+  "ru::photo album": {
+    "t": "фотоальбом",
+    "r": "fotoal'bom"
+  },
+  "ru::potluck": {
+    "t": "обед",
+    "r": "obed"
+  },
+  "ru::shared courtyard": {
+    "t": "общий двор",
+    "r": "obshchiy dvor"
+  },
+  "ru::story night": {
+    "t": "ночь историй",
+    "r": "noch' istoriy"
+  },
+  "ru::memory box": {
+    "t": "ящик памяти",
+    "r": "yashchik pamyati"
+  },
+  "ru::Tell me again how big your family became over the years.": {
+    "t": "Расскажи мне еще раз, насколько большой стала твоя семья за эти годы.",
+    "r": "Rasskazhi mne yeshche raz, naskol'ko bol'shoy stala tvoya sem'ya za eti gody."
+  },
+  "ru::Let us label the photo album before it fades.": {
+    "t": "Давайте маркируем фотоальбом, пока он не потускнел.",
+    "r": "Davayte markiruyem fotoal'bom, poka on ne potusknel."
+  },
+  "ru::I can bring dessert for the next potluck.": {
+    "t": "Я могу принести десерт на следующий обед.",
+    "r": "YA mogu prinesti desert na sleduyushchiy obed."
+  },
+  "ru::We should plan a story night for the younger kids.": {
+    "t": "Нам следует запланировать вечер сказок для детей младшего возраста.",
+    "r": "Nam sleduyet zaplanirovat' vecher skazok dlya detey mladshego vozrasta."
+  },
+  "yue::family tree": {
+    "t": "家譜",
+    "r": "gaa1pou2"
+  },
+  "yue::photo album": {
+    "t": "相簿",
+    "r": "soeng2bou2"
+  },
+  "yue::potluck": {
+    "t": "百樂餐",
+    "r": "baak3lok6caan1"
+  },
+  "yue::shared courtyard": {
+    "t": "共享天井",
+    "r": "gung6hoeng2 tin1zeng2"
+  },
+  "yue::story night": {
+    "t": "故事之夜",
+    "r": "gu3si6 zi1 je6"
+  },
+  "yue::memory box": {
+    "t": "回憶盒",
+    "r": "wui4jik1 hap6"
+  },
+  "yue::Tell me again how big your family became over the years.": {
+    "t": "再同我講下你屋企呢幾年變得幾大。",
+    "r": "zoi3 tung4 ngo5 gong2haa5 nei5 uk1kei2 ne1 gei2 nin4 bin3 dak1 gei2daai6"
+  },
+  "yue::Let us label the photo album before it fades.": {
+    "t": "我哋喺相簿褪色之前標籤佢",
+    "r": "ngo5dei6 hai2 soeng2bou2 tan3sik1 zi1cin4 biu1cim1 keoi5"
+  },
+  "yue::I can bring dessert for the next potluck.": {
+    "t": "我可以為下一次的百樂餐帶甜點",
+    "r": "ngo5 ho2ji5 wai6 haa6jat1ci3 dik1 baak3lok6caan1 daai3 tim4dim2"
+  },
+  "yue::We should plan a story night for the younger kids.": {
+    "t": "我哋應該為細路仔安排一個故事之夜",
+    "r": "ngo5dei6 jing1goi1 wai6 sai3lou6zai2 on1paai4 jat1go3 gu3si6 zi1 je6"
+  },
+  "ru::breathing drill": {
+    "t": "дыхательное упражнение",
+    "r": "dykhatel'noye uprazhneniye"
+  },
+  "ru::affirmation": {
+    "t": "утверждение",
+    "r": "utverzhdeniye"
+  },
+  "ru::coffee walk": {
+    "t": "кофейная прогулка",
+    "r": "kofeynaya progulka"
+  },
+  "ru::calm playlist": {
+    "t": "спокойный плейлист",
+    "r": "spokoynyy pleylist"
+  },
+  "ru::support text": {
+    "t": "текст поддержки",
+    "r": "tekst podderzhki"
+  },
+  "ru::reward plan": {
+    "t": "план вознаграждения",
+    "r": "plan voznagrazhdeniya"
+  },
+  "ru::Ah Fai, let us do a breathing drill before you leave.": {
+    "t": "Ах, Фай, давай сделаем дыхательную гимнастику, прежде чем ты уйдешь.",
+    "r": "Akh, Fay, davay sdelayem dykhatel'nuyu gimnastiku, prezhde chem ty uydesh'."
+  },
+  "ru::Type out the affirmation you want to read during breaks.": {
+    "t": "Напишите утверждение, которое вы хотите читать во время перерывов.",
+    "r": "Napishite utverzhdeniye, kotoroye vy khotite chitat' vo vremya pereryvov."
+  },
+  "ru::I will walk you to the bus stop with coffee.": {
+    "t": "Я провожу тебя до автобусной остановки с кофе.",
+    "r": "YA provozhu tebya do avtobusnoy ostanovki s kofe."
+  },
+  "ru::Plan a reward tonight so the day feels doable.": {
+    "t": "Запланируйте награду сегодня вечером, чтобы день казался выполнимым.",
+    "r": "Zaplaniruyte nagradu segodnya vecherom, chtoby den' kazalsya vypolnimym."
+  },
+  "yue::breathing drill": {
+    "t": "呼吸訓練",
+    "r": "fu1kap1 fan3lin6"
+  },
+  "yue::affirmation": {
+    "t": "肯定",
+    "r": "hang2ding6"
+  },
+  "yue::coffee walk": {
+    "t": "咖啡散步",
+    "r": "gaa3fe1 saan3bou6"
+  },
+  "yue::calm playlist": {
+    "t": "平靜播放列表",
+    "r": "ping4zing6 bo3fong3lit6biu2"
+  },
+  "yue::support text": {
+    "t": "支援文字",
+    "r": "zi1wun4 man4zi6"
+  },
+  "yue::reward plan": {
+    "t": "獎勵計劃",
+    "r": "zoeng2lai6 gai3waak6"
+  },
+  "yue::Ah Fai, let us do a breathing drill before you leave.": {
+    "t": "阿輝，喺你走之前我哋做個呼吸練習啦",
+    "r": "aa3fai1 hai2 nei5 zau2 zi1cin4 ngo5dei6 zou6 go3 fu1kap1 lin6zaap6 la1"
+  },
+  "yue::Type out the affirmation you want to read during breaks.": {
+    "t": "打出你想喺休息時閱讀嘅肯定句",
+    "r": "daa2ceot1 nei5 soeng2 hai2 jau1sik1 si4 jyut6duk6 ge3 hang2ding6geoi3"
+  },
+  "yue::I will walk you to the bus stop with coffee.": {
+    "t": "我會帶住咖啡行埋你去巴士站",
+    "r": "ngo5 wui5 daai3zyu6 gaa3fe1 haang4maai4 nei5 heoi3 baa1si2zaam6"
+  },
+  "yue::Plan a reward tonight so the day feels doable.": {
+    "t": "今晚安排一個獎勵，令呢一日感覺可以應付",
+    "r": "gam1maan1 on1paai4 jat1go3 zoeng2lai6 ling6 ne1 jat1jat6 gam2gok3 ho2ji5 jing3fu6"
+  },
+  "ru::childhood memory": {
+    "t": "детские воспоминания",
+    "r": "detskiye vospominaniya"
+  },
+  "ru::trust exercise": {
+    "t": "упражнение на доверие",
+    "r": "uprazhneniye na doveriye"
+  },
+  "ru::team project": {
+    "t": "командный проект",
+    "r": "komandnyy proyekt"
+  },
+  "ru::apology": {
+    "t": "извинение",
+    "r": "izvineniye"
+  },
+  "ru::shared journal": {
+    "t": "общий журнал",
+    "r": "obshchiy zhurnal"
+  },
+  "ru::celebration toast": {
+    "t": "праздничный тост",
+    "r": "prazdnichnyy tost"
+  },
+  "ru::What first connected Ah Jan and Ka Ling?": {
+    "t": "Что впервые связало А Джана и Ка Линга?",
+    "r": "Chto vpervyye svyazalo A Dzhana i Ka Linga?"
+  },
+  "ru::Let us document the tough moments alongside the sweet ones.": {
+    "t": "Давайте задокументируем трудные моменты наряду с приятными.",
+    "r": "Davayte zadokumentiruyem trudnyye momenty naryadu s priyatnymi."
+  },
+  "ru::Maybe they need a new trust exercise to reset.": {
+    "t": "Возможно, им нужно новое упражнение по доверию для перезагрузки.",
+    "r": "Vozmozhno, im nuzhno novoye uprazhneniye po doveriyu dlya perezagruzki."
+  },
+  "ru::End the story with gratitude for long friendships.": {
+    "t": "Завершите рассказ благодарностью за долгую дружбу.",
+    "r": "Zavershite rasskaz blagodarnost'yu za dolguyu druzhbu."
+  },
+  "yue::childhood memory": {
+    "t": "童年回憶",
+    "r": "tung4nin4 wui4jik1"
+  },
+  "yue::trust exercise": {
+    "t": "信任練習",
+    "r": "seon3jam6 lin6zaap6"
+  },
+  "yue::team project": {
+    "t": "團隊項目",
+    "r": "tyun4deoi2 hong6muk6"
+  },
+  "yue::apology": {
+    "t": "道歉",
+    "r": "dou6hip3"
+  },
+  "yue::shared journal": {
+    "t": "共享日誌",
+    "r": "gung6hoeng2 jat6zi3"
+  },
+  "yue::celebration toast": {
+    "t": "慶祝乾杯",
+    "r": "hing3zuk1 gon1bui1"
+  },
+  "yue::What first connected Ah Jan and Ka Ling?": {
+    "t": "乜嘢係第一次令阿珍同家玲互相認識？",
+    "r": "mat1je5 hai6 dai6jat1ci3 ling6 aa3zan1 tung4 gaa1 ling4 wu6soeng1 jing6sik1"
+  },
+  "yue::Let us document the tough moments alongside the sweet ones.": {
+    "t": "讓我哋記錄住艱難嘅時刻同甜美嘅時刻",
+    "r": "joeng6 ngo5dei6 gei3luk6 zyu6 gaan1naan4 ge3 si4haak1 tung4 tim4mei5 ge3 si4haak1"
+  },
+  "yue::Maybe they need a new trust exercise to reset.": {
+    "t": "可能佢哋需要一個新嘅互信練習嚟重置。",
+    "r": "ho2nang4 keoi5dei6 seoi1jiu3 jat1go3 san1 ge3 wu6seon3 lin6zaap6 lei4 cung4zi3"
+  },
+  "yue::End the story with gratitude for long friendships.": {
+    "t": "以對長久友誼的感激作結",
+    "r": "ji5 deoi3 coeng4gau2 jau5ji4 dik1 gam2gik1 zok3 git3"
+  },
+  "ru::concert ticket": {
+    "t": "билет на концерт",
+    "r": "bilet na kontsert"
+  },
+  "ru::merch table": {
+    "t": "стол с товарами",
+    "r": "stol s tovarami"
+  },
+  "ru::set list": {
+    "t": "установить список",
+    "r": "ustanovit' spisok"
+  },
+  "ru::encore": {
+    "t": "выйти на бис",
+    "r": "vyyti na bis"
+  },
+  "ru::ride home": {
+    "t": "ехать домой",
+    "r": "yekhat' domoy"
+  },
+  "ru::fan club": {
+    "t": "фан-клуб",
+    "r": "fan-klub"
+  },
+  "ru::Which song from the set list surprised you most?": {
+    "t": "Какая песня из сет-листа удивила вас больше всего?",
+    "r": "Kakaya pesnya iz set-lista udivila vas bol'she vsego?"
+  },
+  "ru::Did you grab anything from the merch table?": {
+    "t": "Ты взял что-нибудь со стола с товарами?",
+    "r": "Ty vzyal chto-nibud' so stola s tovarami?"
+  },
+  "ru::Let us plan a ride home before the encore rush.": {
+    "t": "Давайте спланируем поездку домой до того, как нас поторопят выйти на бис.",
+    "r": "Davayte splaniruyem poyezdku domoy do togo, kak nas potoropyat vyyti na bis."
+  },
+  "ru::I will join the fan club newsletter with you.": {
+    "t": "Я подпишусь на рассылку новостей фан-клуба вместе с вами.",
+    "r": "YA podpishus' na rassylku novostey fan-kluba vmeste s vami."
+  },
+  "yue::concert ticket": {
+    "t": "音樂會門票",
+    "r": "jam1ngok6wui2 mun4piu3"
+  },
+  "yue::merch table": {
+    "t": "周邊商品桌",
+    "r": "zau1bin1 soeng1ban2 coek3"
+  },
+  "yue::set list": {
+    "t": "設定列表",
+    "r": "cit3ding6 lit6biu2"
+  },
+  "yue::encore": {
+    "t": "再來一次",
+    "r": "zoi3loi4 jat1ci3"
+  },
+  "yue::ride home": {
+    "t": "搭車返屋企",
+    "r": "daap3ce1 faan1uk1kei2"
+  },
+  "yue::fan club": {
+    "t": "粉絲會",
+    "r": "fan2si1 wui5"
+  },
+  "yue::Which song from the set list surprised you most?": {
+    "t": "歌單入面邊首歌最令你意外?",
+    "r": "go1 daan1 jap6min6 bin1sau2 go1 zeoi3 ling6 nei5 ji3ngoi6"
+  },
+  "yue::Did you grab anything from the merch table?": {
+    "t": "你有冇喺周邊產品枱攞啲嘢呀？",
+    "r": "nei5 jau5mou5 hai2 zau1bin1 caan2ban2 toi2 lo2 di1 je5 aa4"
+  },
+  "yue::Let us plan a ride home before the encore rush.": {
+    "t": "我哋喺安可加場人潮之前計劃返屋企路程",
+    "r": "ngo5dei6 hai2 on1ho2 gaa1coeng4 jan4ciu4 zi1cin4 gai3waak6 faan1uk1kei2 lou6cing4"
+  },
+  "yue::I will join the fan club newsletter with you.": {
+    "t": "我會同你一齊訂閱粉絲會通訊",
+    "r": "ngo5 wui3tung4 nei5 jat1cai4 deng6jyut6 fan2si1 wui5 tung1seon3"
+  },
+  "ru::shared sofa": {
+    "t": "общий диван",
+    "r": "obshchiy divan"
+  },
+  "ru::quiet corner": {
+    "t": "тихий уголок",
+    "r": "tikhiy ugolok"
+  },
+  "ru::chore wheel": {
+    "t": "рутинное колесо",
+    "r": "rutinnoye koleso"
+  },
+  "ru::laundry slot": {
+    "t": "слот для прачечной",
+    "r": "slot dlya prachechnoy"
+  },
+  "ru::kitchen timer": {
+    "t": "кухонный таймер",
+    "r": "kukhonnyy taymer"
+  },
+  "ru::family forum": {
+    "t": "семейный форум",
+    "r": "semeynyy forum"
+  },
+  "ru::How many people are home tonight?": {
+    "t": "Сколько человек сегодня вечером дома?",
+    "r": "Skol'ko chelovek segodnya vecherom doma?"
+  },
+  "ru::Let us design a chore wheel that feels fair.": {
+    "t": "Давайте создадим рутинное колесо, которое будет справедливым.",
+    "r": "Davayte sozdadim rutinnoye koleso, kotoroye budet spravedlivym."
+  },
+  "ru::Reserve a quiet corner for study time.": {
+    "t": "Зарезервируйте тихий уголок для учебы.",
+    "r": "Zarezerviruyte tikhiy ugolok dlya ucheby."
+  },
+  "ru::Schedule a short family forum on Sunday evenings.": {
+    "t": "Запланируйте короткий семейный форум на воскресный вечер.",
+    "r": "Zaplaniruyte korotkiy semeynyy forum na voskresnyy vecher."
+  },
+  "yue::shared sofa": {
+    "t": "共享梳化",
+    "r": "gung6hoeng2 so1faa2"
+  },
+  "yue::quiet corner": {
+    "t": "寧靜角落",
+    "r": "ning4zing6 gok3lok1"
+  },
+  "yue::chore wheel": {
+    "t": "家務輪值表",
+    "r": "gaa1mou6 leon4zik6 biu2"
+  },
+  "yue::laundry slot": {
+    "t": "洗衣投放槽",
+    "r": "sai2ji1 tau4fong3 cou4"
+  },
+  "yue::kitchen timer": {
+    "t": "廚房計時器",
+    "r": "ceoi4fong2 gai3si4hei3"
+  },
+  "yue::family forum": {
+    "t": "家庭論壇",
+    "r": "gaa1ting4 leon6taan4"
+  },
+  "yue::How many people are home tonight?": {
+    "t": "今晚屋企有幾多人？",
+    "r": "gam1maan1 uk1kei2 jau5 gei2do1 jan4"
+  },
+  "yue::Let us design a chore wheel that feels fair.": {
+    "t": "讓我哋設計一個公平嘅家務輪班表",
+    "r": "joeng6 ngo5dei6 cit3gai3 jat1go3 gung1ping4 ge3 gaa1mou6 leon4baan1 biu2"
+  },
+  "yue::Reserve a quiet corner for study time.": {
+    "t": "預留一個安靜嘅角落用嚟讀書",
+    "r": "jyu6lau4 jat1go3 on1zing6 ge3 gok3lok1 jung6lai4 duk6syu1"
+  },
+  "yue::Schedule a short family forum on Sunday evenings.": {
+    "t": "安排一個短嘅家庭論壇喺星期日晚間",
+    "r": "on1paai4 jat1go3 dyun2 ge3 gaa1ting4 leon6taan4 hai2 sing1kei4jat6 maan5gaan1"
+  },
+  "ru::table manners": {
+    "t": "манеры за столом",
+    "r": "manery za stolom"
+  },
+  "ru::servers": {
+    "t": "серверы",
+    "r": "servery"
+  },
+  "ru::side dish": {
+    "t": "гарнир",
+    "r": "garnir"
+  },
+  "ru::dessert tray": {
+    "t": "десертный поднос",
+    "r": "desertnyy podnos"
+  },
+  "ru::closing time": {
+    "t": "время закрытия",
+    "r": "vremya zakrytiya"
+  },
+  "ru::night tram": {
+    "t": "ночной трамвай",
+    "r": "nochnoy tramvay"
+  },
+  "ru::Kwong Jai, which table feels best for conversation?": {
+    "t": "Квонг Джай, за каким столом лучше всего разговаривать?",
+    "r": "Kvong Dzhay, za kakim stolom luchshe vsego razgovarivat'?"
+  },
+  "ru::Let us try a new side dish before dessert.": {
+    "t": "Давайте попробуем новый гарнир перед десертом.",
+    "r": "Davayte poprobuyem novyy garnir pered desertom."
+  },
+  "ru::Thank the servers since they stayed late for us.": {
+    "t": "Поблагодарите официантов, так как они задержались из-за нас.",
+    "r": "Poblagodarite ofitsiantov, tak kak oni zaderzhalis' iz-za nas."
+  },
+  "ru::Do you want to take the night tram together afterward?": {
+    "t": "Хотите потом вместе сесть на ночной трамвай?",
+    "r": "Khotite potom vmeste sest' na nochnoy tramvay?"
+  },
+  "yue::table manners": {
+    "t": "餐桌禮儀",
+    "r": "caan1coek3 lai5ji4"
+  },
+  "yue::servers": {
+    "t": "伺服器",
+    "r": "si6fuk6hei3"
+  },
+  "yue::side dish": {
+    "t": "配菜",
+    "r": "pui3coi3"
+  },
+  "yue::dessert tray": {
+    "t": "甜品盤",
+    "r": "tim4ban2 pun4"
+  },
+  "yue::closing time": {
+    "t": "關門時間",
+    "r": "gwaan1mun4 si4gaan1"
+  },
+  "yue::night tram": {
+    "t": "夜間電車",
+    "r": "je6gaan1 din6ce1"
+  },
+  "yue::Kwong Jai, which table feels best for conversation?": {
+    "t": "廣仔，邊張枱傾偈最舒服？",
+    "r": "gwong2 zai2 bin1zoeng1 toi2 keng1gai2 zeoi3 syu1fuk6"
+  },
+  "yue::Let us try a new side dish before dessert.": {
+    "t": "我哋喺甜品前試吓新嘅配菜",
+    "r": "ngo5dei6 hai2 tim4ban2 cin4 si3 haa2 san1 ge3 pui3coi3"
+  },
+  "yue::Thank the servers since they stayed late for us.": {
+    "t": "多謝嗰啲伺服員，因為佢哋為我哋留到咁夜。",
+    "r": "do1ze6 go2di1 zi6fuk6 jyun4 jan1wai6 keoi5dei6 wai6 ngo5dei6 lau4 dou2 gam3je6"
+  },
+  "yue::Do you want to take the night tram together afterward?": {
+    "t": "你想唔想之後一齊搭夜間電車？",
+    "r": "nei5 soeng2 m4 soeng2 zi1hau6 jat1cai4 daap3 je6gaan1 din6ce1"
+  },
+  "ru::breed research": {
+    "t": "исследование породы",
+    "r": "issledovaniye porody"
+  },
+  "ru::pet budget": {
+    "t": "бюджет на домашнее животное",
+    "r": "byudzhet na domashneye zhivotnoye"
+  },
+  "ru::trial visit": {
+    "t": "пробный визит",
+    "r": "probnyy vizit"
+  },
+  "ru::leash": {
+    "t": "поводок",
+    "r": "povodok"
+  },
+  "ru::groomer": {
+    "t": "грумер",
+    "r": "grumer"
+  },
+  "ru::training class": {
+    "t": "учебный класс",
+    "r": "uchebnyy klass"
+  },
+  "ru::Which breeds match your lifestyle, Ah Sum?": {
+    "t": "Какие породы соответствуют твоему образу жизни, А Сум?",
+    "r": "Kakiye porody sootvetstvuyut tvoyemu obrazu zhizni, A Sum?"
+  },
+  "ru::Let us build a pet budget before you swipe a card.": {
+    "t": "Давайте составим бюджет для домашних животных, прежде чем вы проведете карту.",
+    "r": "Davayte sostavim byudzhet dlya domashnikh zhivotnykh, prezhde chem vy provedete kartu."
+  },
+  "ru::Schedule a trial visit with the dog this weekend.": {
+    "t": "Запланируйте пробный визит с собакой на эти выходные.",
+    "r": "Zaplaniruyte probnyy vizit s sobakoy na eti vykhodnyye."
+  },
+  "ru::I can join a training class with you if needed.": {
+    "t": "При необходимости могу присоединиться к вам на тренинге.",
+    "r": "Pri neobkhodimosti mogu prisoyedinit'sya k vam na treninge."
+  },
+  "yue::breed research": {
+    "t": "繁殖研究",
+    "r": "faan4zik6 jin4gau3"
+  },
+  "yue::pet budget": {
+    "t": "寵物預算",
+    "r": "cung2mat6 jyu6syun3"
+  },
+  "yue::trial visit": {
+    "t": "試用訪問",
+    "r": "si3jung6 fong2man6"
+  },
+  "yue::leash": {
+    "t": "狗繩",
+    "r": "gau2sing2"
+  },
+  "yue::groomer": {
+    "t": "寵物美容師",
+    "r": "cung2mat6 mei5jung4si1"
+  },
+  "yue::training class": {
+    "t": "訓練班",
+    "r": "fan3lin6 baan1"
+  },
+  "yue::Which breeds match your lifestyle, Ah Sum?": {
+    "t": "邊啲品種啱你嘅生活方式，阿沈？",
+    "r": "bin1di1 ban2zung2 aam1 nei5 ge3 sang1wut6fong1sik1 aa3 sam2"
+  },
+  "yue::Let us build a pet budget before you swipe a card.": {
+    "t": "喺你刷卡之前，我哋先制定一個寵物預算",
+    "r": "hai2 nei5 caat3kaat1 zi1cin4 ngo5dei6 sin1 zai3ding6 jat1go3 cung2mat6 jyu6syun3"
+  },
+  "yue::Schedule a trial visit with the dog this weekend.": {
+    "t": "安排今個周末同隻狗試吓探訪",
+    "r": "on1paai4 gam1go3 zau1mut6 tung4 zek3 gau2 si3 haa2 taam3fong2"
+  },
+  "yue::I can join a training class with you if needed.": {
+    "t": "如果需要嘅話，我可以同你一齊參加訓練班。",
+    "r": "jyu4gu2 seoi1jiu3 ge3waa2 ngo5 ho2ji5 tung4 nei5 jat1cai4 caam1gaa1 fan3lin6 baan1"
+  },
+  "ru::class timetable": {
+    "t": "расписание занятий",
+    "r": "raspisaniye zanyatiy"
+  },
+  "ru::study slot": {
+    "t": "слот для учебы",
+    "r": "slot dlya ucheby"
+  },
+  "ru::lab hour": {
+    "t": "лабораторный час",
+    "r": "laboratornyy chas"
+  },
+  "ru::club signup": {
+    "t": "регистрация в клубе",
+    "r": "registratsiya v klube"
+  },
+  "ru::open period": {
+    "t": "открытый период",
+    "r": "otkrytyy period"
+  },
+  "ru::printer queue": {
+    "t": "очередь принтера",
+    "r": "ochered' printera"
+  },
+  "ru::Jason, highlight the tough classes in your planner.": {
+    "t": "Джейсон, выдели в своем ежедневнике сложные занятия.",
+    "r": "Dzheyson, vydeli v svoyem yezhednevnike slozhnyye zanyatiya."
+  },
+  "ru::Let us add a study slot between lab hours.": {
+    "t": "Давайте добавим учебный интервал между лабораторными часами.",
+    "r": "Davayte dobavim uchebnyy interval mezhdu laboratornymi chasami."
+  },
+  "ru::Do not forget to pencil in club signups.": {
+    "t": "Не забудьте записать карандашом регистрацию в клубе.",
+    "r": "Ne zabud'te zapisat' karandashom registratsiyu v klube."
+  },
+  "ru::Print copies of the schedule and stick one on the door.": {
+    "t": "Распечатайте копии расписания и приклейте одну на дверь.",
+    "r": "Raspechatayte kopii raspisaniya i prikleyte odnu na dver'."
+  },
+  "yue::class timetable": {
+    "t": "課程時間表",
+    "r": "fo3cing4 si4gaan1biu2"
+  },
+  "yue::study slot": {
+    "t": "讀書時段",
+    "r": "duk6syu1 si4dyun6"
+  },
+  "yue::lab hour": {
+    "t": "實驗室時間",
+    "r": "sat6jim6sat1 si4gaan1"
+  },
+  "yue::club signup": {
+    "t": "俱樂部報名",
+    "r": "keoi1lok6bou6 bou3meng2"
+  },
+  "yue::open period": {
+    "t": "開放期",
+    "r": "hoi1fong3 kei4"
+  },
+  "yue::printer queue": {
+    "t": "打印機排隊",
+    "r": "daa2jan3gei1 paai4deoi2"
+  },
+  "yue::Jason, highlight the tough classes in your planner.": {
+    "t": "Jason，喺你嘅課程表入面標示出困難嘅課堂",
+    "r": "hai2 nei5 ge3 fo3cing4biu2 jap6min6 biu1si6 ceot1 kwan3naan4 ge3 fo3tong4"
+  },
+  "yue::Let us add a study slot between lab hours.": {
+    "t": "讓我哋喺實驗時間之間加一個自習時間",
+    "r": "joeng6 ngo5dei6 hai2 sat6jim6 si4gaan1 zi1gaan1 gaa1jat1 go3zi6 zaap6 si4gaan1"
+  },
+  "yue::Do not forget to pencil in club signups.": {
+    "t": "唔好忘記用鉛筆記低會社報名。",
+    "r": "m4hou2 mong4gei3 jung6 jyun4bat1 gei3 dai1 wui6se5 bou3meng2"
+  },
+  "yue::Print copies of the schedule and stick one on the door.": {
+    "t": "打印時間表的副本，並貼一份在門上。",
+    "r": "daa2jan3 si4gaan1biu2 dik1 fu3bun2 bing6 tip3 jat1fan6 zoi6 mun4 soeng5"
+  },
+  "ru::tiny flat": {
+    "t": "крошечная квартира",
+    "r": "kroshechnaya kvartira"
+  },
+  "ru::reading lamp": {
+    "t": "лампа для чтения",
+    "r": "lampa dlya chteniya"
+  },
+  "ru::meal kit": {
+    "t": "набор еды",
+    "r": "nabor yedy"
+  },
+  "ru::neighbor chat": {
+    "t": "соседский чат",
+    "r": "sosedskiy chat"
+  },
+  "ru::budget sheet": {
+    "t": "бюджетный лист",
+    "r": "byudzhetnyy list"
+  },
+  "ru::self care list": {
+    "t": "список ухода за собой",
+    "r": "spisok ukhoda za soboy"
+  },
+  "ru::How does the flat feel at night when it is quiet?": {
+    "t": "Как чувствует себя квартира ночью, когда тихо?",
+    "r": "Kak chuvstvuyet sebya kvartira noch'yu, kogda tikho?"
+  },
+  "ru::Let us add a reading lamp to cozy up the sofa.": {
+    "t": "Давайте добавим лампу для чтения, чтобы сделать диван уютнее.",
+    "r": "Davayte dobavim lampu dlya chteniya, chtoby sdelat' divan uyutneye."
+  },
+  "ru::I can drop off a meal kit on Wednesdays.": {
+    "t": "Я могу привезти набор еды по средам.",
+    "r": "YA mogu privezti nabor yedy po sredam."
+  },
+  "ru::Track a self care list so weekends feel lighter.": {
+    "t": "Составьте список заботы о себе, чтобы выходные были легче.",
+    "r": "Sostav'te spisok zaboty o sebe, chtoby vykhodnyye byli legche."
+  },
+  "yue::tiny flat": {
+    "t": "細細嘅單位",
+    "r": "sai3sai3 ge3 daan1wai2"
+  },
+  "yue::reading lamp": {
+    "t": "閱讀燈",
+    "r": "jyut6duk6 dang1"
+  },
+  "yue::meal kit": {
+    "t": "餐盒套裝",
+    "r": "caan1hap6 tou3zong1"
+  },
+  "yue::neighbor chat": {
+    "t": "鄰居傾計",
+    "r": "leon4geoi1 keng1gai2"
+  },
+  "yue::budget sheet": {
+    "t": "預算表",
+    "r": "jyu6syun3 biu2"
+  },
+  "yue::self care list": {
+    "t": "自我照顧清單",
+    "r": "zi6ngo5 ziu3gu3 cing1daan1"
+  },
+  "yue::How does the flat feel at night when it is quiet?": {
+    "t": "晚上安靜嘅時候，呢間單位感覺點樣？",
+    "r": "maan5soeng6 on1zing6 ge3 si4hau6 ne1 gaan1 daan1wai2 gam2gok3 dim2joeng2"
+  },
+  "yue::Let us add a reading lamp to cozy up the sofa.": {
+    "t": "我哋加張閱讀燈嚟令梳化更舒適",
+    "r": "ngo5dei6 gaa1 zoeng1 jyut6duk6 dang1 lei4 lim1so1 faa3 gang3 syu1sik1"
+  },
+  "yue::I can drop off a meal kit on Wednesdays.": {
+    "t": "我可以喺星期三送餐盒過嚟",
+    "r": "ngo5 ho2ji5 hai2 sing1kei4saam1 sung3caan1 hap6 gwo3lai4"
+  },
+  "yue::Track a self care list so weekends feel lighter.": {
+    "t": "追蹤自我照顧清單，令週末感覺輕鬆",
+    "r": "zeoi1zung1 zi6ngo5 ziu3gu3 cing1daan1 ling6 zau1mut6 gam2gok3 heng1sung1"
+  },
+  "ru::trail map": {
+    "t": "карта маршрутов",
+    "r": "karta marshrutov"
+  },
+  "ru::daypack": {
+    "t": "рюкзак",
+    "r": "ryukzak"
+  },
+  "ru::water filter": {
+    "t": "фильтр для воды",
+    "r": "fil'tr dlya vody"
+  },
+  "ru::camp stove": {
+    "t": "походная печь",
+    "r": "pokhodnaya pech'"
+  },
+  "ru::ankle brace": {
+    "t": "бандаж на лодыжку",
+    "r": "bandazh na lodyzhku"
+  },
+  "ru::check-in point": {
+    "t": "пункт регистрации",
+    "r": "punkt registratsii"
+  },
+  "ru::Which trail map are you using for day three?": {
+    "t": "Какую карту маршрутов вы используете для третьего дня?",
+    "r": "Kakuyu kartu marshrutov vy ispol'zuyete dlya tret'yego dnya?"
+  },
+  "ru::Let us check the water filter before nightfall.": {
+    "t": "Давайте проверим фильтр для воды до наступления темноты.",
+    "r": "Davayte proverim fil'tr dlya vody do nastupleniya temnoty."
+  },
+  "ru::Stretch with the ankle brace when you reach camp.": {
+    "t": "Растягивайтесь с помощью бандажа на лодыжке, когда доберетесь до лагеря.",
+    "r": "Rastyagivaytes' s pomoshch'yu bandazha na lodyzhke, kogda doberetes' do lagerya."
+  },
+  "ru::Send me a voice memo from each check-in point.": {
+    "t": "Отправляйте мне голосовые заметки из каждой точки регистрации.",
+    "r": "Otpravlyayte mne golosovyye zametki iz kazhdoy tochki registratsii."
+  },
+  "yue::trail map": {
+    "t": "步道地圖",
+    "r": "bou6dou6 dei6tou4"
+  },
+  "yue::daypack": {
+    "t": "日用背包",
+    "r": "jat6jung6 bui3baau1"
+  },
+  "yue::water filter": {
+    "t": "濾水器",
+    "r": "leoi6seoi2hei3"
+  },
+  "yue::camp stove": {
+    "t": "露營爐",
+    "r": "lou6jing4 lou4"
+  },
+  "yue::ankle brace": {
+    "t": "腳踝護具",
+    "r": "goek3waa5 wu6 geoi6"
+  },
+  "yue::check-in point": {
+    "t": "登記處",
+    "r": "dang1gei3 cyu3"
+  },
+  "yue::Which trail map are you using for day three?": {
+    "t": "你第三日用緊邊條行山路線圖？",
+    "r": "nei5 dai6saam1 jat6jung6 gan2 bin1 tiu4 haang4saan1 lou6sin3tou4"
+  },
+  "yue::Let us check the water filter before nightfall.": {
+    "t": "我哋喺日落前檢查下水過濾器",
+    "r": "ngo5dei6 hai2 jat6lok6 cin4 gim2caa4 haa6seoi2 gwo3leoi6hei3"
+  },
+  "yue::Stretch with the ankle brace when you reach camp.": {
+    "t": "到達營地時戴上腳踝護具進行拉伸",
+    "r": "dou3daat6 jing4dei6 si4 daai3soeng5 goek3waa5 wu6 geoi6 zeon3hang4 laai1san1"
+  },
+  "yue::Send me a voice memo from each check-in point.": {
+    "t": "喺每個打卡點send畀我一個語音備忘錄",
+    "r": "hai2 mui5go3 daa2kaat1 dim2 bei3 ngo5 jat1go3 jyu5jam1 bei6mong4luk6"
+  },
+  "ru::passport": {
+    "t": "паспорт",
+    "r": "pasport"
+  },
+  "ru::boarding gate": {
+    "t": "выход на посадку",
+    "r": "vykhod na posadku"
+  },
+  "ru::carry-on": {
+    "t": "продолжать",
+    "r": "prodolzhat'"
+  },
+  "ru::travel pillow": {
+    "t": "дорожная подушка",
+    "r": "dorozhnaya podushka"
+  },
+  "ru::customs line": {
+    "t": "таможенная линия",
+    "r": "tamozhennaya liniya"
+  },
+  "ru::arrival pickup": {
+    "t": "Встреча по прибытии",
+    "r": "Vstrecha po pribytii"
+  },
+  "ru::Anna, double check your passport and visa.": {
+    "t": "Анна, проверьте свой паспорт и визу.",
+    "r": "Anna, prover'te svoy pasport i vizu."
+  },
+  "ru::Let us set an alarm so you reach the boarding gate early.": {
+    "t": "Давайте установим будильник, чтобы вы добрались до выхода на посадку раньше.",
+    "r": "Davayte ustanovim budil'nik, chtoby vy dobralis' do vykhoda na posadku ran'she."
+  },
+  "ru::Pack a travel pillow for the overnight flight.": {
+    "t": "Возьмите с собой дорожную подушку для ночного перелета.",
+    "r": "Voz'mite s soboy dorozhnuyu podushku dlya nochnogo pereleta."
+  },
+  "ru::Text me when you clear the customs line in L.A..": {
+    "t": "Напиши мне, когда пройдешь таможню в Лос-Анджелесе.",
+    "r": "Napishi mne, kogda proydesh' tamozhnyu v Los-Andzhelese."
+  },
+  "yue::passport": {
+    "t": "護照",
+    "r": "wu6ziu3"
+  },
+  "yue::boarding gate": {
+    "t": "登機閘口",
+    "r": "dang1gei1 zaap6hau2"
+  },
+  "yue::carry-on": {
+    "t": "手提行李",
+    "r": "sau2tai4 hang4lei5"
+  },
+  "yue::travel pillow": {
+    "t": "旅行枕頭",
+    "r": "leoi5hang4 zam2tau4"
+  },
+  "yue::customs line": {
+    "t": "海關排隊",
+    "r": "hoi2gwaan1 paai4deoi2"
+  },
+  "yue::arrival pickup": {
+    "t": "到達接送",
+    "r": "dou3daat6 zip3sung3"
+  },
+  "yue::Anna, double check your passport and visa.": {
+    "t": "Anna，再三檢查你嘅護照同簽證",
+    "r": "zoi3saam1 gim2caa4 nei5 ge3 wu6ziu3 tung4 cim1zing3"
+  },
+  "yue::Let us set an alarm so you reach the boarding gate early.": {
+    "t": "我哋設個鬧鐘，等你早啲到達登機閘口",
+    "r": "ngo5dei6 cit3 go3 naau6zung1 dang2 nei5 zou2 di1 dou3daat6 dang1gei1 zaap6hau2"
+  },
+  "yue::Pack a travel pillow for the overnight flight.": {
+    "t": "為通宵航班帶上旅行枕頭",
+    "r": "wai6 tung1siu1 hong4baan1 daai3 soeng5 leoi5hang4 zam2tau4"
+  },
+  "yue::Text me when you clear the customs line in L.A..": {
+    "t": "喺洛杉磯過完海關嗰陣同我發訊息",
+    "r": "hai2 lok6caam3gei1 gwo3 jyun4 hoi2gwaan1 go2zan6 tung4 ngo5 faat3 seon3sik1"
+  },
+  "ru::orientation": {
+    "t": "ориентация",
+    "r": "oriyentatsiya"
+  },
+  "ru::mentor": {
+    "t": "наставник",
+    "r": "nastavnik"
+  },
+  "ru::workspace": {
+    "t": "рабочее пространство",
+    "r": "rabocheye prostranstvo"
+  },
+  "ru::task tracker": {
+    "t": "трекер задач",
+    "r": "treker zadach"
+  },
+  "ru::lunch buddy": {
+    "t": "приятель по обеду",
+    "r": "priyatel' po obedu"
+  },
+  "ru::celebration treat": {
+    "t": "праздничное угощение",
+    "r": "prazdnichnoye ugoshcheniye"
+  },
+  "ru::How did orientation day feel for you, Sisi?": {
+    "t": "Как тебе понравился ознакомительный день, Сиси?",
+    "r": "Kak tebe ponravilsya oznakomitel'nyy den', Sisi?"
+  },
+  "ru::Let us list questions for your mentor.": {
+    "t": "Перечислим вопросы вашему наставнику.",
+    "r": "Perechislim voprosy vashemu nastavniku."
+  },
+  "ru::Decorate your workspace with something calming.": {
+    "t": "Украсьте свое рабочее место чем-нибудь успокаивающим.",
+    "r": "Ukras'te svoye rabocheye mesto chem-nibud' uspokaivayushchim."
+  },
+  "ru::Plan a celebration treat after the first week.": {
+    "t": "Запланируйте праздничное угощение после первой недели.",
+    "r": "Zaplaniruyte prazdnichnoye ugoshcheniye posle pervoy nedeli."
+  },
+  "yue::orientation": {
+    "t": "方向",
+    "r": "fong1hoeng3"
+  },
+  "yue::mentor": {
+    "t": "導師",
+    "r": "dou6si1"
+  },
+  "yue::workspace": {
+    "t": "工作空間",
+    "r": "gung1zok3 hung1gaan1"
+  },
+  "yue::task tracker": {
+    "t": "任務追蹤器",
+    "r": "jam4mou6 zeoi1zung1 hei3"
+  },
+  "yue::lunch buddy": {
+    "t": "午餐夥伴",
+    "r": "ng5caan1 fo2bun6"
+  },
+  "yue::celebration treat": {
+    "t": "慶祝佳餚",
+    "r": "hing3zuk1 gaai1ngaau4"
+  },
+  "yue::How did orientation day feel for you, Sisi?": {
+    "t": "Sisi，你覺得迎新日感覺點呀？",
+    "r": "nei5 gok3dak1 jing4san1 jat6 gam2gok3 dim2 aa4"
+  },
+  "yue::Let us list questions for your mentor.": {
+    "t": "我哋列出啲問題俾你嘅導師",
+    "r": "ngo5dei6 lit6ceot1 di1 man6tai4 bei2 nei5 ge3 dou6si1"
+  },
+  "yue::Decorate your workspace with something calming.": {
+    "t": "用令人平靜嘅嘢裝飾你嘅工作空間",
+    "r": "jung6 ling6jan4 ping4zing6 ge3 je5 zong1sik1 nei5 ge3 gung1zok3 hung1gaan1"
+  },
+  "yue::Plan a celebration treat after the first week.": {
+    "t": "第一個禮拜之後計劃一次慶祝活動",
+    "r": "dai6jat1go3 lai5baai3 zi1hau6 gai3waak6 jat1ci3 hing3zuk1 wut6dung6"
+  },
+  "ru::university offer": {
+    "t": "предложение университета",
+    "r": "predlozheniye universiteta"
+  },
+  "ru::tuition budget": {
+    "t": "бюджет обучения",
+    "r": "byudzhet obucheniya"
+  },
+  "ru::major choice": {
+    "t": "главный выбор",
+    "r": "glavnyy vybor"
+  },
+  "ru::gap year": {
+    "t": "год перерыва",
+    "r": "god pereryva"
+  },
+  "ru::campus tour": {
+    "t": "тур по кампусу",
+    "r": "tur po kampusu"
+  },
+  "ru::family meeting": {
+    "t": "семейная встреча",
+    "r": "semeynaya vstrecha"
+  },
+  "ru::I hear that you really want me enrolled this fall.": {
+    "t": "Я слышал, вы действительно хотите, чтобы меня зачислили этой осенью.",
+    "r": "YA slyshal, vy deystvitel'no khotite, chtoby menya zachislili etoy osen'yu."
+  },
+  "ru::Let us map tuition and scholarship options together.": {
+    "t": "Давайте вместе сопоставим варианты обучения и стипендии.",
+    "r": "Davayte vmeste sopostavim varianty obucheniya i stipendii."
+  },
+  "ru::Can we visit the campus before I decide on a major?": {
+    "t": "Можем ли мы посетить кампус до того, как я выберу специальность?",
+    "r": "Mozhem li my posetit' kampus do togo, kak ya vyberu spetsial'nost'?"
+  },
+  "ru::Maybe a short gap year could still fit our goals.": {
+    "t": "Возможно, короткий год перерыва все еще мог бы соответствовать нашим целям.",
+    "r": "Vozmozhno, korotkiy god pereryva vse yeshche mog by sootvetstvovat' nashim tselyam."
+  },
+  "yue::university offer": {
+    "t": "大學錄取",
+    "r": "daai6hok6 luk6ceoi2"
+  },
+  "yue::tuition budget": {
+    "t": "學費預算",
+    "r": "hok6fai3 jyu6syun3"
+  },
+  "yue::major choice": {
+    "t": "主要選擇",
+    "r": "zyu2jiu3 syun2zaak6"
+  },
+  "yue::gap year": {
+    "t": "空檔年",
+    "r": "hung1dong3 nin4"
+  },
+  "yue::campus tour": {
+    "t": "校園導賞",
+    "r": "haau6jyun2 dou6soeng2"
+  },
+  "yue::family meeting": {
+    "t": "家庭會議",
+    "r": "gaa1ting4 wui6ji5"
+  },
+  "yue::I hear that you really want me enrolled this fall.": {
+    "t": "我聽講你真係好想我今個秋季入學。",
+    "r": "ngo5 teng1gong2 nei5 zan1hai6 hou2 soeng2 ngo5 gam1go3 cau1gwai3 jap6hok6"
+  },
+  "yue::Let us map tuition and scholarship options together.": {
+    "t": "讓我哋一齊規劃學費同獎學金選擇",
+    "r": "joeng6 ngo5dei6 jat1cai4 kwai1waak6 hok6fai3 tung4 zoeng2hok6gam1 syun2zaak6"
+  },
+  "yue::Can we visit the campus before I decide on a major?": {
+    "t": "我喺決定主修之前可唔可以參觀一下校園？",
+    "r": "ngo5 hai2 kyut3ding6 zyu2sau1 zi1cin4 ho2 m4 ho2ji5 caam1gun1 jat1haa5 haau6jyun2"
+  },
+  "yue::Maybe a short gap year could still fit our goals.": {
+    "t": "或者短期休學年仍然可以符合我哋嘅目標",
+    "r": "waak6ze2 dyun2kei4 jau1hok6 nin4 jing4jin4 ho2ji5 fu4hap6 ngo5dei6 ge3 muk6biu1"
+  }
+}

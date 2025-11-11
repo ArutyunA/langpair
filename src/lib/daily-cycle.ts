@@ -1,4 +1,5 @@
-export const TOTAL_LESSON_DAYS = 10;
+// Keep this in sync with the number of daily content days stored in Supabase.
+export const TOTAL_LESSON_DAYS = 55;
 const MS_PER_DAY = 1000 * 60 * 60 * 24;
 const LESSON_START_DATE = Date.UTC(2025, 10, 7); // 7 Nov 2025
 

@@ -233,6 +233,44 @@ export type Database = {
         }
         Relationships: []
       }
+      user_daily_tasks: {
+        Row: {
+          created_at: string
+          id: string
+          scenario_completed: boolean
+          task_date: string
+          updated_at: string
+          user_id: string
+          vocab_completed: boolean
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          scenario_completed?: boolean
+          task_date?: string
+          updated_at?: string
+          user_id: string
+          vocab_completed?: boolean
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          scenario_completed?: boolean
+          task_date?: string
+          updated_at?: string
+          user_id?: string
+          vocab_completed?: boolean
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_daily_tasks_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       user_progress: {
         Row: {
           created_at: string

@@ -24,6 +24,7 @@ import { UserCircle, Users, Globe, LogOut, SunMoon } from "lucide-react";
 import { ScenarioContent } from "@/types/scenario";
 import { getCurrentLessonDay } from "@/lib/daily-cycle";
 import { DAILY_SCENARIO_SELECT, normalizeScenario, type ScenarioQueryResult } from "@/lib/scenario-utils";
+import { fetchTodayTaskStatus, TOTAL_DAILY_TASKS, type DailyTaskStatus } from "@/lib/task-progress";
 
 interface DailyVocabulary {
   word: string;
@@ -36,20 +37,24 @@ const Index = () => {
   const [session, setSession] = useState<Session | null>(null);
   const [selectedLanguage, setSelectedLanguage] = useState<"russian" | "cantonese" | null>(null);
   const [streak, setStreak] = useState(1);
-  const [xp, setXp] = useState(0);
   const [loading, setLoading] = useState(true);
   const [dailyVocab, setDailyVocab] = useState<DailyVocabulary[]>([]);
   const [dailyScenarios, setDailyScenarios] = useState<Record<"russian" | "cantonese", ScenarioContent | null>>({
     russian: null,
     cantonese: null,
   });
+  const [tasksCompleted, setTasksCompleted] = useState<DailyTaskStatus>({
+    vocabCompleted: false,
+    scenarioCompleted: false,
+  });
   const navigate = useNavigate();
   const { toast } = useToast();
   const { resolvedTheme, setTheme } = useTheme();
   const isDarkMode = resolvedTheme === "dark";
 
-  const dailyGoal = 100;
   const dayNumber = getCurrentLessonDay();
+  const totalTasks = TOTAL_DAILY_TASKS;
+  const completedTasks = Number(tasksCompleted.vocabCompleted) + Number(tasksCompleted.scenarioCompleted);
 
   useEffect(() => {
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
@@ -85,13 +90,12 @@ const Index = () => {
 
       const { data: progress } = await supabase
         .from("user_progress")
-        .select("streak, xp")
+        .select("streak")
         .eq("user_id", user.id)
         .maybeSingle();
 
       if (progress) {
         setStreak(progress.streak);
-        setXp(progress.xp);
       }
 
       if (profile?.learning_language) {
@@ -106,6 +110,9 @@ const Index = () => {
           setDailyVocab(vocab);
         }
       }
+
+      const status = await fetchTodayTaskStatus(user.id);
+      setTasksCompleted(status);
     };
 
     fetchUserData();
@@ -138,29 +145,6 @@ const Index = () => {
 
     fetchDailyScenario();
   }, [dayNumber]);
-
-  const updateProgress = async (newXp: number) => {
-    if (!user) return;
-
-    await supabase
-      .from("user_progress")
-      .update({
-        xp: newXp,
-        last_activity_date: new Date().toISOString().split("T")[0],
-      })
-      .eq("user_id", user.id);
-  };
-
-  const handleCompleteScenario = async () => {
-    const newXp = xp + 50;
-    setXp(newXp);
-    await updateProgress(newXp);
-
-    toast({
-      title: "🎉 Scenario Complete!",
-      description: "+50 XP bonus! Come back tomorrow for a new challenge.",
-    });
-  };
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
@@ -292,18 +276,18 @@ const Index = () => {
       </header>
 
       <main className="container mx-auto px-4 py-8 max-w-4xl space-y-8">
-        <ProgressHeader streak={streak} xp={xp} dailyGoal={dailyGoal} />
+        <ProgressHeader streak={streak} completedTasks={completedTasks} totalTasks={totalTasks} />
 
         <Button
           size="lg"
-          className="w-full h-auto py-8 bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-card-hover dark:bg-primary/10 dark:text-primary-foreground dark:border dark:border-primary/30"
+          className="w-full h-auto py-8 bg-teal-800 text-primary-foreground hover:opacity-90 shadow-card-hover dark:bg-teal-900/80 dark:text-primary-foreground dark:border dark:border-primary/30"
           onClick={() => navigate("/vocabulary-quiz")}
         >
           <div className="text-center space-y-1">
             <div className="text-sm font-medium opacity-90">
               {selectedLanguage === "russian" ? "Russian" : "Cantonese"} Vocabulary
             </div>
-            <div className="text-2xl font-bold">
+            <div className="text-lg font-bold">
               Daily Vocab Flash Challenge
             </div>
             <div className="text-sm opacity-75">
@@ -316,10 +300,6 @@ const Index = () => {
           <ScenarioCard
             title={currentScenario.title}
             description={currentScenario.description}
-            yourRole={currentScenario.yourRole}
-            partnerRole={currentScenario.partnerRole}
-            language={selectedLanguage}
-            scenarioId={currentScenario.id}
             onClick={() => navigate(`/scenario/${currentScenario.id}`)}
           />
         ) : (

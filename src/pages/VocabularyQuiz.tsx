@@ -7,6 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft, Check, X } from "lucide-react";
 import { getCurrentLessonDay } from "@/lib/daily-cycle";
+import { markTaskCompleted } from "@/lib/task-progress";
 
 const MAX_QUESTIONS = 20;
 const DONT_KNOW_OPTION = "Don't know";
@@ -15,9 +16,10 @@ interface VocabQuestion {
   word: string;
   translation: string;
   romanization?: string;
-  questionType: "toEnglish" | "fromEnglish" | "romanToEnglish";
+  questionType: "toEnglish" | "fromEnglish";
   attempts?: number;
   incorrect?: number;
+  options: string[];
 }
 
 const VocabularyQuiz = () => {
@@ -27,7 +29,6 @@ const VocabularyQuiz = () => {
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [language, setLanguage] = useState<string>("");
-  const [options, setOptions] = useState<string[]>([]);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -36,12 +37,6 @@ const VocabularyQuiz = () => {
   useEffect(() => {
     fetchVocabulary();
   }, [dayNumber]);
-
-  useEffect(() => {
-    if (vocabulary.length > 0 && currentIndex < vocabulary.length) {
-      generateOptions();
-    }
-  }, [currentIndex, vocabulary]);
 
   const fetchVocabulary = async () => {
     const { data: { user } } = await supabase.auth.getUser();
@@ -72,14 +67,10 @@ const VocabularyQuiz = () => {
       return;
     }
 
-    const supportsRomanizationMode = languagePreference === "cantonese";
     const questions: VocabQuestion[] = [];
 
     source.forEach(entry => {
       const availableTypes: VocabQuestion["questionType"][] = ["toEnglish", "fromEnglish"];
-      if (supportsRomanizationMode && entry.romanization) {
-        availableTypes.push("romanToEnglish");
-      }
       availableTypes
         .sort(() => Math.random() - 0.5)
         .forEach(type =>
@@ -88,20 +79,28 @@ const VocabularyQuiz = () => {
             questionType: type,
             attempts: 0,
             incorrect: 0,
+            options: [],
           }),
         );
     });
 
     const shuffled = questions.sort(() => Math.random() - 0.5).slice(0, MAX_QUESTIONS);
-    setVocabulary(shuffled);
+    const enriched = shuffled.map(question => ({
+      ...question,
+      options: buildQuestionOptions(question, shuffled),
+    }));
+    setVocabulary(enriched);
     setCurrentIndex(0);
     setScore(0);
     setSelectedAnswer(null);
     setShowResult(false);
   };
 
-  const buildPoolByType = (type: VocabQuestion["questionType"]) => {
-    return vocabulary
+  const buildPoolByType = (
+    questionsList: VocabQuestion[],
+    type: VocabQuestion["questionType"],
+  ) => {
+    return questionsList
       .map(v => (type === "fromEnglish" ? v.word : v.translation))
       .filter((value): value is string => Boolean(value));
   };
@@ -134,21 +133,15 @@ const VocabularyQuiz = () => {
     return wrongs;
   };
 
-  const generateOptions = () => {
-    const current = vocabulary[currentIndex];
-    if (!current) return;
+  const buildQuestionOptions = (
+    question: VocabQuestion,
+    questionsList: VocabQuestion[],
+  ) => {
+    const correctAnswer =
+      question.questionType === "fromEnglish" ? question.word : question.translation;
+    const pool = buildPoolByType(questionsList, question.questionType);
+    const wrongAnswers = buildWrongAnswers(correctAnswer, pool);
 
-    let correctAnswer = "";
-    if (current.questionType === "fromEnglish") {
-      correctAnswer = current.word;
-    } else {
-      correctAnswer = current.translation;
-    }
-
-    const pool = buildPoolByType(current.questionType);
-    let wrongAnswers = buildWrongAnswers(correctAnswer, pool);
-
-    // Ensure at least 4 unique actual options (1 correct + 3 wrong)
     const optionSet = new Set<string>([correctAnswer, ...wrongAnswers]);
     const uniquePool = Array.from(new Set(pool.filter(value => value !== correctAnswer)));
     while (optionSet.size < 4 && uniquePool.length > 0) {
@@ -160,11 +153,12 @@ const VocabularyQuiz = () => {
       const candidate = fallbackPool[Math.floor(Math.random() * fallbackPool.length)];
       optionSet.add(candidate);
     }
+
     const actualOptions = Array.from(optionSet).sort(() => Math.random() - 0.5);
     if (!actualOptions.includes(DONT_KNOW_OPTION)) {
       actualOptions.push(DONT_KNOW_OPTION);
     }
-    setOptions(actualOptions);
+    return actualOptions;
   };
 
   const getQuestion = () => {
@@ -176,13 +170,13 @@ const VocabularyQuiz = () => {
     } else if (current.questionType === "fromEnglish") {
       return current.translation;
     } else {
-      return current.romanization || current.word;
+      return current.word;
     }
   };
 
   const getCorrectAnswer = () => {
     const current = vocabulary[currentIndex];
-    if (current.questionType === "toEnglish" || current.questionType === "romanToEnglish") {
+    if (current.questionType === "toEnglish") {
       return current.translation;
     } else {
       return current.word;
@@ -236,52 +230,41 @@ const VocabularyQuiz = () => {
       setCurrentIndex(currentIndex + 1);
       setSelectedAnswer(null);
       setShowResult(false);
-    } else {
-      const { data: { user } } = await supabase.auth.getUser();
-      if (user) {
-        const xpGained = score * 5;
-        const { data: progress } = await supabase
-          .from("user_progress")
-          .select("xp")
-          .eq("user_id", user.id)
-          .single();
-
-        if (progress) {
-          await supabase
-            .from("user_progress")
-            .update({ xp: progress.xp + xpGained })
-            .eq("user_id", user.id);
-        }
-      }
-
-      const sortedPerformance = [...vocabulary].sort((a, b) => {
-        const incorrectA = a.incorrect ?? 0;
-        const incorrectB = b.incorrect ?? 0;
-        if (incorrectA === incorrectB) {
-          const attemptsA = a.attempts ?? 0;
-          const attemptsB = b.attempts ?? 0;
-          return attemptsB - attemptsA;
-        }
-        return incorrectB - incorrectA;
-      });
-
-      const summaryLines = sortedPerformance
-        .filter(entry => (entry.attempts ?? 0) > 0)
-        .slice(0, 10)
-        .map(entry => {
-          const attempts = entry.attempts ?? 0;
-          const incorrect = entry.incorrect ?? 0;
-          return `${entry.word} / ${entry.translation} — ${incorrect}/${attempts} incorrect`;
-        })
-        .join("\\n");
-
-      toast({
-        title: "Quiz Complete!",
-        description: `Score: ${score}/${vocabulary.length} (${Math.round((score / vocabulary.length) * 100)}%)\\n${summaryLines}`,
-      });
-
-      setTimeout(() => navigate("/"), 500);
+      return;
     }
+
+    const { data: { user } } = await supabase.auth.getUser();
+    if (user) {
+      await markTaskCompleted(user.id, "vocab");
+    }
+
+    const sortedPerformance = [...vocabulary].sort((a, b) => {
+      const incorrectA = a.incorrect ?? 0;
+      const incorrectB = b.incorrect ?? 0;
+      if (incorrectA === incorrectB) {
+        const attemptsA = a.attempts ?? 0;
+        const attemptsB = b.attempts ?? 0;
+        return attemptsB - attemptsA;
+      }
+      return incorrectB - incorrectA;
+    });
+
+    const summaryLines = sortedPerformance
+      .filter(entry => (entry.attempts ?? 0) > 0)
+      .slice(0, 10)
+      .map(entry => {
+        const attempts = entry.attempts ?? 0;
+        const incorrect = entry.incorrect ?? 0;
+        return `${entry.word} / ${entry.translation} — ${incorrect}/${attempts} incorrect`;
+      })
+      .join("\\n");
+
+    toast({
+      title: "Quiz complete!",
+      description: `Score: ${score}/${vocabulary.length} (${Math.round((score / vocabulary.length) * 100)}%)\\n${summaryLines}`,
+    });
+
+    setTimeout(() => navigate("/"), 500);
   };
 
   if (vocabulary.length === 0) {
@@ -297,6 +280,7 @@ const VocabularyQuiz = () => {
   }
 
   const current = vocabulary[currentIndex];
+  const currentOptions = current?.options ?? [];
   const progress = ((currentIndex + 1) / vocabulary.length) * 100;
 
   return (
@@ -331,9 +315,9 @@ const VocabularyQuiz = () => {
               <div className="text-center space-y-6">
                 <div className="space-y-2">
                   <p className="text-sm text-muted-foreground">
-                    {current.questionType === "toEnglish" ? "Translate to English" : 
-                     current.questionType === "fromEnglish" ? `Translate to ${language === "russian" ? "Russian" : "Cantonese"}` :
-                     "Translate romanization to English"}
+                    {current.questionType === "toEnglish"
+                      ? "Translate to English"
+                      : `Translate to ${language === "russian" ? "Russian" : "Cantonese"}`}
                   </p>
                   <h2 className="text-4xl font-bold text-foreground">
                     {getQuestion()}
@@ -341,7 +325,7 @@ const VocabularyQuiz = () => {
                 </div>
 
                 <div className="grid gap-3">
-                  {options.map((option, index) => {
+                  {currentOptions.map((option, index) => {
                     const isSelected = selectedAnswer === option;
                     const isCorrect = option === getCorrectAnswer();
                     const showCorrect = showResult && isCorrect;

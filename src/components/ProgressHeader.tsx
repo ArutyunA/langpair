@@ -1,15 +1,15 @@
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { Flame, Zap } from "lucide-react";
+import { CheckSquare, Flame } from "lucide-react";
 
 interface ProgressHeaderProps {
   streak: number;
-  xp: number;
-  dailyGoal: number;
+  completedTasks: number;
+  totalTasks: number;
 }
 
-const ProgressHeader = ({ streak, xp, dailyGoal }: ProgressHeaderProps) => {
-  const progress = Math.min((xp / dailyGoal) * 100, 100);
+const ProgressHeader = ({ streak, completedTasks, totalTasks }: ProgressHeaderProps) => {
+  const progress = Math.min((completedTasks / totalTasks) * 100, 100);
 
   return (
     <div className="space-y-4">
@@ -26,15 +26,19 @@ const ProgressHeader = ({ streak, xp, dailyGoal }: ProgressHeaderProps) => {
           variant="outline"
           className="bg-gradient-accent text-accent-foreground border-0 px-4 py-2 shadow-card dark:bg-card/80 dark:text-card-foreground dark:border dark:border-border"
         >
-          <Zap className="w-4 h-4 mr-2" />
-          <span className="font-bold">{xp} XP</span>
+          <CheckSquare className="w-4 h-4 mr-2" />
+          <span className="font-bold">
+            {completedTasks}/{totalTasks} tasks
+          </span>
         </Badge>
       </div>
 
       <div className="space-y-2">
         <div className="flex items-center justify-between text-sm">
-          <span className="text-muted-foreground">Daily goal</span>
-          <span className="font-semibold text-foreground">{xp} / {dailyGoal} XP</span>
+          <span className="text-muted-foreground">Daily tasks</span>
+          <span className="font-semibold text-foreground">
+            {completedTasks} / {totalTasks} complete
+          </span>
         </div>
         <Progress value={progress} className="h-3" />
       </div>

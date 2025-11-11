@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+'import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft } from "lucide-react";
 import { DAILY_SCENARIO_SELECT, normalizeScenario, type ScenarioQueryResult } from "@/lib/scenario-utils";
 import type { ScenarioContent } from "@/types/scenario";
+import { markTaskCompleted } from "@/lib/task-progress";
 
 interface PhraseState {
   showRomanization: boolean;
@@ -98,26 +99,14 @@ const ScenarioDetail = () => {
     const { data: { user } } = await supabase.auth.getUser();
     if (!user) return;
 
-    const { data: progress } = await supabase
-      .from("user_progress")
-      .select("xp")
-      .eq("user_id", user.id)
-      .single();
+    await markTaskCompleted(user.id, "scenario");
 
-    if (progress) {
-      const newXp = progress.xp + 50;
-      await supabase
-        .from("user_progress")
-        .update({ xp: newXp })
-        .eq("user_id", user.id);
+    toast({
+      title: "Scenario complete!",
+      description: "Great work—daily scenario task locked in.",
+    });
 
-      toast({
-        title: "🎉 Scenario Complete!",
-        description: "+50 XP bonus! Come back tomorrow for a new challenge.",
-      });
-
-      navigate("/");
-    }
+    navigate("/");
   };
 
   if (loadingScenario || !scenario || phraseStates.length === 0) {

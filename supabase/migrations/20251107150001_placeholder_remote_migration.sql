@@ -1,0 +1,1 @@
+-- Placeholder migration to mirror remote state (already applied upstream).
