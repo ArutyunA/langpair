@@ -1,11 +1,11 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowLeft, Check, X } from "lucide-react";
+import { ArrowLeft, Check, Loader2, Volume2, X } from "lucide-react";
 import { getCurrentLessonDay } from "@/lib/daily-cycle";
 import { markTaskCompleted } from "@/lib/task-progress";
 
@@ -20,7 +20,12 @@ interface VocabQuestion {
   attempts?: number;
   incorrect?: number;
   options: string[];
+  ttsStoragePath?: string | null;
 }
+
+const TTS_BUCKET = import.meta.env.VITE_TTS_BUCKET ?? "TTSCanto";
+const TTS_SPEAKER_PREFIX = import.meta.env.VITE_TTS_PREFIX ?? "bethany";
+const STORAGE_PUBLIC_SEGMENT = "storage/v1/object/public/";
 
 const VocabularyQuiz = () => {
   const [vocabulary, setVocabulary] = useState<VocabQuestion[]>([]);
@@ -30,6 +35,9 @@ const VocabularyQuiz = () => {
   const [showResult, setShowResult] = useState(false);
   const [language, setLanguage] = useState<string>("");
   const [showQuestionRomanization, setShowQuestionRomanization] = useState(false);
+  const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null);
+  const [loadingAudioId, setLoadingAudioId] = useState<string | null>(null);
+  const [autoPlayedQuestionIndex, setAutoPlayedQuestionIndex] = useState<number | null>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -65,12 +73,15 @@ const VocabularyQuiz = () => {
 
     const { data: vocab } = await supabase
       .from("daily_vocabulary")
-      .select("word, translation, romanization")
+      .select("word, translation, romanization, tts_storage_path")
       .eq("language", profile.learning_language)
       .eq("day_number", dayNumber)
       .limit(10);
 
-    const source = (vocab ?? []).slice(0, 10);
+    const source = (vocab ?? []).slice(0, 10).map(entry => ({
+      ...entry,
+      ttsStoragePath: (entry as Record<string, unknown>).tts_storage_path as string | null | undefined,
+    }));
 
     if (source.length === 0) {
       setVocabulary([]);
@@ -90,6 +101,7 @@ const VocabularyQuiz = () => {
             attempts: 0,
             incorrect: 0,
             options: [],
+            ttsStoragePath: entry.ttsStoragePath,
           }),
         );
     });
@@ -105,6 +117,7 @@ const VocabularyQuiz = () => {
     setSelectedAnswer(null);
     setShowResult(false);
     setShowQuestionRomanization(false);
+    setAutoPlayedQuestionIndex(null);
   };
 
   const buildPoolByType = (
@@ -224,6 +237,7 @@ const VocabularyQuiz = () => {
 
     setSelectedAnswer(answer);
     setShowResult(true);
+    setAutoPlayedQuestionIndex(null);
 
     const isCorrect = answer === getCorrectAnswer();
     recordAttempt(currentIndex, isCorrect);
@@ -234,6 +248,7 @@ const VocabularyQuiz = () => {
   };
 
   const handleNext = async () => {
+    setAutoPlayedQuestionIndex(null);
     if (currentIndex < vocabulary.length - 1) {
       setCurrentIndex(currentIndex + 1);
       setSelectedAnswer(null);
@@ -276,6 +291,141 @@ const VocabularyQuiz = () => {
     setTimeout(() => navigate("/"), 500);
   };
 
+  useEffect(() => {
+    return () => {
+      if (currentAudio) {
+        currentAudio.pause();
+      }
+    };
+  }, [currentAudio]);
+
+  const resolvePublicAudioUrls = useCallback((rawPath?: string | null) => {
+    if (!rawPath) return [];
+    const trimmed = rawPath.trim();
+    if (!trimmed) return [];
+
+    if (/^https?:\/\//i.test(trimmed)) {
+      return [trimmed];
+    }
+
+    const stripBucketPrefix = (value: string) => {
+      let next = value.replace(/^\/+/, "");
+      const storageIndex = next.toLowerCase().indexOf(STORAGE_PUBLIC_SEGMENT);
+      if (storageIndex >= 0) {
+        next = next.slice(storageIndex + STORAGE_PUBLIC_SEGMENT.length);
+      }
+
+      const bucketMarker = `${TTS_BUCKET}/`;
+      const bucketIndex = next.indexOf(bucketMarker);
+      if (bucketIndex >= 0) {
+        next = next.slice(bucketIndex + bucketMarker.length);
+      }
+
+      next = next.replace(/^public\//i, "");
+      if (next.startsWith(bucketMarker)) {
+        next = next.slice(bucketMarker.length);
+      }
+
+      return next;
+    };
+
+    const normalized = stripBucketPrefix(trimmed);
+    const normalizedParts = normalized.split("/").filter(Boolean);
+    const baseFilename = normalizedParts.at(-1) ?? normalized;
+    const dayFromFilenameMatch = baseFilename.match(/(day\d{1,2})/i);
+    const lessonDay = `day${String(dayNumber).padStart(2, "0")}`;
+    const candidates: string[] = [];
+    const seen = new Set<string>();
+
+    const addCandidate = (value?: string | null) => {
+      const next = value?.trim();
+      if (!next || seen.has(next)) return;
+      seen.add(next);
+      candidates.push(next);
+    };
+
+    if (dayFromFilenameMatch) {
+      const explicitDay = dayFromFilenameMatch[1].toLowerCase();
+      addCandidate(`${TTS_SPEAKER_PREFIX}/${explicitDay}/${baseFilename}`);
+    }
+
+    addCandidate(`${TTS_SPEAKER_PREFIX}/${lessonDay}/${baseFilename}`);
+    const prefixedNormalized = normalized.startsWith(`${TTS_SPEAKER_PREFIX}/`)
+      ? normalized
+      : `${TTS_SPEAKER_PREFIX}/${normalized}`;
+    addCandidate(prefixedNormalized);
+    addCandidate(normalized);
+
+    const urls: string[] = [];
+    for (const candidate of candidates) {
+      const { data } = supabase.storage.from(TTS_BUCKET).getPublicUrl(candidate);
+      if (data.publicUrl) {
+        urls.push(data.publicUrl);
+      }
+    }
+    return urls;
+  }, [dayNumber]);
+
+  const playAudio = useCallback(async (targetId: string, path?: string | null) => {
+    if (!path) {
+      return;
+    }
+
+    const candidateUrls = resolvePublicAudioUrls(path);
+    if (candidateUrls.length === 0) {
+      return;
+    }
+
+    setLoadingAudioId(targetId);
+    try {
+      for (const url of candidateUrls) {
+        try {
+          const headResponse = await fetch(url, { method: "HEAD" });
+          if (!headResponse.ok) {
+            continue;
+          }
+
+          if (currentAudio) {
+            currentAudio.pause();
+          }
+
+          const audio = new Audio(url);
+          await audio.play();
+          setCurrentAudio(audio);
+          audio.onended = () => setCurrentAudio(null);
+          break;
+        } catch (_err) {
+          continue;
+        }
+      }
+    } finally {
+      setLoadingAudioId(null);
+    }
+  }, [currentAudio, resolvePublicAudioUrls]);
+
+  const current = vocabulary[currentIndex];
+
+  useEffect(() => {
+    if (
+      showResult &&
+      language === "cantonese" &&
+      current?.questionType === "fromEnglish" &&
+      current?.ttsStoragePath &&
+      autoPlayedQuestionIndex !== currentIndex
+    ) {
+      setAutoPlayedQuestionIndex(currentIndex);
+      playAudio(`option-${currentIndex}`, current.ttsStoragePath);
+    }
+  }, [
+    autoPlayedQuestionIndex,
+    current?.questionType,
+    current?.ttsStoragePath,
+    currentIndex,
+    language,
+    playAudio,
+    showResult,
+  ]);
+
   if (vocabulary.length === 0) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
@@ -288,7 +438,6 @@ const VocabularyQuiz = () => {
     );
   }
 
-  const current = vocabulary[currentIndex];
   const currentOptions = current?.options ?? [];
   const progress = ((currentIndex + 1) / vocabulary.length) * 100;
 
@@ -351,6 +500,20 @@ const VocabularyQuiz = () => {
                     >
                       {getQuestion()}
                     </h2>
+                    {language === "cantonese" && current.questionType === "toEnglish" && current.ttsStoragePath && (
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="mx-auto"
+                        onClick={() => playAudio(`question-${currentIndex}`, current.ttsStoragePath)}
+                      >
+                        {loadingAudioId === `question-${currentIndex}` ? (
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                        ) : (
+                          <Volume2 className="w-4 h-4" />
+                        )}
+                      </Button>
+                    )}
                     {canRevealQuestionRomanization && showQuestionRomanization && current.romanization && (
                       <p className="text-lg text-muted-foreground">{current.romanization}</p>
                     )}
@@ -376,7 +539,6 @@ const VocabularyQuiz = () => {
                           isSelected && !isSkip ? "bg-primary/10" : ""
                         } ${isSkip ? "justify-center w-1/2 mx-auto text-muted-foreground italic bg-muted/40 border-dashed" : ""}`}
                         onClick={() => handleAnswer(option)}
-                        disabled={showResult}
                       >
                         <div className="w-full flex flex-col items-center gap-1">
                           <span className={isSkip ? "italic" : ""}>{option}</span>
@@ -385,6 +547,34 @@ const VocabularyQuiz = () => {
                               {romanizationLookup.get(option) ?? ""}
                             </span>
                           )}
+                          {showCorrect &&
+                            language === "cantonese" &&
+                            current.questionType === "fromEnglish" &&
+                            current.ttsStoragePath &&
+                            !isSkip && (
+                              <span
+                                role="button"
+                                tabIndex={0}
+                                className="p-2 rounded-full hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary"
+                                onClick={event => {
+                                  event.stopPropagation();
+                                  playAudio(`option-${currentIndex}`, current.ttsStoragePath);
+                                }}
+                                onKeyDown={event => {
+                                  if (event.key === "Enter" || event.key === " ") {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                    playAudio(`option-${currentIndex}`, current.ttsStoragePath);
+                                  }
+                                }}
+                              >
+                                {loadingAudioId === `option-${currentIndex}` ? (
+                                  <Loader2 className="w-4 h-4 animate-spin" />
+                                ) : (
+                                  <Volume2 className="w-4 h-4" />
+                                )}
+                              </span>
+                            )}
                           <div className="flex gap-2">
                             {showCorrect && <Check className="w-5 h-5 text-green-500" />}
                             {showWrong && <X className="w-5 h-5 text-red-500" />}
