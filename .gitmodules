@@ -1,0 +1,3 @@
+[submodule "WenetSpeech-Yue"]
+	path = WenetSpeech-Yue
+	url = https://github.com/ArutyunA/TTS-Canto.git
