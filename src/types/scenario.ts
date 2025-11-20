@@ -4,6 +4,7 @@ export interface ScenarioPhrase {
   phrase: string;
   translation: string;
   romanization?: string | null;
+  ttsStoragePath?: string | null;
 }
 
 export interface ScenarioPrompt {

@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Loader2, Volume2 } from "lucide-react";
 import { DAILY_SCENARIO_SELECT, normalizeScenario, type ScenarioQueryResult } from "@/lib/scenario-utils";
 import type { ScenarioContent } from "@/types/scenario";
 import { markTaskCompleted } from "@/lib/task-progress";
@@ -18,7 +18,12 @@ interface VocabularyEntry {
   word: string;
   translation: string;
   romanization?: string | null;
+  tts_storage_path?: string | null;
 }
+
+const TTS_BUCKET = import.meta.env.VITE_TTS_BUCKET ?? "TTSCanto";
+const TTS_SPEAKER_PREFIX = import.meta.env.VITE_TTS_PREFIX ?? "bethany";
+const STORAGE_PUBLIC_SEGMENT = "storage/v1/object/public/";
 
 const ScenarioDetail = () => {
   const { scenarioId } = useParams();
@@ -26,6 +31,8 @@ const ScenarioDetail = () => {
   const [phraseStates, setPhraseStates] = useState<PhraseState[]>([]);
   const [loadingScenario, setLoadingScenario] = useState(true);
   const [vocabHighlights, setVocabHighlights] = useState<VocabularyEntry[]>([]);
+  const [loadingAudioId, setLoadingAudioId] = useState<string | null>(null);
+  const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null);
   const navigate = useNavigate();
   const { toast } = useToast();
 
@@ -62,7 +69,7 @@ const ScenarioDetail = () => {
       if (!scenario) return;
       const { data, error } = await supabase
         .from("daily_vocabulary")
-        .select("word, translation, romanization")
+        .select("word, translation, romanization, tts_storage_path")
         .eq("day_number", scenario.dayNumber)
         .eq("language", scenario.language)
         .limit(5);
@@ -77,6 +84,14 @@ const ScenarioDetail = () => {
 
     fetchVocabulary();
   }, [scenario]);
+
+  useEffect(() => {
+    return () => {
+      if (currentAudio) {
+        currentAudio.pause();
+      }
+    };
+  }, [currentAudio]);
 
   const handlePhraseClick = (index: number) => {
     setPhraseStates(prev => {
@@ -107,6 +122,139 @@ const ScenarioDetail = () => {
     });
 
     navigate("/");
+  };
+
+  const resolvePublicAudioUrls = (rawPath?: string | null): string[] => {
+    if (!rawPath) return [];
+    const trimmed = rawPath.trim();
+    if (!trimmed) return [];
+
+    if (/^https?:\/\//i.test(trimmed)) {
+      return [trimmed];
+    }
+
+    const stripBucketPrefix = (value: string) => {
+      let next = value.replace(/^\/+/, "");
+      const storageIndex = next.toLowerCase().indexOf(STORAGE_PUBLIC_SEGMENT);
+      if (storageIndex >= 0) {
+        next = next.slice(storageIndex + STORAGE_PUBLIC_SEGMENT.length);
+      }
+
+      const bucketMarker = `${TTS_BUCKET}/`;
+      const bucketIndex = next.indexOf(bucketMarker);
+      if (bucketIndex >= 0) {
+        next = next.slice(bucketIndex + bucketMarker.length);
+      }
+
+      next = next.replace(/^public\//i, "");
+      if (next.startsWith(bucketMarker)) {
+        next = next.slice(bucketMarker.length);
+      }
+
+      return next;
+    };
+
+    const normalized = stripBucketPrefix(trimmed);
+    const normalizedParts = normalized.split("/").filter(Boolean);
+    const baseFilename = normalizedParts.at(-1) ?? normalized;
+    const seen = new Set<string>();
+    const priorityCandidates: string[] = [];
+    const fallbackCandidates: string[] = [];
+
+    const addCandidate = (value?: string | null, priority = false) => {
+      const next = value?.trim();
+      if (!next || seen.has(next)) return;
+      seen.add(next);
+      (priority ? priorityCandidates : fallbackCandidates).push(next);
+    };
+
+    const filenameDayMatch = baseFilename.match(/(day\d{1,2})/i);
+    if (filenameDayMatch) {
+      const explicitDay = filenameDayMatch[1].toLowerCase();
+      addCandidate(`${TTS_SPEAKER_PREFIX}/${explicitDay}/${baseFilename}`, true);
+    }
+
+    const scenarioDay = scenario ? `day${String(scenario.dayNumber).padStart(2, "0")}` : null;
+    if (scenarioDay) {
+      addCandidate(`${TTS_SPEAKER_PREFIX}/${scenarioDay}/${baseFilename}`, true);
+    }
+
+    const prefixedNormalized = normalized.startsWith(`${TTS_SPEAKER_PREFIX}/`)
+      ? normalized
+      : `${TTS_SPEAKER_PREFIX}/${normalized}`;
+    addCandidate(prefixedNormalized, false);
+    addCandidate(normalized, false);
+
+    const candidates = [...priorityCandidates, ...fallbackCandidates];
+
+    const urls: string[] = [];
+    for (const candidate of candidates) {
+      const { data } = supabase.storage.from(TTS_BUCKET).getPublicUrl(candidate);
+      if (data.publicUrl) {
+        urls.push(data.publicUrl);
+      }
+    }
+    return urls;
+  };
+
+  const playAudio = async (id: string, path?: string | null) => {
+    if (!path) {
+      toast({
+        title: "Audio unavailable",
+        description: "This item doesn't have an audio sample yet.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      setLoadingAudioId(id);
+      const candidateUrls = resolvePublicAudioUrls(path);
+      if (candidateUrls.length === 0) {
+        throw new Error("Missing public URL");
+      }
+
+      let played = false;
+      for (const publicUrl of candidateUrls) {
+        try {
+          const headResponse = await fetch(publicUrl, { method: "HEAD" });
+          if (!headResponse.ok) {
+            if (import.meta.env.DEV) {
+              console.warn("Audio HEAD check failed", publicUrl, headResponse.status);
+            }
+            continue;
+          }
+
+          if (currentAudio) {
+            currentAudio.pause();
+          }
+
+          const audio = new Audio(publicUrl);
+          await audio.play();
+          setCurrentAudio(audio);
+          audio.onended = () => setCurrentAudio(null);
+          played = true;
+          break;
+        } catch (candidateErr) {
+          if (import.meta.env.DEV) {
+            console.warn("Audio candidate failed", candidateErr);
+          }
+        }
+      }
+
+      if (!played) {
+        throw new Error("Unable to play any audio source");
+      }
+    } catch (err) {
+      console.error(err);
+      toast({
+        title: "Playback error",
+        description: "Unable to play this audio right now.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoadingAudioId(null);
+    }
   };
 
   if (loadingScenario || !scenario || phraseStates.length === 0) {
@@ -153,17 +301,33 @@ const ScenarioDetail = () => {
                   <div className="space-y-2">
                     <h3 className="text-lg font-semibold text-foreground">Key Vocabulary</h3>
                     <div className="grid gap-2 sm:grid-cols-2 text-sm text-muted-foreground">
-                      {vocabHighlights.map((entry, index) => (
-                        <div key={`${entry.word}-${index}`} className="flex items-center justify-between rounded-md border border-border px-3 py-2">
-                          <div>
-                            <p className="font-semibold text-foreground">{entry.word}</p>
-                            {showRomanization && entry.romanization && (
-                              <p className="text-xs text-muted-foreground">{entry.romanization}</p>
-                            )}
+                      {vocabHighlights.map((entry, index) => {
+                        const id = `vocab-${entry.word}-${index}`;
+                        return (
+                          <div key={id} className="flex items-center justify-between rounded-md border border-border px-3 py-2 gap-3">
+                            <div className="flex-1">
+                              <p className="font-semibold text-foreground">{entry.word}</p>
+                              {showRomanization && entry.romanization && (
+                                <p className="text-xs text-muted-foreground">{entry.romanization}</p>
+                              )}
+                              <p className="text-sm text-muted-foreground">{entry.translation}</p>
+                            </div>
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              aria-label={`Play audio for ${entry.word}`}
+                              onClick={() => playAudio(id, entry.tts_storage_path)}
+                              disabled={loadingAudioId === id}
+                            >
+                              {loadingAudioId === id ? (
+                                <Loader2 className="h-4 w-4 animate-spin" />
+                              ) : (
+                                <Volume2 className="h-4 w-4" />
+                              )}
+                            </Button>
                           </div>
-                          <span>{entry.translation}</span>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </div>
                 )}
@@ -203,8 +367,26 @@ const ScenarioDetail = () => {
                 >
                   <CardContent className="p-4">
                     <div className="space-y-2">
-                      <div className="text-xs font-semibold text-muted-foreground uppercase">
-                        {isYourLine ? scenario.yourRole : scenario.partnerRole}
+                      <div className="flex items-center justify-between">
+                        <div className="text-xs font-semibold text-muted-foreground uppercase">
+                          {isYourLine ? scenario.yourRole : scenario.partnerRole}
+                        </div>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          aria-label="Play phrase audio"
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            playAudio(`phrase-${phrase.id}`, phrase.ttsStoragePath);
+                          }}
+                          disabled={loadingAudioId === `phrase-${phrase.id}`}
+                        >
+                          {loadingAudioId === `phrase-${phrase.id}` ? (
+                            <Loader2 className="h-4 w-4 animate-spin" />
+                          ) : (
+                            <Volume2 className="h-4 w-4" />
+                          )}
+                        </Button>
                       </div>
                       
                       <div className="text-2xl font-bold text-foreground leading-relaxed">

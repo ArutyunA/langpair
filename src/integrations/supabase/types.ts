@@ -121,6 +121,7 @@ export type Database = {
           romanization: string | null
           scenario_id: string
           translation: string
+          tts_storage_path: string | null
         }
         Insert: {
           created_at?: string
@@ -130,6 +131,7 @@ export type Database = {
           romanization?: string | null
           scenario_id: string
           translation: string
+          tts_storage_path?: string | null
         }
         Update: {
           created_at?: string
@@ -139,6 +141,7 @@ export type Database = {
           romanization?: string | null
           scenario_id?: string
           translation?: string
+          tts_storage_path?: string | null
         }
         Relationships: [
           {

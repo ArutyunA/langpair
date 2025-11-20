@@ -1,0 +1,371 @@
+id,day,language,section,type,tts_text,romanization,english,instruct_text,speaker_id
+day01_vocabulary_001,1,Cantonese,Vocabulary,Flashcard,咖啡,gaa3 fe1,coffee,用温柔的语气讲这句话,Beth251112
+day01_vocabulary_002,1,Cantonese,Vocabulary,Flashcard,茶,caa4,tea,用温柔的语气讲这句话,Beth251112
+day01_vocabulary_003,1,Cantonese,Vocabulary,Flashcard,牛奶,ngau4 naai5,milk,用温柔的语气讲这句话,Beth251112
+day01_vocabulary_004,1,Cantonese,Vocabulary,Flashcard,糖,tong4,sugar,用温柔的语气讲这句话,Beth251112
+day01_vocabulary_005,1,Cantonese,Vocabulary,Flashcard,侍應,si6 jing3,waiter,用温柔的语气讲这句话,Beth251112
+day01_vocabulary_006,1,Cantonese,Vocabulary,Flashcard,單,daan1,bill,用温柔的语气讲这句话,Beth251112
+day01_vocabulary_007,1,Cantonese,Vocabulary,Flashcard,味道,mei6 dou6,flavor,用温柔的语气讲这句话,Beth251112
+day01_vocabulary_008,1,Cantonese,Vocabulary,Flashcard,凍,dung3,cold,用温柔的语气讲这句话,Beth251112
+day01_vocabulary_009,1,Cantonese,Vocabulary,Flashcard,熱,jit6,hot,用温柔的语气讲这句话,Beth251112
+day01_vocabulary_010,1,Cantonese,Vocabulary,Flashcard,蛋糕,daan6 gou1,cake,用温柔的语气讲这句话,Beth251112
+day02_vocabulary_001,2,Cantonese,Vocabulary,Flashcard,朋友,pang4 jau5,friend,用温柔的语气讲这句话,Beth251112
+day02_vocabulary_002,2,Cantonese,Vocabulary,Flashcard,時間,si4 gaan3,time,用温柔的语气讲这句话,Beth251112
+day02_vocabulary_003,2,Cantonese,Vocabulary,Flashcard,地方,dei6 fong1,place,用温柔的语气讲这句话,Beth251112
+day02_vocabulary_004,2,Cantonese,Vocabulary,Flashcard,約,joek3,to arrange,用温柔的语气讲这句话,Beth251112
+day02_vocabulary_005,2,Cantonese,Vocabulary,Flashcard,一齊,jat1 cai4,together,用温柔的语气讲这句话,Beth251112
+day02_vocabulary_006,2,Cantonese,Vocabulary,Flashcard,自由,zi6 jau4,free (available),用温柔的语气讲这句话,Beth251112
+day02_vocabulary_007,2,Cantonese,Vocabulary,Flashcard,諗,nam2,to think,用温柔的语气讲这句话,Beth251112
+day02_vocabulary_008,2,Cantonese,Vocabulary,Flashcard,興趣,hing3 ceoi3,interest,用温柔的语气讲这句话,Beth251112
+day02_vocabulary_009,2,Cantonese,Vocabulary,Flashcard,出街,ceot1 gaai1,to go out,用温柔的语气讲这句话,Beth251112
+day02_vocabulary_010,2,Cantonese,Vocabulary,Flashcard,計劃,gai3 waak6,plan,用温柔的语气讲这句话,Beth251112
+day03_vocabulary_001,3,Cantonese,Vocabulary,Flashcard,火車,fo2 ce1,train,用温柔的语气讲这句话,Beth251112
+day03_vocabulary_002,3,Cantonese,Vocabulary,Flashcard,車站,ce1 zaam6,station,用温柔的语气讲这句话,Beth251112
+day03_vocabulary_003,3,Cantonese,Vocabulary,Flashcard,車票,ce1 piu3,ticket,用温柔的语气讲这句话,Beth251112
+day03_vocabulary_004,3,Cantonese,Vocabulary,Flashcard,到達,dou3 daat6,arrival,用温柔的语气讲这句话,Beth251112
+day03_vocabulary_005,3,Cantonese,Vocabulary,Flashcard,開出,hoi1 ceot1,departure,用温柔的语气讲这句话,Beth251112
+day03_vocabulary_006,3,Cantonese,Vocabulary,Flashcard,月台,jyut6 toi4,platform,用温柔的语气讲这句话,Beth251112
+day03_vocabulary_007,3,Cantonese,Vocabulary,Flashcard,延誤,jin4 ng6,delay,用温柔的语气讲这句话,Beth251112
+day03_vocabulary_008,3,Cantonese,Vocabulary,Flashcard,座位,zo6 wai2,seat,用温柔的语气讲这句话,Beth251112
+day03_vocabulary_009,3,Cantonese,Vocabulary,Flashcard,時間表,si4 gaan3 biu2,schedule,用温柔的语气讲这句话,Beth251112
+day03_vocabulary_010,3,Cantonese,Vocabulary,Flashcard,舒服,syu1 fuk6,comfortable,用温柔的语气讲这句话,Beth251112
+day04_vocabulary_001,4,Cantonese,Vocabulary,Flashcard,商店,soeng1 dim3,shop,用温柔的语气讲这句话,Beth251112
+day04_vocabulary_002,4,Cantonese,Vocabulary,Flashcard,買嘢,maai5 je5,to buy,用温柔的语气讲这句话,Beth251112
+day04_vocabulary_003,4,Cantonese,Vocabulary,Flashcard,平,paang4,cheap,用温柔的语气讲这句话,Beth251112
+day04_vocabulary_004,4,Cantonese,Vocabulary,Flashcard,價錢,gaa3 cin4,price,用温柔的语气讲这句话,Beth251112
+day04_vocabulary_005,4,Cantonese,Vocabulary,Flashcard,試身室,si3 san1 sat1,fitting room,用温柔的语气讲这句话,Beth251112
+day04_vocabulary_006,4,Cantonese,Vocabulary,Flashcard,袋,doi6,bag,用温柔的语气讲这句话,Beth251112
+day04_vocabulary_007,4,Cantonese,Vocabulary,Flashcard,收銀台,sau1 ngan2 toi4,cash register,用温柔的语气讲这句话,Beth251112
+day04_vocabulary_008,4,Cantonese,Vocabulary,Flashcard,顏色,ngaan4 sik1,color,用温柔的语气讲这句话,Beth251112
+day04_vocabulary_009,4,Cantonese,Vocabulary,Flashcard,折扣,zit3 kau3,discount,用温柔的语气讲这句话,Beth251112
+day04_vocabulary_010,4,Cantonese,Vocabulary,Flashcard,試下,si3 haa5,to try,用温柔的语气讲这句话,Beth251112
+day05_vocabulary_001,5,Cantonese,Vocabulary,Flashcard,餐廳,caan1 teng1,restaurant,用温柔的语气讲这句话,Beth251112
+day05_vocabulary_002,5,Cantonese,Vocabulary,Flashcard,餐牌,caan1 paai4,menu,用温柔的语气讲这句话,Beth251112
+day05_vocabulary_003,5,Cantonese,Vocabulary,Flashcard,侍應,si6 jing3,waiter,用温柔的语气讲这句话,Beth251112
+day05_vocabulary_004,5,Cantonese,Vocabulary,Flashcard,前菜,cin4 coi3,appetizer,用温柔的语气讲这句话,Beth251112
+day05_vocabulary_005,5,Cantonese,Vocabulary,Flashcard,主菜,zyu2 coi3,main course,用温柔的语气讲这句话,Beth251112
+day05_vocabulary_006,5,Cantonese,Vocabulary,Flashcard,甜品,tim4 ban2,dessert,用温柔的语气讲这句话,Beth251112
+day05_vocabulary_007,5,Cantonese,Vocabulary,Flashcard,味道,mei6 dou6,taste,用温柔的语气讲这句话,Beth251112
+day05_vocabulary_008,5,Cantonese,Vocabulary,Flashcard,單,daan1,bill,用温柔的语气讲这句话,Beth251112
+day05_vocabulary_009,5,Cantonese,Vocabulary,Flashcard,推介,teoi1 gaai3,recommendation,用温柔的语气讲这句话,Beth251112
+day05_vocabulary_010,5,Cantonese,Vocabulary,Flashcard,好味,hou2 mei6,tasty,用温柔的语气讲这句话,Beth251112
+day06_vocabulary_001,6,Cantonese,Vocabulary,Flashcard,戲院,hei3 jyun2,cinema,用温柔的语气讲这句话,Beth251112
+day06_vocabulary_002,6,Cantonese,Vocabulary,Flashcard,電影,din6 jing2,movie,用温柔的语气讲这句话,Beth251112
+day06_vocabulary_003,6,Cantonese,Vocabulary,Flashcard,戲票,hei3 piu3,ticket,用温柔的语气讲这句话,Beth251112
+day06_vocabulary_004,6,Cantonese,Vocabulary,Flashcard,座位,zo6 wai2,seat,用温柔的语气讲这句话,Beth251112
+day06_vocabulary_005,6,Cantonese,Vocabulary,Flashcard,故事,gu3 si6,story,用温柔的语气讲这句话,Beth251112
+day06_vocabulary_006,6,Cantonese,Vocabulary,Flashcard,演員,jin2 jyun4,actor,用温柔的语气讲这句话,Beth251112
+day06_vocabulary_007,6,Cantonese,Vocabulary,Flashcard,有趣,jau5 ceoi3,interesting,用温柔的语气讲这句话,Beth251112
+day06_vocabulary_008,6,Cantonese,Vocabulary,Flashcard,好笑,hou2 siu3,funny,用温柔的语气讲这句话,Beth251112
+day06_vocabulary_009,6,Cantonese,Vocabulary,Flashcard,結局,git3 guk6,ending,用温柔的语气讲这句话,Beth251112
+day06_vocabulary_010,6,Cantonese,Vocabulary,Flashcard,再睇,zoi3 tai2,watch again,用温柔的语气讲这句话,Beth251112
+day07_vocabulary_001,7,Cantonese,Vocabulary,Flashcard,旅行,leoi5 hang4,travel,用温柔的语气讲这句话,Beth251112
+day07_vocabulary_002,7,Cantonese,Vocabulary,Flashcard,地圖,dei6 tou4,map,用温柔的语气讲这句话,Beth251112
+day07_vocabulary_003,7,Cantonese,Vocabulary,Flashcard,天氣,tin1 hei3,weather,用温柔的语气讲这句话,Beth251112
+day07_vocabulary_004,7,Cantonese,Vocabulary,Flashcard,沙灘,sa1 taan1,beach,用温柔的语气讲这句话,Beth251112
+day07_vocabulary_005,7,Cantonese,Vocabulary,Flashcard,山,saan1,mountain,用温柔的语气讲这句话,Beth251112
+day07_vocabulary_006,7,Cantonese,Vocabulary,Flashcard,影相,jing2 soeng2,to take photos,用温柔的语气讲这句话,Beth251112
+day07_vocabulary_007,7,Cantonese,Vocabulary,Flashcard,放假,fong3 gaa3,holiday,用温柔的语气讲这句话,Beth251112
+day07_vocabulary_008,7,Cantonese,Vocabulary,Flashcard,休息,jau1 sik1,to rest,用温柔的语气讲这句话,Beth251112
+day07_vocabulary_009,7,Cantonese,Vocabulary,Flashcard,行程,haang4 cing4,route,用温柔的语气讲这句话,Beth251112
+day07_vocabulary_010,7,Cantonese,Vocabulary,Flashcard,計劃,gai3 waak6,plan,用温柔的语气讲这句话,Beth251112
+day08_vocabulary_001,8,Cantonese,Vocabulary,Flashcard,醫生,ji1 sang1,doctor,用温柔的语气讲这句话,Beth251112
+day08_vocabulary_002,8,Cantonese,Vocabulary,Flashcard,痛,tung3,pain,用温柔的语气讲这句话,Beth251112
+day08_vocabulary_003,8,Cantonese,Vocabulary,Flashcard,藥,joek6,medicine,用温柔的语气讲这句话,Beth251112
+day08_vocabulary_004,8,Cantonese,Vocabulary,Flashcard,頭痛,tau4 tung3,headache,用温柔的语气讲这句话,Beth251112
+day08_vocabulary_005,8,Cantonese,Vocabulary,Flashcard,肚痛,tou5 tung3,stomachache,用温柔的语气讲这句话,Beth251112
+day08_vocabulary_006,8,Cantonese,Vocabulary,Flashcard,咳,kai1,cough,用温柔的语气讲这句话,Beth251112
+day08_vocabulary_007,8,Cantonese,Vocabulary,Flashcard,感冒,gam2 mou6,cold,用温柔的语气讲这句话,Beth251112
+day08_vocabulary_008,8,Cantonese,Vocabulary,Flashcard,醫院,ji1 jyun2,hospital,用温柔的语气讲这句话,Beth251112
+day08_vocabulary_009,8,Cantonese,Vocabulary,Flashcard,健康,gin6 hong1,health,用温柔的语气讲这句话,Beth251112
+day08_vocabulary_010,8,Cantonese,Vocabulary,Flashcard,休息,jau1 sik1,rest,用温柔的语气讲这句话,Beth251112
+day09_vocabulary_001,9,Cantonese,Vocabulary,Flashcard,工作,gung1 zok3,work,用温柔的语气讲这句话,Beth251112
+day09_vocabulary_002,9,Cantonese,Vocabulary,Flashcard,會議,wui6 ji5,meeting,用温柔的语气讲这句话,Beth251112
+day09_vocabulary_003,9,Cantonese,Vocabulary,Flashcard,計劃,gai3 waak6,project,用温柔的语气讲这句话,Beth251112
+day09_vocabulary_004,9,Cantonese,Vocabulary,Flashcard,報告,bou3 gou3,report,用温柔的语气讲这句话,Beth251112
+day09_vocabulary_005,9,Cantonese,Vocabulary,Flashcard,同事,tung4 si6,colleague,用温柔的语气讲这句话,Beth251112
+day09_vocabulary_006,9,Cantonese,Vocabulary,Flashcard,上司,soeng6 si1,boss,用温柔的语气讲这句话,Beth251112
+day09_vocabulary_007,9,Cantonese,Vocabulary,Flashcard,時間,si4 gaan3,time,用温柔的语气讲这句话,Beth251112
+day09_vocabulary_008,9,Cantonese,Vocabulary,Flashcard,任務,jam6 mou6,task,用温柔的语气讲这句话,Beth251112
+day09_vocabulary_009,9,Cantonese,Vocabulary,Flashcard,主意,zyu2 ji3,idea,用温柔的语气讲这句话,Beth251112
+day09_vocabulary_010,9,Cantonese,Vocabulary,Flashcard,成功,sing4 gung1,success,用温柔的语气讲这句话,Beth251112
+day10_vocabulary_001,10,Cantonese,Vocabulary,Flashcard,街,gaai1,street,用温柔的语气讲这句话,Beth251112
+day10_vocabulary_002,10,Cantonese,Vocabulary,Flashcard,地圖,dei6 tou4,map,用温柔的语气讲这句话,Beth251112
+day10_vocabulary_003,10,Cantonese,Vocabulary,Flashcard,右轉,jau6 zyun2,turn right,用温柔的语气讲这句话,Beth251112
+day10_vocabulary_004,10,Cantonese,Vocabulary,Flashcard,左轉,zo2 zyun2,turn left,用温柔的语气讲这句话,Beth251112
+day10_vocabulary_005,10,Cantonese,Vocabulary,Flashcard,直行,zik6 haang4,go straight,用温柔的语气讲这句话,Beth251112
+day10_vocabulary_006,10,Cantonese,Vocabulary,Flashcard,路口,lou6 hau2,crossroad,用温柔的语气讲这句话,Beth251112
+day10_vocabulary_007,10,Cantonese,Vocabulary,Flashcard,近,kan5,near,用温柔的语气讲这句话,Beth251112
+day10_vocabulary_008,10,Cantonese,Vocabulary,Flashcard,遠,jyun5,far,用温柔的语气讲这句话,Beth251112
+day10_vocabulary_009,10,Cantonese,Vocabulary,Flashcard,大廈,daai6 haa6,building,用温柔的语气讲这句话,Beth251112
+day10_vocabulary_010,10,Cantonese,Vocabulary,Flashcard,方向,fong1 hoeng3,direction,用温柔的语气讲这句话,Beth251112
+day11_vocabulary_001,11,Cantonese,Vocabulary,Flashcard,女兒,neoi5ji4,daughter,用温柔的语气讲这句话,Beth251112
+day11_vocabulary_002,11,Cantonese,Vocabulary,Flashcard,上學日,soeng5hok6 jat6,school day,用温柔的语气讲这句话,Beth251112
+day11_vocabulary_003,11,Cantonese,Vocabulary,Flashcard,功課,gung1fo3,homework,用温柔的语气讲这句话,Beth251112
+day11_vocabulary_004,11,Cantonese,Vocabulary,Flashcard,背囊,bui3nong4,backpack,用温柔的语气讲这句话,Beth251112
+day11_vocabulary_005,11,Cantonese,Vocabulary,Flashcard,飯盒,faan6haap2,lunchbox,用温柔的语气讲这句话,Beth251112
+day11_vocabulary_006,11,Cantonese,Vocabulary,Flashcard,校車,haau6ce1,school bus,用温柔的语气讲这句话,Beth251112
+day12_vocabulary_001,12,Cantonese,Vocabulary,Flashcard,中學,zung1hok6,middle school,用温柔的语气讲这句话,Beth251112
+day12_vocabulary_002,12,Cantonese,Vocabulary,Flashcard,班主任時間,baan1zyu2jam6 si4gaan1,homeroom,用温柔的语气讲这句话,Beth251112
+day12_vocabulary_003,12,Cantonese,Vocabulary,Flashcard,教科書,gaau3fo1syu1,textbook,用温柔的语气讲这句话,Beth251112
+day12_vocabulary_004,12,Cantonese,Vocabulary,Flashcard,儲物櫃,cyu5mat6gwai6,locker,用温柔的语气讲这句话,Beth251112
+day12_vocabulary_005,12,Cantonese,Vocabulary,Flashcard,遲鈴,ci4 ling4,late bell,用温柔的语气讲这句话,Beth251112
+day12_vocabulary_006,12,Cantonese,Vocabulary,Flashcard,讀書計劃,duk6syu1 gai3waak6,study plan,用温柔的语气讲这句话,Beth251112
+day13_vocabulary_001,13,Cantonese,Vocabulary,Flashcard,夜風,je6 fung1,night breeze,用温柔的语气讲这句话,Beth251112
+day13_vocabulary_002,13,Cantonese,Vocabulary,Flashcard,厚厚的毛毯,hau5 hau5 dik1 mou4taam2,thick blanket,用温柔的语气讲这句话,Beth251112
+day13_vocabulary_003,13,Cantonese,Vocabulary,Flashcard,暖風機,nyun5fung1gei1,space heater,用温柔的语气讲这句话,Beth251112
+day13_vocabulary_004,13,Cantonese,Vocabulary,Flashcard,熱茶,jit6caa4,hot tea,用温柔的语气讲这句话,Beth251112
+day13_vocabulary_005,13,Cantonese,Vocabulary,Flashcard,窗閂,coeng1 saan1,window latch,用温柔的语气讲这句话,Beth251112
+day13_vocabulary_006,13,Cantonese,Vocabulary,Flashcard,睡眠質素,seoi6min4 zat1sou3,sleep quality,用温柔的语气讲这句话,Beth251112
+day14_vocabulary_001,14,Cantonese,Vocabulary,Flashcard,公司,gung1si1,company,用温柔的语气讲这句话,Beth251112
+day14_vocabulary_002,14,Cantonese,Vocabulary,Flashcard,同事傾計,tung4si6 keng1gai2,coworker chat,用温柔的语气讲这句话,Beth251112
+day14_vocabulary_003,14,Cantonese,Vocabulary,Flashcard,每週會議,mui5zau1 wui6ji5,weekly meeting,用温柔的语气讲这句话,Beth251112
+day14_vocabulary_004,14,Cantonese,Vocabulary,Flashcard,項目簡介,hong6muk6 gaan2gaai3,project brief,用温柔的语气讲这句话,Beth251112
+day14_vocabulary_005,14,Cantonese,Vocabulary,Flashcard,截止日期,zit6zi2 jat6kei4,deadlines,用温柔的语气讲这句话,Beth251112
+day14_vocabulary_006,14,Cantonese,Vocabulary,Flashcard,反饋筆記,faan2gwai6 bat1gei3,feedback notes,用温柔的语气讲这句话,Beth251112
+day15_vocabulary_001,15,Cantonese,Vocabulary,Flashcard,鞋店,haai4dim3,shoe store,用温柔的语气讲这句话,Beth251112
+day15_vocabulary_002,15,Cantonese,Vocabulary,Flashcard,運動鞋,wan6dung6haai4,sneakers,用温柔的语气讲这句话,Beth251112
+day15_vocabulary_003,15,Cantonese,Vocabulary,Flashcard,高跟鞋高度,gou1gan1haai4 gou1dou6,heel height,用温柔的语气讲这句话,Beth251112
+day15_vocabulary_004,15,Cantonese,Vocabulary,Flashcard,尺碼表,cek3maa5 biu2,size chart,用温柔的语气讲这句话,Beth251112
+day15_vocabulary_005,15,Cantonese,Vocabulary,Flashcard,退貨政策,teoi3fo3 zing3caak3,return policy,用温柔的语气讲这句话,Beth251112
+day15_vocabulary_006,15,Cantonese,Vocabulary,Flashcard,舒適度測試,syu1sik1 dou6 caak1si3,comfort test,用温柔的语气讲这句话,Beth251112
+day16_vocabulary_001,16,Cantonese,Vocabulary,Flashcard,女朋友,neoi2pang4jau5,girlfriend,用温柔的语气讲这句话,Beth251112
+day16_vocabulary_002,16,Cantonese,Vocabulary,Flashcard,咖啡約會,gaa3fe1 joek3wui2,coffee date,用温柔的语气讲这句话,Beth251112
+day16_vocabulary_003,16,Cantonese,Vocabulary,Flashcard,嗜好,si3hou3,hobby,用温柔的语气讲这句话,Beth251112
+day16_vocabulary_004,16,Cantonese,Vocabulary,Flashcard,周末計劃,zau1mut6 gai3waak6,weekend plan,用温柔的语气讲这句话,Beth251112
+day16_vocabulary_005,16,Cantonese,Vocabulary,Flashcard,文字串,man4zi6 cyun3,text thread,用温柔的语气讲这句话,Beth251112
+day16_vocabulary_006,16,Cantonese,Vocabulary,Flashcard,慶祝,hing3zuk1,celebration,用温柔的语气讲这句话,Beth251112
+day17_vocabulary_001,17,Cantonese,Vocabulary,Flashcard,生日派對,saang1jat6paai3deoi3,birthday party,用温柔的语气讲这句话,Beth251112
+day17_vocabulary_002,17,Cantonese,Vocabulary,Flashcard,禮物包裝,lai5mat6 baau1zong1,gift wrap,用温柔的语气讲这句话,Beth251112
+day17_vocabulary_003,17,Cantonese,Vocabulary,Flashcard,着裝規範,zoek3zong1 kwai1faan6,dress code,用温柔的语气讲这句话,Beth251112
+day17_vocabulary_004,17,Cantonese,Vocabulary,Flashcard,賓客名單,ban1haak3 ming4daan1,guest list,用温柔的语气讲这句话,Beth251112
+day17_vocabulary_005,17,Cantonese,Vocabulary,Flashcard,派對巴士,paai3deoi3 baa1si2,party bus,用温柔的语气讲这句话,Beth251112
+day17_vocabulary_006,17,Cantonese,Vocabulary,Flashcard,煙花蠟燭,jin1faa1 laap6zuk1,sparkler candles,用温柔的语气讲这句话,Beth251112
+day18_vocabulary_001,18,Cantonese,Vocabulary,Flashcard,細細嘅單位,sai3sai3 ge3 daan1wai2,tiny apartment,用温柔的语气讲这句话,Beth251112
+day18_vocabulary_002,18,Cantonese,Vocabulary,Flashcard,儲物箱,cyu5mat6 soeng1,storage box,用温柔的语气讲这句话,Beth251112
+day18_vocabulary_003,18,Cantonese,Vocabulary,Flashcard,樓層平面圖,lau4cang4 ping4min2tou4,floor plan,用温柔的语气讲这句话,Beth251112
+day18_vocabulary_004,18,Cantonese,Vocabulary,Flashcard,租金預算,zou1gam1 jyu6syun3,rent budget,用温柔的语气讲这句话,Beth251112
+day18_vocabulary_005,18,Cantonese,Vocabulary,Flashcard,摺枱,zip3 toi2,folding table,用温柔的语气讲这句话,Beth251112
+day18_vocabulary_006,18,Cantonese,Vocabulary,Flashcard,共享衣櫃,gung6hoeng2 ji1gwai6,shared closet,用温柔的语气讲这句话,Beth251112
+day19_vocabulary_001,19,Cantonese,Vocabulary,Flashcard,手提電腦支架,sau2tai4din6nou5 zi1gaa2,laptop stand,用温柔的语气讲这句话,Beth251112
+day19_vocabulary_002,19,Cantonese,Vocabulary,Flashcard,無線滑鼠,mou4sin3 waat6syu2,wireless mouse,用温柔的语气讲这句话,Beth251112
+day19_vocabulary_003,19,Cantonese,Vocabulary,Flashcard,屏幕休息,ping4mok6 jau1sik1,screen break,用温柔的语气讲这句话,Beth251112
+day19_vocabulary_004,19,Cantonese,Vocabulary,Flashcard,專注計時器,zyun1zyu3 gai3si4hei3,focus timer,用温柔的语气讲这句话,Beth251112
+day19_vocabulary_005,19,Cantonese,Vocabulary,Flashcard,軟件更新,jyun5gin2 gang1san1,software update,用温柔的语气讲这句话,Beth251112
+day19_vocabulary_006,19,Cantonese,Vocabulary,Flashcard,伸展提示,san1zin2 tai4si6,stretch reminder,用温柔的语气讲这句话,Beth251112
+day20_vocabulary_001,20,Cantonese,Vocabulary,Flashcard,訂枱,deng6 toi2,table reservation,用温柔的语气讲这句话,Beth251112
+day20_vocabulary_002,20,Cantonese,Vocabulary,Flashcard,餐牌精選,caan1paai2 zing1syun2,menu special,用温柔的语气讲这句话,Beth251112
+day20_vocabulary_003,20,Cantonese,Vocabulary,Flashcard,等候名單,dang2hau6 ming4daan1,waitlist,用温柔的语气讲这句话,Beth251112
+day20_vocabulary_004,20,Cantonese,Vocabulary,Flashcard,茶壺,caa4wu2,tea pot,用温柔的语气讲这句话,Beth251112
+day20_vocabulary_005,20,Cantonese,Vocabulary,Flashcard,招牌菜,ziu1paai4coi3,signature dish,用温柔的语气讲这句话,Beth251112
+day20_vocabulary_006,20,Cantonese,Vocabulary,Flashcard,AA制,ei1ei1zai3,bill split,用温柔的语气讲这句话,Beth251112
+day21_vocabulary_001,21,Cantonese,Vocabulary,Flashcard,播放列表,bo3fong3lit6biu2,playlist,用温柔的语气讲这句话,Beth251112
+day21_vocabulary_002,21,Cantonese,Vocabulary,Flashcard,耳機,ji5gei1,headphones,用温柔的语气讲这句话,Beth251112
+day21_vocabulary_003,21,Cantonese,Vocabulary,Flashcard,舞步,mou5bou6,dance move,用温柔的语气讲这句话,Beth251112
+day21_vocabulary_004,21,Cantonese,Vocabulary,Flashcard,合唱,hap6coeng3,chorus,用温柔的语气讲这句话,Beth251112
+day21_vocabulary_005,21,Cantonese,Vocabulary,Flashcard,音量旋鈕,jam1loeng6 syun4nau2,volume knob,用温柔的语气讲这句话,Beth251112
+day21_vocabulary_006,21,Cantonese,Vocabulary,Flashcard,最愛的歌手,zeoi3 oi3 dik1 go1sau2,favorite singer,用温柔的语气讲这句话,Beth251112
+day22_vocabulary_001,22,Cantonese,Vocabulary,Flashcard,準備餐食,zeon2bei6 caan1 sik6,meal prep,用温柔的语气讲这句话,Beth251112
+day22_vocabulary_002,22,Cantonese,Vocabulary,Flashcard,步數,bou6sou3,step count,用温柔的语气讲这句话,Beth251112
+day22_vocabulary_003,22,Cantonese,Vocabulary,Flashcard,補水,bou2seoi2,hydration,用温柔的语气讲这句话,Beth251112
+day22_vocabulary_004,22,Cantonese,Vocabulary,Flashcard,間歇跑,gaan3hit3 paau2,interval run,用温柔的语气讲这句话,Beth251112
+day22_vocabulary_005,22,Cantonese,Vocabulary,Flashcard,睡眠節奏,seoi6min4 zit3zau3,sleep rhythm,用温柔的语气讲这句话,Beth251112
+day22_vocabulary_006,22,Cantonese,Vocabulary,Flashcard,進展相,zeon3zin2 soeng2,progress photo,用温柔的语气讲这句话,Beth251112
+day23_vocabulary_001,23,Cantonese,Vocabulary,Flashcard,職位列表,zik1wai6 lit6biu2,job listing,用温柔的语气讲这句话,Beth251112
+day23_vocabulary_002,23,Cantonese,Vocabulary,Flashcard,履歷表草稿,lei5lik6biu2 cou2gou2,resume draft,用温柔的语气讲这句话,Beth251112
+day23_vocabulary_003,23,Cantonese,Vocabulary,Flashcard,求職信,kau4zik1seon3,cover letter,用温柔的语气讲这句话,Beth251112
+day23_vocabulary_004,23,Cantonese,Vocabulary,Flashcard,技能網格,gei6nang4 mong5gaak3,skills grid,用温柔的语气讲这句话,Beth251112
+day23_vocabulary_005,23,Cantonese,Vocabulary,Flashcard,影片面試,jing2pin2 min6si3,video interview,用温柔的语气讲这句话,Beth251112
+day23_vocabulary_006,23,Cantonese,Vocabulary,Flashcard,網絡咖啡,mong5lok2 gaa3fe1,network coffee,用温柔的语气讲这句话,Beth251112
+day24_vocabulary_001,24,Cantonese,Vocabulary,Flashcard,打卡紙,daa2kaat1 zi2,timecard,用温柔的语气讲这句话,Beth251112
+day24_vocabulary_002,24,Cantonese,Vocabulary,Flashcard,通勤,tung1kan4,commute,用温柔的语气讲这句话,Beth251112
+day24_vocabulary_003,24,Cantonese,Vocabulary,Flashcard,街頭小食,gaai1tau4 siu2sik6,street food,用温柔的语气讲这句话,Beth251112
+day24_vocabulary_004,24,Cantonese,Vocabulary,Flashcard,播客節目,bo3haak3 zit3muk6,podcast episode,用温柔的语气讲这句话,Beth251112
+day24_vocabulary_005,24,Cantonese,Vocabulary,Flashcard,梳化瞓覺,so1faa2 fan3gaau3,sofa nap,用温柔的语气讲这句话,Beth251112
+day24_vocabulary_006,24,Cantonese,Vocabulary,Flashcard,夜市,je6si5,night market,用温柔的语气讲这句话,Beth251112
+day25_vocabulary_001,25,Cantonese,Vocabulary,Flashcard,衣櫃,ji1gwai6,wardrobe,用温柔的语气讲这句话,Beth251112
+day25_vocabulary_002,25,Cantonese,Vocabulary,Flashcard,晾衫架,long6saam1gaa2,laundry rack,用温柔的语气讲这句话,Beth251112
+day25_vocabulary_003,25,Cantonese,Vocabulary,Flashcard,熨衫板,tong3saam1baan2,ironing board,用温柔的语气讲这句话,Beth251112
+day25_vocabulary_004,25,Cantonese,Vocabulary,Flashcard,天氣報告,tin1hei3bou3gou3,weather report,用温柔的语气讲这句话,Beth251112
+day25_vocabulary_005,25,Cantonese,Vocabulary,Flashcard,配件,pui3gin2,accessories,用温柔的语气讲这句话,Beth251112
+day25_vocabulary_006,25,Cantonese,Vocabulary,Flashcard,備用服裝,bei6jung6 fuk6zong1,backup outfit,用温柔的语气讲这句话,Beth251112
+day26_vocabulary_001,26,Cantonese,Vocabulary,Flashcard,自習室,zi6zaap6 sat1,study hall,用温柔的语气讲这句话,Beth251112
+day26_vocabulary_002,26,Cantonese,Vocabulary,Flashcard,小食吧,siu2sik6 baa1,snack bar,用温柔的语气讲这句话,Beth251112
+day26_vocabulary_003,26,Cantonese,Vocabulary,Flashcard,社團會議,se5tyun4 wui6ji5,club meeting,用温柔的语气讲这句话,Beth251112
+day26_vocabulary_004,26,Cantonese,Vocabulary,Flashcard,手帳,sau2zoeng3,notebook,用温柔的语气讲这句话,Beth251112
+day26_vocabulary_005,26,Cantonese,Vocabulary,Flashcard,儲物櫃通行證,cyu5mat6gwai6 tung1hang4zing3,locker pass,用温柔的语气讲这句话,Beth251112
+day26_vocabulary_006,26,Cantonese,Vocabulary,Flashcard,練習測驗,lin6zaap6 caak1jim6,practice quiz,用温柔的语气讲这句话,Beth251112
+day27_vocabulary_001,27,Cantonese,Vocabulary,Flashcard,班次時間表,baan1ci3 si4gaan1biu2,shift schedule,用温柔的语气讲这句话,Beth251112
+day27_vocabulary_002,27,Cantonese,Vocabulary,Flashcard,任務隊列,jam4mou6 deoi6lit6,task queue,用温柔的语气讲这句话,Beth251112
+day27_vocabulary_003,27,Cantonese,Vocabulary,Flashcard,刷徽章,caat3 fai1zoeng1,badge swipe,用温柔的语气讲这句话,Beth251112
+day27_vocabulary_004,27,Cantonese,Vocabulary,Flashcard,午飯時間,ng5faan6 si4gaan1,lunch break,用温柔的语气讲这句话,Beth251112
+day27_vocabulary_005,27,Cantonese,Vocabulary,Flashcard,狀態板,zong6taai3 baan2,status board,用温柔的语气讲这句话,Beth251112
+day27_vocabulary_006,27,Cantonese,Vocabulary,Flashcard,打氣說話,daa2hei3 syut3waa6,pep talk,用温柔的语气讲这句话,Beth251112
+day28_vocabulary_001,28,Cantonese,Vocabulary,Flashcard,休息日,jau1sik1 jat6,day off,用温柔的语气讲这句话,Beth251112
+day28_vocabulary_002,28,Cantonese,Vocabulary,Flashcard,水療入場券,seoi2liu4 jap6coeng4gyun3,spa ticket,用温柔的语气讲这句话,Beth251112
+day28_vocabulary_003,28,Cantonese,Vocabulary,Flashcard,公園長椅,gung1jyun2 coeng4ji2,park bench,用温柔的语气讲这句话,Beth251112
+day28_vocabulary_004,28,Cantonese,Vocabulary,Flashcard,小說,siu2syut3,novel,用温柔的语气讲这句话,Beth251112
+day28_vocabulary_005,28,Cantonese,Vocabulary,Flashcard,慢慢享受早午餐,maan6maan2 hoeng2sau6 zou2 ng5caan1,slow brunch,用温柔的语气讲这句话,Beth251112
+day28_vocabulary_006,28,Cantonese,Vocabulary,Flashcard,相片日誌,soeng3pin2 jat6zi3,photo journal,用温柔的语气讲这句话,Beth251112
+day29_vocabulary_001,29,Cantonese,Vocabulary,Flashcard,溫度,wan1dou6,temperature,用温柔的语气讲这句话,Beth251112
+day29_vocabulary_002,29,Cantonese,Vocabulary,Flashcard,診所,can2so2,clinic,用温柔的语气讲这句话,Beth251112
+day29_vocabulary_003,29,Cantonese,Vocabulary,Flashcard,藥量,joek6 loeng6,medicine dose,用温柔的语气讲这句话,Beth251112
+day29_vocabulary_004,29,Cantonese,Vocabulary,Flashcard,休息日,jau1sik1 jat6,rest day,用温柔的语气讲这句话,Beth251112
+day29_vocabulary_005,29,Cantonese,Vocabulary,Flashcard,薑湯,goeng1 soeng1,ginger soup,用温柔的语气讲这句话,Beth251112
+day29_vocabulary_006,29,Cantonese,Vocabulary,Flashcard,跟進電話,gan1zeon3 din6waa2,follow-up call,用温柔的语气讲这句话,Beth251112
+day30_vocabulary_001,30,Cantonese,Vocabulary,Flashcard,演講廳,jin2gong2 teng1,lecture hall,用温柔的语气讲这句话,Beth251112
+day30_vocabulary_002,30,Cantonese,Vocabulary,Flashcard,學期計劃,hok6kei4 gai3waak6,semester plan,用温柔的语气讲这句话,Beth251112
+day30_vocabulary_003,30,Cantonese,Vocabulary,Flashcard,研究實驗室,jin4gau3 sat6jim6sat1,research lab,用温柔的语气讲这句话,Beth251112
+day30_vocabulary_004,30,Cantonese,Vocabulary,Flashcard,學生證,hok6saang1zing3,student card,用温柔的语气讲这句话,Beth251112
+day30_vocabulary_005,30,Cantonese,Vocabulary,Flashcard,小組項目,siu2zou2 hong6muk6,group project,用温柔的语气讲这句话,Beth251112
+day30_vocabulary_006,30,Cantonese,Vocabulary,Flashcard,自助餐廳通行證,zi6zo6caan1teng1 tung1hang4zing3,cafeteria pass,用温柔的语气讲这句话,Beth251112
+day31_vocabulary_001,31,Cantonese,Vocabulary,Flashcard,招聘網站,ziu1ping3 mong5zaam6,job portal,用温柔的语气讲这句话,Beth251112
+day31_vocabulary_002,31,Cantonese,Vocabulary,Flashcard,作品集連結,zok3ban2 zaap6 lin4git3,portfolio link,用温柔的语气讲这句话,Beth251112
+day31_vocabulary_003,31,Cantonese,Vocabulary,Flashcard,轉介,zyun2gaai3,referral,用温柔的语气讲这句话,Beth251112
+day31_vocabulary_004,31,Cantonese,Vocabulary,Flashcard,薪金範圍,san1gam1 faan6wai4,salary range,用温柔的语气讲这句话,Beth251112
+day31_vocabulary_005,31,Cantonese,Vocabulary,Flashcard,模擬面試,mou4ji4 min6si3,mock interview,用温柔的语气讲这句话,Beth251112
+day31_vocabulary_006,31,Cantonese,Vocabulary,Flashcard,慶祝小食,hing3zuk1 siu2sik6,celebration snack,用温柔的语气讲这句话,Beth251112
+day32_vocabulary_001,32,Cantonese,Vocabulary,Flashcard,醫院袋,ji1jyun2 doi2,hospital bag,用温柔的语气讲这句话,Beth251112
+day32_vocabulary_002,32,Cantonese,Vocabulary,Flashcard,生產計劃,sang1caan2 gai3waak6,birth plan,用温柔的语气讲这句话,Beth251112
+day32_vocabulary_003,32,Cantonese,Vocabulary,Flashcard,產前檢查,caan2cin4gim2caa4,prenatal visit,用温柔的语气讲这句话,Beth251112
+day32_vocabulary_004,32,Cantonese,Vocabulary,Flashcard,夜班,je6baan1,night shift,用温柔的语气讲这句话,Beth251112
+day32_vocabulary_005,32,Cantonese,Vocabulary,Flashcard,家庭熱線,gaa1ting4 jit6sin3,family hotline,用温柔的语气讲这句话,Beth251112
+day32_vocabulary_006,32,Cantonese,Vocabulary,Flashcard,嬰兒毯,jing1ji4 taam2,baby blanket,用温柔的语气讲这句话,Beth251112
+day33_vocabulary_001,33,Cantonese,Vocabulary,Flashcard,晾衫堆,long6saam1 deoi1,laundry pile,用温柔的语气讲这句话,Beth251112
+day33_vocabulary_002,33,Cantonese,Vocabulary,Flashcard,儲物箱,cyu5mat6 soeng1,storage bin,用温柔的语气讲这句话,Beth251112
+day33_vocabulary_003,33,Cantonese,Vocabulary,Flashcard,捐款袋,gyun1fun2 doi2,donation bag,用温柔的语气讲这句话,Beth251112
+day33_vocabulary_004,33,Cantonese,Vocabulary,Flashcard,抹塵布,mut3 can4 bou3,dust cloth,用温柔的语气讲这句话,Beth251112
+day33_vocabulary_005,33,Cantonese,Vocabulary,Flashcard,任務計時器,jam4mou6 gai3si4hei3,task timer,用温柔的语气讲这句话,Beth251112
+day33_vocabulary_006,33,Cantonese,Vocabulary,Flashcard,播放列表喇叭,bo3fong3lit6biu2 laa3baa1,playlist speaker,用温柔的语气讲这句话,Beth251112
+day34_vocabulary_001,34,Cantonese,Vocabulary,Flashcard,旅行預算,leoi5hang4 jyu6syun3,travel budget,用温柔的语气讲这句话,Beth251112
+day34_vocabulary_002,34,Cantonese,Vocabulary,Flashcard,收納立方袋,sau1naap6 laap6fong1 doi2,packing cubes,用温柔的语气讲这句话,Beth251112
+day34_vocabulary_003,34,Cantonese,Vocabulary,Flashcard,行程表,hang4cing4 biu2,itinerary,用温柔的语气讲这句话,Beth251112
+day34_vocabulary_004,34,Cantonese,Vocabulary,Flashcard,護照副本,wu6ziu3 fu3bun2,passport copy,用温柔的语气讲这句话,Beth251112
+day34_vocabulary_005,34,Cantonese,Vocabulary,Flashcard,貨幣兌換,fo3bai6deoi3wun6,currency exchange,用温柔的语气讲这句话,Beth251112
+day34_vocabulary_006,34,Cantonese,Vocabulary,Flashcard,旅行日誌,leoi5hang4 jat6zi3,travel journal,用温柔的语气讲这句话,Beth251112
+day35_vocabulary_001,35,Cantonese,Vocabulary,Flashcard,登機證,dang1gei1zing3,boarding pass,用温柔的语气讲这句话,Beth251112
+day35_vocabulary_002,35,Cantonese,Vocabulary,Flashcard,海關申報表,hoi2gwaan1 san1bou3 biu2,customs form,用温柔的语气讲这句话,Beth251112
+day35_vocabulary_003,35,Cantonese,Vocabulary,Flashcard,旅遊保險,leoi5jau4 bou2him2,travel insurance,用温柔的语气讲这句话,Beth251112
+day35_vocabulary_004,35,Cantonese,Vocabulary,Flashcard,機場快綫,gei1coeng4faai3sin3,airport express,用温柔的语气讲这句话,Beth251112
+day35_vocabulary_005,35,Cantonese,Vocabulary,Flashcard,時區,si4keoi1,time zone,用温柔的语气讲这句话,Beth251112
+day35_vocabulary_006,35,Cantonese,Vocabulary,Flashcard,到達訊息,dou3daat6 seon3sik1,arrival text,用温柔的语气讲这句话,Beth251112
+day36_vocabulary_001,36,Cantonese,Vocabulary,Flashcard,烹飪課,paang1jam6 fo3,cooking class,用温柔的语气讲这句话,Beth251112
+day36_vocabulary_002,36,Cantonese,Vocabulary,Flashcard,雜貨清單,zaap6fo3 cing1daan1,grocery list,用温柔的语气讲这句话,Beth251112
+day36_vocabulary_003,36,Cantonese,Vocabulary,Flashcard,砧板,zam1baan2,cutting board,用温柔的语气讲这句话,Beth251112
+day36_vocabulary_004,36,Cantonese,Vocabulary,Flashcard,煮食鍋,zyu2sik6 wo1,saucepan,用温柔的语气讲这句话,Beth251112
+day36_vocabulary_005,36,Cantonese,Vocabulary,Flashcard,調味料,tiu4mei6liu2,seasoning,用温柔的语气讲这句话,Beth251112
+day36_vocabulary_006,36,Cantonese,Vocabulary,Flashcard,試味,si3mei6,taste test,用温柔的语气讲这句话,Beth251112
+day37_vocabulary_001,37,Cantonese,Vocabulary,Flashcard,鬧鐘,naau6zung1,alarm clock,用温柔的语气讲这句话,Beth251112
+day37_vocabulary_002,37,Cantonese,Vocabulary,Flashcard,日出散步,jat6ceot1 saan3bou6,sunrise walk,用温柔的语气讲这句话,Beth251112
+day37_vocabulary_003,37,Cantonese,Vocabulary,Flashcard,咖啡保溫瓶,gaa3fe1 bou2wan1 ping2,coffee thermos,用温柔的语气讲这句话,Beth251112
+day37_vocabulary_004,37,Cantonese,Vocabulary,Flashcard,伸展墊,san1zin2 din3,stretch mat,用温柔的语气讲这句话,Beth251112
+day37_vocabulary_005,37,Cantonese,Vocabulary,Flashcard,習慣追蹤器,zaap6gwaan3 zeoi1zung1 hei3,habit tracker,用温柔的语气讲这句话,Beth251112
+day37_vocabulary_006,37,Cantonese,Vocabulary,Flashcard,獎勵小食,zoeng2lai6 siu2sik6,reward snack,用温柔的语气讲这句话,Beth251112
+day38_vocabulary_001,38,Cantonese,Vocabulary,Flashcard,長途,coeng4tou4,long distance,用温柔的语气讲这句话,Beth251112
+day38_vocabulary_002,38,Cantonese,Vocabulary,Flashcard,視像聊天,si6zoeng6 liu4tin1,video chat,用温柔的语气讲这句话,Beth251112
+day38_vocabulary_003,38,Cantonese,Vocabulary,Flashcard,慰問包,wai3man6 baau1,care package,用温柔的语气讲这句话,Beth251112
+day38_vocabulary_004,38,Cantonese,Vocabulary,Flashcard,時差,si4caa1,time difference,用温柔的语气讲这句话,Beth251112
+day38_vocabulary_005,38,Cantonese,Vocabulary,Flashcard,共享播放列表,gung6hoeng2 bo3fong3lit6biu2,shared playlist,用温柔的语气讲这句话,Beth251112
+day38_vocabulary_006,38,Cantonese,Vocabulary,Flashcard,未來的訪問,mei6loi4 dik1 fong2man6,future visit,用温柔的语气讲这句话,Beth251112
+day39_vocabulary_001,39,Cantonese,Vocabulary,Flashcard,朝晨鬧鐘,ziu1 san4 naau6zung1,morning alarm,用温柔的语气讲这句话,Beth251112
+day39_vocabulary_002,39,Cantonese,Vocabulary,Flashcard,奶昔,naai5sik1,smoothie,用温柔的语气讲这句话,Beth251112
+day39_vocabulary_003,39,Cantonese,Vocabulary,Flashcard,燕麥,jin3mak6,oatmeal,用温柔的语气讲这句话,Beth251112
+day39_vocabulary_004,39,Cantonese,Vocabulary,Flashcard,爐面煎鍋,lou4 min6 zin1wo1,stovetop pan,用温柔的语气讲这句话,Beth251112
+day39_vocabulary_005,39,Cantonese,Vocabulary,Flashcard,雜貨籃,zaap6fo3 laam4,grocery basket,用温柔的语气讲这句话,Beth251112
+day39_vocabulary_006,39,Cantonese,Vocabulary,Flashcard,習慣連續記錄,zaap6gwaan3 lin4zuk6 gei3luk6,habit streak,用温柔的语气讲这句话,Beth251112
+day40_vocabulary_001,40,Cantonese,Vocabulary,Flashcard,課堂回顧,fo3tong4 wui4gu3,lecture recap,用温柔的语气讲这句话,Beth251112
+day40_vocabulary_002,40,Cantonese,Vocabulary,Flashcard,簡報投影片,gaan2bou3 tau4jing2 pin2,presentation slides,用温柔的语气讲这句话,Beth251112
+day40_vocabulary_003,40,Cantonese,Vocabulary,Flashcard,讀書夥伴,duk6syu1 fo2bun6,study partner,用温柔的语气讲这句话,Beth251112
+day40_vocabulary_004,40,Cantonese,Vocabulary,Flashcard,校園穿梭巴士,haau6jyun2 cyun1so1baa1si2,campus shuttle,用温柔的语气讲这句话,Beth251112
+day40_vocabulary_005,40,Cantonese,Vocabulary,Flashcard,補習課,bou2zaap6 fo3,tutor session,用温柔的语气讲这句话,Beth251112
+day40_vocabulary_006,40,Cantonese,Vocabulary,Flashcard,咖啡券,gaa3fe1 gyun3,coffee voucher,用温柔的语气讲这句话,Beth251112
+day41_vocabulary_001,41,Cantonese,Vocabulary,Flashcard,群組聊天,kwan4 zou2 liu4tin1,group chat,用温柔的语气讲这句话,Beth251112
+day41_vocabulary_002,41,Cantonese,Vocabulary,Flashcard,預訂,jyu6deng6,reservation,用温柔的语气讲这句话,Beth251112
+day41_vocabulary_003,41,Cantonese,Vocabulary,Flashcard,共乘,gung6sing4,carpool,用温柔的语气讲这句话,Beth251112
+day41_vocabulary_004,41,Cantonese,Vocabulary,Flashcard,AA制,ei1ei1zai3,shared bill,用温柔的语气讲这句话,Beth251112
+day41_vocabulary_005,41,Cantonese,Vocabulary,Flashcard,攝影亭,sip3jing2 ting4,photo booth,用温柔的语气讲这句话,Beth251112
+day41_vocabulary_006,41,Cantonese,Vocabulary,Flashcard,派對之後,paai3deoi3 zi1hau6,after party,用温柔的语气讲这句话,Beth251112
+day42_vocabulary_001,42,Cantonese,Vocabulary,Flashcard,領養寵物,ling5joeng5 cung2mat6,pet adoption,用温柔的语气讲这句话,Beth251112
+day42_vocabulary_002,42,Cantonese,Vocabulary,Flashcard,每日步行,mui5jat6 bou6hang4,daily walk,用温柔的语气讲这句话,Beth251112
+day42_vocabulary_003,42,Cantonese,Vocabulary,Flashcard,食物碗,sik6mat6 wun2,food bowl,用温柔的语气讲这句话,Beth251112
+day42_vocabulary_004,42,Cantonese,Vocabulary,Flashcard,睇獸醫,tai2 sau3ji1,vet visit,用温柔的语气讲这句话,Beth251112
+day42_vocabulary_005,42,Cantonese,Vocabulary,Flashcard,訓練獎勵,fan3lin6 zoeng2lai6,training treats,用温柔的语气讲这句话,Beth251112
+day42_vocabulary_006,42,Cantonese,Vocabulary,Flashcard,護理時間表,wu6lei5 si4gaan1biu2,care schedule,用温柔的语气讲这句话,Beth251112
+day43_vocabulary_001,43,Cantonese,Vocabulary,Flashcard,家譜,gaa1pou2,family tree,用温柔的语气讲这句话,Beth251112
+day43_vocabulary_002,43,Cantonese,Vocabulary,Flashcard,相簿,soeng2bou2,photo album,用温柔的语气讲这句话,Beth251112
+day43_vocabulary_003,43,Cantonese,Vocabulary,Flashcard,百樂餐,baak3lok6caan1,potluck,用温柔的语气讲这句话,Beth251112
+day43_vocabulary_004,43,Cantonese,Vocabulary,Flashcard,共享天井,gung6hoeng2 tin1zeng2,shared courtyard,用温柔的语气讲这句话,Beth251112
+day43_vocabulary_005,43,Cantonese,Vocabulary,Flashcard,故事之夜,gu3si6 zi1 je6,story night,用温柔的语气讲这句话,Beth251112
+day43_vocabulary_006,43,Cantonese,Vocabulary,Flashcard,回憶盒,wui4jik1 hap6,memory box,用温柔的语气讲这句话,Beth251112
+day44_vocabulary_001,44,Cantonese,Vocabulary,Flashcard,呼吸訓練,fu1kap1 fan3lin6,breathing drill,用温柔的语气讲这句话,Beth251112
+day44_vocabulary_002,44,Cantonese,Vocabulary,Flashcard,肯定,hang2ding6,affirmation,用温柔的语气讲这句话,Beth251112
+day44_vocabulary_003,44,Cantonese,Vocabulary,Flashcard,咖啡散步,gaa3fe1 saan3bou6,coffee walk,用温柔的语气讲这句话,Beth251112
+day44_vocabulary_004,44,Cantonese,Vocabulary,Flashcard,平靜播放列表,ping4zing6 bo3fong3lit6biu2,calm playlist,用温柔的语气讲这句话,Beth251112
+day44_vocabulary_005,44,Cantonese,Vocabulary,Flashcard,支援文字,zi1wun4 man4zi6,support text,用温柔的语气讲这句话,Beth251112
+day44_vocabulary_006,44,Cantonese,Vocabulary,Flashcard,獎勵計劃,zoeng2lai6 gai3waak6,reward plan,用温柔的语气讲这句话,Beth251112
+day45_vocabulary_001,45,Cantonese,Vocabulary,Flashcard,童年回憶,tung4nin4 wui4jik1,childhood memory,用温柔的语气讲这句话,Beth251112
+day45_vocabulary_002,45,Cantonese,Vocabulary,Flashcard,信任練習,seon3jam6 lin6zaap6,trust exercise,用温柔的语气讲这句话,Beth251112
+day45_vocabulary_003,45,Cantonese,Vocabulary,Flashcard,團隊項目,tyun4deoi2 hong6muk6,team project,用温柔的语气讲这句话,Beth251112
+day45_vocabulary_004,45,Cantonese,Vocabulary,Flashcard,道歉,dou6hip3,apology,用温柔的语气讲这句话,Beth251112
+day45_vocabulary_005,45,Cantonese,Vocabulary,Flashcard,共享日誌,gung6hoeng2 jat6zi3,shared journal,用温柔的语气讲这句话,Beth251112
+day45_vocabulary_006,45,Cantonese,Vocabulary,Flashcard,慶祝乾杯,hing3zuk1 gon1bui1,celebration toast,用温柔的语气讲这句话,Beth251112
+day46_vocabulary_001,46,Cantonese,Vocabulary,Flashcard,音樂會門票,jam1ngok6wui2 mun4piu3,concert ticket,用温柔的语气讲这句话,Beth251112
+day46_vocabulary_002,46,Cantonese,Vocabulary,Flashcard,周邊商品桌,zau1bin1 soeng1ban2 coek3,merch table,用温柔的语气讲这句话,Beth251112
+day46_vocabulary_003,46,Cantonese,Vocabulary,Flashcard,設定列表,cit3ding6 lit6biu2,set list,用温柔的语气讲这句话,Beth251112
+day46_vocabulary_004,46,Cantonese,Vocabulary,Flashcard,再來一次,zoi3loi4 jat1ci3,encore,用温柔的语气讲这句话,Beth251112
+day46_vocabulary_005,46,Cantonese,Vocabulary,Flashcard,搭車返屋企,daap3ce1 faan1uk1kei2,ride home,用温柔的语气讲这句话,Beth251112
+day46_vocabulary_006,46,Cantonese,Vocabulary,Flashcard,粉絲會,fan2si1 wui5,fan club,用温柔的语气讲这句话,Beth251112
+day47_vocabulary_001,47,Cantonese,Vocabulary,Flashcard,共享梳化,gung6hoeng2 so1faa2,shared sofa,用温柔的语气讲这句话,Beth251112
+day47_vocabulary_002,47,Cantonese,Vocabulary,Flashcard,寧靜角落,ning4zing6 gok3lok1,quiet corner,用温柔的语气讲这句话,Beth251112
+day47_vocabulary_003,47,Cantonese,Vocabulary,Flashcard,家務輪值表,gaa1mou6 leon4zik6 biu2,chore wheel,用温柔的语气讲这句话,Beth251112
+day47_vocabulary_004,47,Cantonese,Vocabulary,Flashcard,洗衣投放槽,sai2ji1 tau4fong3 cou4,laundry slot,用温柔的语气讲这句话,Beth251112
+day47_vocabulary_005,47,Cantonese,Vocabulary,Flashcard,廚房計時器,ceoi4fong2 gai3si4hei3,kitchen timer,用温柔的语气讲这句话,Beth251112
+day47_vocabulary_006,47,Cantonese,Vocabulary,Flashcard,家庭論壇,gaa1ting4 leon6taan4,family forum,用温柔的语气讲这句话,Beth251112
+day48_vocabulary_001,48,Cantonese,Vocabulary,Flashcard,餐桌禮儀,caan1coek3 lai5ji4,table manners,用温柔的语气讲这句话,Beth251112
+day48_vocabulary_002,48,Cantonese,Vocabulary,Flashcard,伺服器,si6fuk6hei3,servers,用温柔的语气讲这句话,Beth251112
+day48_vocabulary_003,48,Cantonese,Vocabulary,Flashcard,配菜,pui3coi3,side dish,用温柔的语气讲这句话,Beth251112
+day48_vocabulary_004,48,Cantonese,Vocabulary,Flashcard,甜品盤,tim4ban2 pun4,dessert tray,用温柔的语气讲这句话,Beth251112
+day48_vocabulary_005,48,Cantonese,Vocabulary,Flashcard,關門時間,gwaan1mun4 si4gaan1,closing time,用温柔的语气讲这句话,Beth251112
+day48_vocabulary_006,48,Cantonese,Vocabulary,Flashcard,夜間電車,je6gaan1 din6ce1,night tram,用温柔的语气讲这句话,Beth251112
+day49_vocabulary_001,49,Cantonese,Vocabulary,Flashcard,繁殖研究,faan4zik6 jin4gau3,breed research,用温柔的语气讲这句话,Beth251112
+day49_vocabulary_002,49,Cantonese,Vocabulary,Flashcard,寵物預算,cung2mat6 jyu6syun3,pet budget,用温柔的语气讲这句话,Beth251112
+day49_vocabulary_003,49,Cantonese,Vocabulary,Flashcard,試用訪問,si3jung6 fong2man6,trial visit,用温柔的语气讲这句话,Beth251112
+day49_vocabulary_004,49,Cantonese,Vocabulary,Flashcard,狗繩,gau2sing2,leash,用温柔的语气讲这句话,Beth251112
+day49_vocabulary_005,49,Cantonese,Vocabulary,Flashcard,寵物美容師,cung2mat6 mei5jung4si1,groomer,用温柔的语气讲这句话,Beth251112
+day49_vocabulary_006,49,Cantonese,Vocabulary,Flashcard,訓練班,fan3lin6 baan1,training class,用温柔的语气讲这句话,Beth251112
+day50_vocabulary_001,50,Cantonese,Vocabulary,Flashcard,課程時間表,fo3cing4 si4gaan1biu2,class timetable,用温柔的语气讲这句话,Beth251112
+day50_vocabulary_002,50,Cantonese,Vocabulary,Flashcard,讀書時段,duk6syu1 si4dyun6,study slot,用温柔的语气讲这句话,Beth251112
+day50_vocabulary_003,50,Cantonese,Vocabulary,Flashcard,實驗室時間,sat6jim6sat1 si4gaan1,lab hour,用温柔的语气讲这句话,Beth251112
+day50_vocabulary_004,50,Cantonese,Vocabulary,Flashcard,俱樂部報名,keoi1lok6bou6 bou3meng2,club signup,用温柔的语气讲这句话,Beth251112
+day50_vocabulary_005,50,Cantonese,Vocabulary,Flashcard,開放期,hoi1fong3 kei4,open period,用温柔的语气讲这句话,Beth251112
+day50_vocabulary_006,50,Cantonese,Vocabulary,Flashcard,打印機排隊,daa2jan3gei1 paai4deoi2,printer queue,用温柔的语气讲这句话,Beth251112
+day51_vocabulary_001,51,Cantonese,Vocabulary,Flashcard,細細嘅單位,sai3sai3 ge3 daan1wai2,tiny flat,用温柔的语气讲这句话,Beth251112
+day51_vocabulary_002,51,Cantonese,Vocabulary,Flashcard,閱讀燈,jyut6duk6 dang1,reading lamp,用温柔的语气讲这句话,Beth251112
+day51_vocabulary_003,51,Cantonese,Vocabulary,Flashcard,餐盒套裝,caan1hap6 tou3zong1,meal kit,用温柔的语气讲这句话,Beth251112
+day51_vocabulary_004,51,Cantonese,Vocabulary,Flashcard,鄰居傾計,leon4geoi1 keng1gai2,neighbor chat,用温柔的语气讲这句话,Beth251112
+day51_vocabulary_005,51,Cantonese,Vocabulary,Flashcard,預算表,jyu6syun3 biu2,budget sheet,用温柔的语气讲这句话,Beth251112
+day51_vocabulary_006,51,Cantonese,Vocabulary,Flashcard,自我照顧清單,zi6ngo5 ziu3gu3 cing1daan1,self care list,用温柔的语气讲这句话,Beth251112
+day52_vocabulary_001,52,Cantonese,Vocabulary,Flashcard,步道地圖,bou6dou6 dei6tou4,trail map,用温柔的语气讲这句话,Beth251112
+day52_vocabulary_002,52,Cantonese,Vocabulary,Flashcard,日用背包,jat6jung6 bui3baau1,daypack,用温柔的语气讲这句话,Beth251112
+day52_vocabulary_003,52,Cantonese,Vocabulary,Flashcard,濾水器,leoi6seoi2hei3,water filter,用温柔的语气讲这句话,Beth251112
+day52_vocabulary_004,52,Cantonese,Vocabulary,Flashcard,露營爐,lou6jing4 lou4,camp stove,用温柔的语气讲这句话,Beth251112
+day52_vocabulary_005,52,Cantonese,Vocabulary,Flashcard,腳踝護具,goek3waa5 wu6 geoi6,ankle brace,用温柔的语气讲这句话,Beth251112
+day52_vocabulary_006,52,Cantonese,Vocabulary,Flashcard,登記處,dang1gei3 cyu3,check-in point,用温柔的语气讲这句话,Beth251112
+day53_vocabulary_001,53,Cantonese,Vocabulary,Flashcard,護照,wu6ziu3,passport,用温柔的语气讲这句话,Beth251112
+day53_vocabulary_002,53,Cantonese,Vocabulary,Flashcard,登機閘口,dang1gei1 zaap6hau2,boarding gate,用温柔的语气讲这句话,Beth251112
+day53_vocabulary_003,53,Cantonese,Vocabulary,Flashcard,手提行李,sau2tai4 hang4lei5,carry-on,用温柔的语气讲这句话,Beth251112
+day53_vocabulary_004,53,Cantonese,Vocabulary,Flashcard,旅行枕頭,leoi5hang4 zam2tau4,travel pillow,用温柔的语气讲这句话,Beth251112
+day53_vocabulary_005,53,Cantonese,Vocabulary,Flashcard,海關排隊,hoi2gwaan1 paai4deoi2,customs line,用温柔的语气讲这句话,Beth251112
+day53_vocabulary_006,53,Cantonese,Vocabulary,Flashcard,到達接送,dou3daat6 zip3sung3,arrival pickup,用温柔的语气讲这句话,Beth251112
+day54_vocabulary_001,54,Cantonese,Vocabulary,Flashcard,方向,fong1hoeng3,orientation,用温柔的语气讲这句话,Beth251112
+day54_vocabulary_002,54,Cantonese,Vocabulary,Flashcard,導師,dou6si1,mentor,用温柔的语气讲这句话,Beth251112
+day54_vocabulary_003,54,Cantonese,Vocabulary,Flashcard,工作空間,gung1zok3 hung1gaan1,workspace,用温柔的语气讲这句话,Beth251112
+day54_vocabulary_004,54,Cantonese,Vocabulary,Flashcard,任務追蹤器,jam4mou6 zeoi1zung1 hei3,task tracker,用温柔的语气讲这句话,Beth251112
+day54_vocabulary_005,54,Cantonese,Vocabulary,Flashcard,午餐夥伴,ng5caan1 fo2bun6,lunch buddy,用温柔的语气讲这句话,Beth251112
+day54_vocabulary_006,54,Cantonese,Vocabulary,Flashcard,慶祝佳餚,hing3zuk1 gaai1ngaau4,celebration treat,用温柔的语气讲这句话,Beth251112
+day55_vocabulary_001,55,Cantonese,Vocabulary,Flashcard,大學錄取,daai6hok6 luk6ceoi2,university offer,用温柔的语气讲这句话,Beth251112
+day55_vocabulary_002,55,Cantonese,Vocabulary,Flashcard,學費預算,hok6fai3 jyu6syun3,tuition budget,用温柔的语气讲这句话,Beth251112
+day55_vocabulary_003,55,Cantonese,Vocabulary,Flashcard,主要選擇,zyu2jiu3 syun2zaak6,major choice,用温柔的语气讲这句话,Beth251112
+day55_vocabulary_004,55,Cantonese,Vocabulary,Flashcard,空檔年,hung1dong3 nin4,gap year,用温柔的语气讲这句话,Beth251112
+day55_vocabulary_005,55,Cantonese,Vocabulary,Flashcard,校園導賞,haau6jyun2 dou6soeng2,campus tour,用温柔的语气讲这句话,Beth251112
+day55_vocabulary_006,55,Cantonese,Vocabulary,Flashcard,家庭會議,gaa1ting4 wui6ji5,family meeting,用温柔的语气讲这句话,Beth251112

@@ -18,7 +18,7 @@ export const DAILY_SCENARIO_SELECT = `
   description,
   your_role,
   partner_role,
-  phrases:daily_scenario_phrases(id, order_index, phrase, translation, romanization),
+  phrases:daily_scenario_phrases(id, order_index, phrase, translation, romanization, tts_storage_path),
   prompts:daily_scenario_prompts(id, order_index, prompt)
 `;
 
@@ -32,6 +32,7 @@ export const normalizeScenario = (row: ScenarioQueryResult): ScenarioContent => 
       phrase: phrase.phrase,
       translation: phrase.translation,
       romanization: phrase.romanization,
+      ttsStoragePath: phrase.tts_storage_path ?? null,
     }));
 
   const prompts = (row.prompts ?? [])
