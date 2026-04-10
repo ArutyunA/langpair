@@ -14,13 +14,25 @@ dotenv.config({ path: path.join(rootDir, ".env.local"), quiet: true });
 dotenv.config({ path: path.join(rootDir, ".env"), quiet: true });
 
 const { Client } = pg;
-const defaultBackupFile = path.resolve(
-  rootDir,
-  "..",
-  "backups",
-  "source-project-ref",
-  "db_cluster-27-11-2025@22-15-07.backup",
-);
+async function inferDefaultBackupFile() {
+  const backupRoot = path.resolve(rootDir, "..", "backups");
+  const refs = await fs.readdir(backupRoot, { withFileTypes: true }).catch(() => []);
+  const candidates = [];
+
+  for (const entry of refs) {
+    if (!entry.isDirectory()) continue;
+    const entryDir = path.join(backupRoot, entry.name);
+    const filenames = await fs.readdir(entryDir).catch(() => []);
+    for (const filename of filenames) {
+      if (filename.startsWith("db_cluster-") && filename.endsWith(".backup")) {
+        candidates.push(path.join(entryDir, filename));
+      }
+    }
+  }
+
+  candidates.sort();
+  return candidates[0] ?? path.resolve(backupRoot, "source-project-ref", "db_cluster-<timestamp>.backup");
+}
 
 const targetTables = [
   "public.daily_scenarios",
@@ -90,7 +102,7 @@ const schemaSql = `
 
 function parseArgs(argv) {
   const args = {
-    backupFile: defaultBackupFile,
+    backupFile: "",
     dryRun: false,
   };
 
@@ -225,12 +237,13 @@ function buildInsertQuery(tableName, columns, rows) {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   const databaseUrl = process.env.DATABASE_URL;
+  const backupFile = args.backupFile || (await inferDefaultBackupFile());
 
   if (!databaseUrl) {
     throw new Error("DATABASE_URL is required in .env.local.");
   }
 
-  const dump = await fs.readFile(args.backupFile, "utf-8");
+  const dump = await fs.readFile(backupFile, "utf-8");
   const copyBlocks = extractCopyBlocks(dump);
 
   for (const tableName of targetTables) {

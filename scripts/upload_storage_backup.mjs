@@ -7,13 +7,23 @@ import process from "node:process";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const defaultSourceDir = path.resolve(
-  repoRoot,
-  "..",
-  "backups",
-  "source-project-ref",
-  "TTSCanto",
-);
+async function inferDefaultSourceDir() {
+  const backupRoot = path.resolve(repoRoot, "..", "backups");
+  const refs = await fs.readdir(backupRoot, { withFileTypes: true }).catch(() => []);
+  const candidates = [];
+
+  for (const entry of refs) {
+    if (!entry.isDirectory()) continue;
+    const bucketDir = path.join(backupRoot, entry.name, "TTSCanto");
+    const stat = await fs.stat(bucketDir).catch(() => null);
+    if (stat?.isDirectory()) {
+      candidates.push(bucketDir);
+    }
+  }
+
+  candidates.sort();
+  return candidates[0] ?? path.resolve(backupRoot, "source-project-ref", "TTSCanto");
+}
 
 function parseArgs(argv) {
   const args = {
@@ -22,7 +32,7 @@ function parseArgs(argv) {
     dryRun: false,
     projectUrl: process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL || "",
     serviceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY || "",
-    sourceDir: defaultSourceDir,
+    sourceDir: "",
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -122,6 +132,9 @@ async function runPool(files, concurrency, worker) {
 
 async function main() {
   const args = parseArgs(process.argv.slice(2));
+  if (!args.sourceDir) {
+    args.sourceDir = await inferDefaultSourceDir();
+  }
   if (!args.projectUrl || !args.serviceRoleKey) {
     throw new Error(
       "project URL and service role key are required. Pass --project-url / --service-role-key or set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.",

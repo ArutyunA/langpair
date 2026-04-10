@@ -2,14 +2,14 @@
 
 This project already contains the paused project backup artifacts:
 
-- Database dump: `../backups/source-project-ref/db_cluster-27-11-2025@22-15-07.backup`
-- Storage objects: `../backups/source-project-ref/TTSCanto/`
+- Database dump: `../backups/<source-project-ref>/db_cluster-<timestamp>.backup`
+- Storage objects: `../backups/<source-project-ref>/TTSCanto/`
 
 The original Supabase project metadata recovered from the CLI is:
 
-- Old project ref: `source-project-ref`
-- Old region: `eu-north-1`
-- Old org id: `source-org-id`
+- Old project ref: `<source-project-ref>`
+- Old region: `<source-region>`
+- Old org id: `<source-org-id>`
 
 ## 1. Create the replacement hosted project
 
@@ -17,8 +17,8 @@ You can create it from the dashboard or the CLI. The CLI form is:
 
 ```bash
 supabase projects create "LangPair Restored" \
-  --org-id source-org-id \
-  --region eu-north-1 \
+  --org-id '<source-org-id>' \
+  --region '<source-region>' \
   --db-password '<choose-a-strong-password>'
 ```
 
@@ -72,7 +72,7 @@ export SUPABASE_SERVICE_ROLE_KEY='<new-service-role-key>'
 node scripts/upload_storage_backup.mjs
 ```
 
-By default this uploads every file under `../backups/source-project-ref/TTSCanto/` into the `TTSCanto` bucket while preserving paths like `bethany/day44/...`.
+By default this uploads every file under `../backups/<source-project-ref>/TTSCanto/` into the `TTSCanto` bucket while preserving paths like `bethany/day44/...`.
 
 ## 5. Redeploy the Edge Function
 

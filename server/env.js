@@ -9,7 +9,7 @@ dotenv.config({ path: path.join(rootDir, ".env.local"), quiet: true });
 dotenv.config({ path: path.join(rootDir, ".env"), quiet: true });
 
 export const env = {
-  audioRoot: path.resolve(rootDir, "..", "backups", "source-project-ref", "TTSCanto"),
+  audioRoot: path.resolve(rootDir, "public", "audio"),
   databaseUrl: process.env.DATABASE_URL ?? "",
   port: Number(process.env.PORT ?? 3000),
   rootDir,

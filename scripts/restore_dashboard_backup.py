@@ -13,13 +13,12 @@ import sys
 from pathlib import Path
 
 
-DEFAULT_BACKUP = (
-    Path(__file__).resolve().parents[1]
-    / ".."
-    / "backups"
-    / "source-project-ref"
-    / "db_cluster-27-11-2025@22-15-07.backup"
-).resolve()
+def infer_default_backup() -> str:
+    backup_root = (Path(__file__).resolve().parents[1] / ".." / "backups").resolve()
+    matches = sorted(backup_root.glob("*/db_cluster-*.backup"))
+    if not matches:
+        return str((backup_root / "<source-project-ref>" / "db_cluster-<timestamp>.backup").resolve())
+    return str(matches[0].resolve())
 
 
 def parse_args() -> argparse.Namespace:
@@ -31,8 +30,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--backup-file",
-        default=str(DEFAULT_BACKUP),
-        help=f"Path to the downloaded backup file. Defaults to {DEFAULT_BACKUP}.",
+        default=infer_default_backup(),
+        help="Path to the downloaded backup file. Defaults to the first matching backups/*/db_cluster-*.backup.",
     )
     parser.add_argument(
         "--psql-path",
