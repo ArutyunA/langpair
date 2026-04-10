@@ -1,13 +1,19 @@
 import type { Language } from "@/lib/api";
 
 const LANGUAGE_STORAGE_KEY = "langpair-learning-language";
+const DEFAULT_LANGUAGE: Language = "cantonese";
 
 const canUseStorage = () => typeof window !== "undefined" && Boolean(window.localStorage);
 
-export const getLanguagePreference = (): Language | null => {
-  if (!canUseStorage()) return null;
+export const getLanguagePreference = (): Language => {
+  if (!canUseStorage()) return DEFAULT_LANGUAGE;
   const value = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-  return value === "russian" || value === "cantonese" ? value : null;
+  if (value === DEFAULT_LANGUAGE) {
+    return DEFAULT_LANGUAGE;
+  }
+
+  window.localStorage.setItem(LANGUAGE_STORAGE_KEY, DEFAULT_LANGUAGE);
+  return DEFAULT_LANGUAGE;
 };
 
 export const setLanguagePreference = (language: Language) => {
