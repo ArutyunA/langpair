@@ -1,4 +1,5 @@
 import type { ScenarioContent } from "@/types/scenario";
+import { buildPublicUrl } from "@/lib/public-url";
 
 export type Language = "russian" | "cantonese";
 
@@ -27,10 +28,13 @@ export interface ScenarioDetailResponse {
   vocabHighlights: VocabularyEntry[];
 }
 
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL ?? "").replace(/\/$/, "");
-
 const request = async <T>(pathname: string): Promise<T> => {
-  const response = await fetch(`${API_BASE_URL}${pathname}`);
+  const response = await fetch(
+    buildPublicUrl(pathname, {
+      baseValue: import.meta.env.VITE_API_BASE_URL,
+      fallbackBase: "",
+    }),
+  );
   if (!response.ok) {
     throw new Error(`Request failed: ${response.status}`);
   }

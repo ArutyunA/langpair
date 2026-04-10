@@ -1,14 +1,21 @@
-const AUDIO_BASE_URL = (import.meta.env.VITE_AUDIO_BASE_URL ?? "/audio").replace(/\/$/, "");
+import { buildPublicUrl } from "@/lib/public-url";
+
 const TTS_BUCKET = import.meta.env.VITE_TTS_BUCKET ?? "TTSCanto";
 const TTS_SPEAKER_PREFIX = import.meta.env.VITE_TTS_PREFIX ?? "bethany";
 const STORAGE_PUBLIC_SEGMENT = "storage/v1/object/public/";
 
 const buildAudioUrl = (relativePath: string) =>
-  `${AUDIO_BASE_URL}/${relativePath
-    .split("/")
-    .filter(Boolean)
-    .map((segment) => encodeURIComponent(segment))
-    .join("/")}`;
+  buildPublicUrl(
+    `/audio/${relativePath
+      .split("/")
+      .filter(Boolean)
+      .map((segment) => encodeURIComponent(segment))
+      .join("/")}`,
+    {
+      baseValue: import.meta.env.VITE_AUDIO_BASE_URL,
+      fallbackBase: "",
+    },
+  );
 
 interface ResolveAudioUrlsOptions {
   lessonDayNumber?: number | null;
