@@ -1,7 +1,5 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { User, Session } from "@supabase/supabase-js";
-import { supabase } from "@/integrations/supabase/client";
 import LanguageSelector from "@/components/LanguageSelector";
 import ProgressHeader from "@/components/ProgressHeader";
 import ScenarioCard from "@/components/ScenarioCard";
@@ -20,29 +18,24 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useToast } from "@/hooks/use-toast";
 import { useTheme } from "next-themes";
-import { UserCircle, Users, Globe, LogOut, SunMoon } from "lucide-react";
-import { ScenarioContent } from "@/types/scenario";
+import { Globe, Settings2, SunMoon } from "lucide-react";
 import { getCurrentLessonDay } from "@/lib/daily-cycle";
-import { DAILY_SCENARIO_SELECT, normalizeScenario, type ScenarioQueryResult } from "@/lib/scenario-utils";
-import { fetchTodayTaskStatus, TOTAL_DAILY_TASKS, type DailyTaskStatus } from "@/lib/task-progress";
+import { fetchDayOverview, type Language, type VocabularyEntry } from "@/lib/api";
+import { fetchTodayTaskStatus, getCurrentStreak, TOTAL_DAILY_TASKS, type DailyTaskStatus } from "@/lib/task-progress";
+import { getLanguagePreference, setLanguagePreference } from "@/lib/preferences";
+import type { ScenarioContent } from "@/types/scenario";
 
-interface DailyVocabulary {
-  word: string;
-  translation: string;
-  romanization?: string;
-}
+const EMPTY_SCENARIOS: Record<Language, ScenarioContent | null> = {
+  russian: null,
+  cantonese: null,
+};
 
 const Index = () => {
-  const [user, setUser] = useState<User | null>(null);
-  const [session, setSession] = useState<Session | null>(null);
-  const [selectedLanguage, setSelectedLanguage] = useState<"russian" | "cantonese" | null>(null);
-  const [streak, setStreak] = useState(1);
+  const [selectedLanguage, setSelectedLanguageState] = useState<Language | null>(() => getLanguagePreference());
+  const [streak, setStreak] = useState(0);
   const [loading, setLoading] = useState(true);
-  const [dailyVocab, setDailyVocab] = useState<DailyVocabulary[]>([]);
-  const [dailyScenarios, setDailyScenarios] = useState<Record<"russian" | "cantonese", ScenarioContent | null>>({
-    russian: null,
-    cantonese: null,
-  });
+  const [dailyVocab, setDailyVocab] = useState<VocabularyEntry[]>([]);
+  const [dailyScenarios, setDailyScenarios] = useState<Record<Language, ScenarioContent | null>>(EMPTY_SCENARIOS);
   const [tasksCompleted, setTasksCompleted] = useState<DailyTaskStatus>({
     vocabCompleted: false,
     scenarioCompleted: false,
@@ -57,110 +50,62 @@ const Index = () => {
   const completedTasks = Number(tasksCompleted.vocabCompleted) + Number(tasksCompleted.scenarioCompleted);
 
   useEffect(() => {
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        setSession(session);
-        setUser(session?.user ?? null);
-        setLoading(false);
-      }
-    );
-
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      setLoading(false);
-    });
-
-    return () => subscription.unsubscribe();
+    fetchTodayTaskStatus().then(setTasksCompleted);
+    setStreak(getCurrentStreak());
   }, []);
 
   useEffect(() => {
-    if (!user) return;
+    if (!selectedLanguage) {
+      setLoading(false);
+      setDailyVocab([]);
+      setDailyScenarios(EMPTY_SCENARIOS);
+      return;
+    }
 
-    const fetchUserData = async () => {
-      const { data: profile } = await supabase
-        .from("profiles")
-        .select("learning_language")
-        .eq("id", user.id)
-        .maybeSingle();
+    let cancelled = false;
+    setLoading(true);
 
-      if (profile?.learning_language) {
-        setSelectedLanguage(profile.learning_language as "russian" | "cantonese");
-      }
+    const loadOverview = async () => {
+      try {
+        const [overview, status] = await Promise.all([
+          fetchDayOverview(dayNumber, selectedLanguage),
+          fetchTodayTaskStatus(),
+        ]);
 
-      const { data: progress } = await supabase
-        .from("user_progress")
-        .select("streak")
-        .eq("user_id", user.id)
-        .maybeSingle();
+        if (cancelled) return;
 
-      if (progress) {
-        setStreak(progress.streak);
-      }
+        const scenarioMap: Record<Language, ScenarioContent | null> = { ...EMPTY_SCENARIOS };
+        overview.scenarios.forEach((scenario) => {
+          scenarioMap[scenario.language] = scenario;
+        });
 
-      if (profile?.learning_language) {
-        const { data: vocab } = await supabase
-          .from("daily_vocabulary")
-          .select("word, translation, romanization")
-          .eq("language", profile.learning_language)
-          .eq("day_number", dayNumber)
-          .limit(10);
-
-        if (vocab) {
-          setDailyVocab(vocab);
+        setDailyVocab(overview.dailyVocab);
+        setDailyScenarios(scenarioMap);
+        setTasksCompleted(status);
+        setStreak(getCurrentStreak());
+      } catch (error) {
+        console.error("Error loading overview", error);
+        if (!cancelled) {
+          setDailyVocab([]);
+          setDailyScenarios(EMPTY_SCENARIOS);
+        }
+      } finally {
+        if (!cancelled) {
+          setLoading(false);
         }
       }
-
-      const status = await fetchTodayTaskStatus(user.id);
-      setTasksCompleted(status);
     };
 
-    fetchUserData();
-  }, [user, dayNumber]);
+    loadOverview();
 
-  useEffect(() => {
-    const fetchDailyScenario = async () => {
-      const { data, error } = await supabase
-        .from("daily_scenarios")
-        .select(DAILY_SCENARIO_SELECT)
-        .eq("day_number", dayNumber);
-
-      if (error) {
-        console.error("Error fetching scenarios:", error);
-        return;
-      }
-
-      const scenarioMap: Record<"russian" | "cantonese", ScenarioContent | null> = {
-        russian: null,
-        cantonese: null,
-      };
-
-      data?.forEach(row => {
-        const language = row.language as "russian" | "cantonese";
-        scenarioMap[language] = normalizeScenario(row as ScenarioQueryResult);
-      });
-
-      setDailyScenarios(scenarioMap);
+    return () => {
+      cancelled = true;
     };
+  }, [dayNumber, selectedLanguage]);
 
-    fetchDailyScenario();
-  }, [dayNumber]);
-
-  const handleSignOut = async () => {
-    await supabase.auth.signOut();
-    navigate("/auth");
-  };
-
-  const handleChangeLanguage = async (newLanguage: "russian" | "cantonese") => {
-    if (!user) return;
-    
-    await supabase
-      .from("profiles")
-      .update({ learning_language: newLanguage })
-      .eq("id", user.id);
-    
-    setSelectedLanguage(newLanguage);
-    
+  const handleChangeLanguage = (newLanguage: Language) => {
+    setLanguagePreference(newLanguage);
+    setSelectedLanguageState(newLanguage);
     toast({
       title: "Language updated",
       description: `Now learning ${newLanguage}`,
@@ -170,12 +115,6 @@ const Index = () => {
   const handleThemeToggle = (checked: boolean) => {
     setTheme(checked ? "dark" : "light");
   };
-
-  useEffect(() => {
-    if (!loading && !user) {
-      navigate("/auth");
-    }
-  }, [loading, user, navigate]);
 
   if (loading) {
     return (
@@ -189,10 +128,6 @@ const Index = () => {
     );
   }
 
-  if (!user) {
-    return null;
-  }
-
   if (!selectedLanguage) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4">
@@ -202,19 +137,19 @@ const Index = () => {
               LangPair
             </h1>
             <p className="text-lg text-muted-foreground">
-              Learn languages together through roleplay conversations
+              Learn languages through daily roleplay conversations
             </p>
           </div>
           <LanguageSelector
             selectedLanguage={selectedLanguage}
-            onSelect={setSelectedLanguage}
+            onSelect={handleChangeLanguage}
           />
         </div>
       </div>
     );
   }
 
-  const currentScenario = selectedLanguage ? dailyScenarios[selectedLanguage] : null;
+  const currentScenario = dailyScenarios[selectedLanguage];
   const vocabCount = dailyVocab.length;
 
   return (
@@ -227,11 +162,11 @@ const Index = () => {
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="sm">
-                <UserCircle className="w-5 h-5" />
+                <Settings2 className="w-5 h-5" />
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuLabel>Profile</DropdownMenuLabel>
+              <DropdownMenuLabel>Preferences</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuSub>
                 <DropdownMenuSubTrigger>
@@ -248,7 +183,7 @@ const Index = () => {
                 </DropdownMenuSubContent>
               </DropdownMenuSub>
               <DropdownMenuItem
-                onSelect={event => event.preventDefault()}
+                onSelect={(event) => event.preventDefault()}
                 className="flex items-center justify-between"
               >
                 <div className="flex items-center">
@@ -260,15 +195,6 @@ const Index = () => {
                   onCheckedChange={handleThemeToggle}
                   aria-label="Toggle dark mode"
                 />
-              </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => navigate("/friends")}>
-                <Users className="w-4 h-4 mr-2" />
-                Learning Partners
-              </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={handleSignOut}>
-                <LogOut className="w-4 h-4 mr-2" />
-                Sign Out
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -307,7 +233,6 @@ const Index = () => {
             Loading today's scenario...
           </div>
         )}
-
       </main>
     </div>
   );

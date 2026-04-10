@@ -1,6 +1,5 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -8,6 +7,9 @@ import { useToast } from "@/hooks/use-toast";
 import { ArrowLeft, Check, Loader2, Volume2, X } from "lucide-react";
 import { getCurrentLessonDay } from "@/lib/daily-cycle";
 import { markTaskCompleted } from "@/lib/task-progress";
+import { fetchDailyVocabulary, type Language } from "@/lib/api";
+import { getLanguagePreference } from "@/lib/preferences";
+import { resolveAudioUrls } from "@/lib/audio";
 
 const MAX_QUESTIONS = 20;
 const DONT_KNOW_OPTION = "Don't know";
@@ -15,7 +17,7 @@ const DONT_KNOW_OPTION = "Don't know";
 interface VocabQuestion {
   word: string;
   translation: string;
-  romanization?: string;
+  romanization?: string | null;
   questionType: "toEnglish" | "fromEnglish";
   attempts?: number;
   incorrect?: number;
@@ -23,17 +25,14 @@ interface VocabQuestion {
   ttsStoragePath?: string | null;
 }
 
-const TTS_BUCKET = import.meta.env.VITE_TTS_BUCKET ?? "TTSCanto";
-const TTS_SPEAKER_PREFIX = import.meta.env.VITE_TTS_PREFIX ?? "bethany";
-const STORAGE_PUBLIC_SEGMENT = "storage/v1/object/public/";
-
 const VocabularyQuiz = () => {
   const [vocabulary, setVocabulary] = useState<VocabQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
-  const [language, setLanguage] = useState<string>("");
+  const [language, setLanguage] = useState<Language | "">("");
+  const [loading, setLoading] = useState(true);
   const [showQuestionRomanization, setShowQuestionRomanization] = useState(false);
   const [currentAudio, setCurrentAudio] = useState<HTMLAudioElement | null>(null);
   const [loadingAudioId, setLoadingAudioId] = useState<string | null>(null);
@@ -44,7 +43,7 @@ const VocabularyQuiz = () => {
   const dayNumber = getCurrentLessonDay();
   const romanizationLookup = useMemo(() => {
     const map = new Map<string, string>();
-    vocabulary.forEach(entry => {
+    vocabulary.forEach((entry) => {
       if (entry.word) {
         map.set(entry.word, entry.romanization ?? "");
       }
@@ -53,87 +52,76 @@ const VocabularyQuiz = () => {
   }, [vocabulary]);
 
   useEffect(() => {
-    fetchVocabulary();
-  }, [dayNumber]);
+    const loadVocabulary = async () => {
+      setLoading(true);
+      const languagePreference = getLanguagePreference();
+      if (!languagePreference) {
+        navigate("/");
+        return;
+      }
 
-  const fetchVocabulary = async () => {
-    const { data: { user } } = await supabase.auth.getUser();
-    if (!user) return;
+      try {
+        setLanguage(languagePreference);
+        const vocab = await fetchDailyVocabulary(dayNumber, languagePreference);
 
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("learning_language")
-      .eq("id", user.id)
-      .single();
+        const source = vocab.slice(0, 10).map((entry) => ({
+          ...entry,
+          ttsStoragePath: entry.ttsStoragePath,
+        }));
 
-    if (!profile) return;
+        if (source.length === 0) {
+          setVocabulary([]);
+          return;
+        }
 
-    const languagePreference = (profile.learning_language as "russian" | "cantonese") ?? "russian";
-    setLanguage(languagePreference);
+        const questions: VocabQuestion[] = [];
+        source.forEach((entry) => {
+          ["toEnglish", "fromEnglish"]
+            .sort(() => Math.random() - 0.5)
+            .forEach((type) =>
+              questions.push({
+                ...entry,
+                questionType: type as VocabQuestion["questionType"],
+                attempts: 0,
+                incorrect: 0,
+                options: [],
+                ttsStoragePath: entry.ttsStoragePath,
+              }),
+            );
+        });
 
-    const { data: vocab } = await supabase
-      .from("daily_vocabulary")
-      .select("word, translation, romanization, tts_storage_path")
-      .eq("language", profile.learning_language)
-      .eq("day_number", dayNumber)
-      .limit(10);
+        const shuffled = questions.sort(() => Math.random() - 0.5).slice(0, MAX_QUESTIONS);
+        const enriched = shuffled.map((question) => ({
+          ...question,
+          options: buildQuestionOptions(question, shuffled),
+        }));
+        setVocabulary(enriched);
+        setCurrentIndex(0);
+        setScore(0);
+        setSelectedAnswer(null);
+        setShowResult(false);
+        setShowQuestionRomanization(false);
+        setAutoPlayedQuestionIndex(null);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    const source = (vocab ?? []).slice(0, 10).map(entry => ({
-      ...entry,
-      ttsStoragePath: (entry as Record<string, unknown>).tts_storage_path as string | null | undefined,
-    }));
-
-    if (source.length === 0) {
-      setVocabulary([]);
-      return;
-    }
-
-    const questions: VocabQuestion[] = [];
-
-    source.forEach(entry => {
-      const availableTypes: VocabQuestion["questionType"][] = ["toEnglish", "fromEnglish"];
-      availableTypes
-        .sort(() => Math.random() - 0.5)
-        .forEach(type =>
-          questions.push({
-            ...entry,
-            questionType: type,
-            attempts: 0,
-            incorrect: 0,
-            options: [],
-            ttsStoragePath: entry.ttsStoragePath,
-          }),
-        );
-    });
-
-    const shuffled = questions.sort(() => Math.random() - 0.5).slice(0, MAX_QUESTIONS);
-    const enriched = shuffled.map(question => ({
-      ...question,
-      options: buildQuestionOptions(question, shuffled),
-    }));
-    setVocabulary(enriched);
-    setCurrentIndex(0);
-    setScore(0);
-    setSelectedAnswer(null);
-    setShowResult(false);
-    setShowQuestionRomanization(false);
-    setAutoPlayedQuestionIndex(null);
-  };
+    loadVocabulary();
+  }, [dayNumber, navigate]);
 
   const buildPoolByType = (
     questionsList: VocabQuestion[],
     type: VocabQuestion["questionType"],
-  ) => {
-    return questionsList
-      .map(v => (type === "fromEnglish" ? v.word : v.translation))
-      .filter((value): value is string => Boolean(value));
-  };
+  ) => questionsList
+    .map((value) => (type === "fromEnglish" ? value.word : value.translation))
+    .filter((value): value is string => Boolean(value));
 
   const buildWrongAnswers = (
     correctAnswer: string,
     pool: string[],
   ) => {
-    const unique = Array.from(new Set(pool.filter(value => value !== correctAnswer)));
+    const unique = Array.from(new Set(pool.filter((value) => value !== correctAnswer)));
     const shuffled = unique.sort(() => Math.random() - 0.5);
     const wrongs: string[] = [];
 
@@ -142,7 +130,6 @@ const VocabularyQuiz = () => {
       wrongs.push(option);
     }
 
-    // Fallback: if there still aren't enough unique options, reuse pool entries
     if (wrongs.length < 3) {
       while (wrongs.length < 3 && pool.length > 0) {
         const candidate = pool[Math.floor(Math.random() * pool.length)];
@@ -167,12 +154,12 @@ const VocabularyQuiz = () => {
     const wrongAnswers = buildWrongAnswers(correctAnswer, pool);
 
     const optionSet = new Set<string>([correctAnswer, ...wrongAnswers]);
-    const uniquePool = Array.from(new Set(pool.filter(value => value !== correctAnswer)));
+    const uniquePool = Array.from(new Set(pool.filter((value) => value !== correctAnswer)));
     while (optionSet.size < 4 && uniquePool.length > 0) {
       const candidate = uniquePool[Math.floor(Math.random() * uniquePool.length)];
       optionSet.add(candidate);
     }
-    const fallbackPool = pool.filter(value => value !== correctAnswer);
+    const fallbackPool = pool.filter((value) => value !== correctAnswer);
     while (optionSet.size < 4 && fallbackPool.length > 0) {
       const candidate = fallbackPool[Math.floor(Math.random() * fallbackPool.length)];
       optionSet.add(candidate);
@@ -188,27 +175,16 @@ const VocabularyQuiz = () => {
   const getQuestion = () => {
     const current = vocabulary[currentIndex];
     if (!current) return "";
-
-    if (current.questionType === "toEnglish") {
-      return current.word;
-    } else if (current.questionType === "fromEnglish") {
-      return current.translation;
-    } else {
-      return current.word;
-    }
+    return current.questionType === "toEnglish" ? current.word : current.translation;
   };
 
   const getCorrectAnswer = () => {
     const current = vocabulary[currentIndex];
-    if (current.questionType === "toEnglish") {
-      return current.translation;
-    } else {
-      return current.word;
-    }
+    return current.questionType === "toEnglish" ? current.translation : current.word;
   };
 
   const recordAttempt = (questionIndex: number, isCorrect: boolean) => {
-    setVocabulary(prev => {
+    setVocabulary((prev) => {
       const clone = [...prev];
       const entry = { ...clone[questionIndex] };
       entry.attempts = (entry.attempts ?? 0) + 1;
@@ -242,7 +218,7 @@ const VocabularyQuiz = () => {
     const isCorrect = answer === getCorrectAnswer();
     recordAttempt(currentIndex, isCorrect);
     if (isCorrect) {
-      setScore(score + 1);
+      setScore((current) => current + 1);
     }
     setShowQuestionRomanization(false);
   };
@@ -257,35 +233,32 @@ const VocabularyQuiz = () => {
       return;
     }
 
-    const { data: { user } } = await supabase.auth.getUser();
-    if (user) {
-      await markTaskCompleted(user.id, "vocab");
-    }
+    await markTaskCompleted("vocab");
 
-    const sortedPerformance = [...vocabulary].sort((a, b) => {
-      const incorrectA = a.incorrect ?? 0;
-      const incorrectB = b.incorrect ?? 0;
-      if (incorrectA === incorrectB) {
-        const attemptsA = a.attempts ?? 0;
-        const attemptsB = b.attempts ?? 0;
-        return attemptsB - attemptsA;
+    const sortedPerformance = [...vocabulary].sort((left, right) => {
+      const incorrectLeft = left.incorrect ?? 0;
+      const incorrectRight = right.incorrect ?? 0;
+      if (incorrectLeft === incorrectRight) {
+        const attemptsLeft = left.attempts ?? 0;
+        const attemptsRight = right.attempts ?? 0;
+        return attemptsRight - attemptsLeft;
       }
-      return incorrectB - incorrectA;
+      return incorrectRight - incorrectLeft;
     });
 
     const summaryLines = sortedPerformance
-      .filter(entry => (entry.attempts ?? 0) > 0)
+      .filter((entry) => (entry.attempts ?? 0) > 0)
       .slice(0, 10)
-      .map(entry => {
+      .map((entry) => {
         const attempts = entry.attempts ?? 0;
         const incorrect = entry.incorrect ?? 0;
         return `${entry.word} / ${entry.translation} — ${incorrect}/${attempts} incorrect`;
       })
-      .join("\\n");
+      .join("\n");
 
     toast({
       title: "Quiz complete!",
-      description: `Score: ${score}/${vocabulary.length} (${Math.round((score / vocabulary.length) * 100)}%)\\n${summaryLines}`,
+      description: `Score: ${score}/${vocabulary.length} (${Math.round((score / vocabulary.length) * 100)}%)\n${summaryLines}`,
     });
 
     setTimeout(() => navigate("/"), 500);
@@ -299,72 +272,10 @@ const VocabularyQuiz = () => {
     };
   }, [currentAudio]);
 
-  const resolvePublicAudioUrls = useCallback((rawPath?: string | null) => {
-    if (!rawPath) return [];
-    const trimmed = rawPath.trim();
-    if (!trimmed) return [];
-
-    if (/^https?:\/\//i.test(trimmed)) {
-      return [trimmed];
-    }
-
-    const stripBucketPrefix = (value: string) => {
-      let next = value.replace(/^\/+/, "");
-      const storageIndex = next.toLowerCase().indexOf(STORAGE_PUBLIC_SEGMENT);
-      if (storageIndex >= 0) {
-        next = next.slice(storageIndex + STORAGE_PUBLIC_SEGMENT.length);
-      }
-
-      const bucketMarker = `${TTS_BUCKET}/`;
-      const bucketIndex = next.indexOf(bucketMarker);
-      if (bucketIndex >= 0) {
-        next = next.slice(bucketIndex + bucketMarker.length);
-      }
-
-      next = next.replace(/^public\//i, "");
-      if (next.startsWith(bucketMarker)) {
-        next = next.slice(bucketMarker.length);
-      }
-
-      return next;
-    };
-
-    const normalized = stripBucketPrefix(trimmed);
-    const normalizedParts = normalized.split("/").filter(Boolean);
-    const baseFilename = normalizedParts.at(-1) ?? normalized;
-    const dayFromFilenameMatch = baseFilename.match(/(day\d{1,2})/i);
-    const lessonDay = `day${String(dayNumber).padStart(2, "0")}`;
-    const candidates: string[] = [];
-    const seen = new Set<string>();
-
-    const addCandidate = (value?: string | null) => {
-      const next = value?.trim();
-      if (!next || seen.has(next)) return;
-      seen.add(next);
-      candidates.push(next);
-    };
-
-    if (dayFromFilenameMatch) {
-      const explicitDay = dayFromFilenameMatch[1].toLowerCase();
-      addCandidate(`${TTS_SPEAKER_PREFIX}/${explicitDay}/${baseFilename}`);
-    }
-
-    addCandidate(`${TTS_SPEAKER_PREFIX}/${lessonDay}/${baseFilename}`);
-    const prefixedNormalized = normalized.startsWith(`${TTS_SPEAKER_PREFIX}/`)
-      ? normalized
-      : `${TTS_SPEAKER_PREFIX}/${normalized}`;
-    addCandidate(prefixedNormalized);
-    addCandidate(normalized);
-
-    const urls: string[] = [];
-    for (const candidate of candidates) {
-      const { data } = supabase.storage.from(TTS_BUCKET).getPublicUrl(candidate);
-      if (data.publicUrl) {
-        urls.push(data.publicUrl);
-      }
-    }
-    return urls;
-  }, [dayNumber]);
+  const resolvePublicAudioUrls = useCallback(
+    (rawPath?: string | null) => resolveAudioUrls(rawPath, { lessonDayNumber: dayNumber }),
+    [dayNumber],
+  );
 
   const playAudio = useCallback(async (targetId: string, path?: string | null) => {
     if (!path) {
@@ -394,7 +305,7 @@ const VocabularyQuiz = () => {
           setCurrentAudio(audio);
           audio.onended = () => setCurrentAudio(null);
           break;
-        } catch (_err) {
+        } catch (_error) {
           continue;
         }
       }
@@ -426,12 +337,12 @@ const VocabularyQuiz = () => {
     showResult,
   ]);
 
-  if (vocabulary.length === 0) {
+  if (loading || vocabulary.length === 0) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
           <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-            Loading quiz...
+            {loading ? "Loading quiz..." : "No quiz data for today."}
           </div>
         </div>
       </div>
@@ -494,7 +405,7 @@ const VocabularyQuiz = () => {
                       }`}
                       onClick={() => {
                         if (canRevealQuestionRomanization) {
-                          setShowQuestionRomanization(prev => !prev);
+                          setShowQuestionRomanization((value) => !value);
                         }
                       }}
                     >
@@ -521,75 +432,50 @@ const VocabularyQuiz = () => {
                 </div>
 
                 <div className="grid gap-3">
-                  {currentOptions.map((option, index) => {
-                    const isSelected = selectedAnswer === option;
+                  {currentOptions.map((option) => {
                     const isCorrect = option === getCorrectAnswer();
-                    const showCorrect = showResult && isCorrect;
-                    const showWrong = showResult && isSelected && !isCorrect;
-                    const isSkip = option === DONT_KNOW_OPTION;
+                    const isSelected = selectedAnswer === option;
+                    const optionRomanization =
+                      showOptionRomanization && option !== DONT_KNOW_OPTION
+                        ? romanizationLookup.get(option)
+                        : null;
 
                     return (
                       <Button
-                        key={index}
+                        key={option}
                         variant="outline"
-                        size="lg"
-                        className={`h-auto py-4 text-lg ${
-                          showCorrect ? "bg-green-500/20 border-green-500" :
-                          showWrong ? "bg-red-500/20 border-red-500" :
-                          isSelected && !isSkip ? "bg-primary/10" : ""
-                        } ${isSkip ? "justify-center w-1/2 mx-auto text-muted-foreground italic bg-muted/40 border-dashed" : ""}`}
+                        className={`h-auto min-h-16 justify-between px-4 py-4 whitespace-normal ${
+                          showResult && isCorrect
+                            ? "border-green-500 bg-green-500/10"
+                            : showResult && isSelected
+                              ? "border-red-500 bg-red-500/10"
+                              : ""
+                        }`}
                         onClick={() => handleAnswer(option)}
+                        disabled={showResult}
                       >
-                        <div className="w-full flex flex-col items-center gap-1">
-                          <span className={isSkip ? "italic" : ""}>{option}</span>
-                          {showOptionRomanization && !isSkip && (
-                            <span className="text-sm text-muted-foreground">
-                              {romanizationLookup.get(option) ?? ""}
-                            </span>
+                        <div className="flex-1 text-left">
+                          <div className="font-medium">{option}</div>
+                          {optionRomanization && (
+                            <div className="text-sm text-muted-foreground mt-1">{optionRomanization}</div>
                           )}
-                          {showCorrect &&
-                            language === "cantonese" &&
-                            current.questionType === "fromEnglish" &&
-                            current.ttsStoragePath &&
-                            !isSkip && (
-                              <span
-                                role="button"
-                                tabIndex={0}
-                                className="p-2 rounded-full hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary"
-                                onClick={event => {
-                                  event.stopPropagation();
-                                  playAudio(`option-${currentIndex}`, current.ttsStoragePath);
-                                }}
-                                onKeyDown={event => {
-                                  if (event.key === "Enter" || event.key === " ") {
-                                    event.preventDefault();
-                                    event.stopPropagation();
-                                    playAudio(`option-${currentIndex}`, current.ttsStoragePath);
-                                  }
-                                }}
-                              >
-                                {loadingAudioId === `option-${currentIndex}` ? (
-                                  <Loader2 className="w-4 h-4 animate-spin" />
-                                ) : (
-                                  <Volume2 className="w-4 h-4" />
-                                )}
-                              </span>
-                            )}
-                          <div className="flex gap-2">
-                            {showCorrect && <Check className="w-5 h-5 text-green-500" />}
-                            {showWrong && <X className="w-5 h-5 text-red-500" />}
-                          </div>
                         </div>
+                        {showResult && isCorrect && <Check className="w-4 h-4 text-green-600" />}
+                        {showResult && isSelected && !isCorrect && <X className="w-4 h-4 text-red-600" />}
                       </Button>
                     );
                   })}
                 </div>
-                {showResult && (
-                  <Button className="w-full mt-4" onClick={handleNext}>
-                    Continue
+
+                {showResult ? (
+                  <Button onClick={handleNext} className="w-full">
+                    {currentIndex === vocabulary.length - 1 ? "Finish" : "Next Question"}
+                  </Button>
+                ) : (
+                  <Button variant="ghost" onClick={handleSkip} className="w-full">
+                    Skip
                   </Button>
                 )}
-
               </div>
             </CardContent>
           </Card>
